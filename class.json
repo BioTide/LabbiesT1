@@ -1,0 +1,31 @@
+[
+  {
+    "species": "rats",
+    "quantity": 30,
+    "price": 100.00,
+    "desc": "standard albino rats"
+  },
+  {
+    "species": "rabbits",
+    "quantity": 25,
+    "price": 100.00,
+    "desc": "standard albino rabbits"
+  },
+  {
+    "species": "guinea pigs",
+    "quantity": 112,
+    "price": 79.99,
+    "desc": "standard albino pigs"
+  },
+  {
+    "species": "mice",
+    "quantity": 144,
+    "price": 59.99,
+    "desc": "standard albino mice"
+  },
+  {
+    "species": "cancer mice",
+    "quantity": 144,
+    "price": 129.99
+  }
+]

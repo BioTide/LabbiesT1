@@ -1,6 +1,4 @@
-.vl {
-    background-color: black;
-    width: 2px;
-    margin-left: 50%;
-    height: 10px;
+.footer {
+    position: absolute;
+    bottom:0;
 }

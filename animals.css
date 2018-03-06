@@ -2,6 +2,8 @@
     position: absolute;
     bottom:0;
 }
-hr .style1 {
-    border-top: 5px solid darkgreen;
+
+.img-thumbnail   {
+    height: 50px;
+    width: 75px;
 }

@@ -5,12 +5,42 @@
     <title> Labbies Home</title>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/open-iconic/1.1.1/font/css/open-iconic-bootstrap.min.css" rel="stylesheet">
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.css" rel="stylesheet">
+    <link href="animals.css">
+    <style>
+        .vl {
+            border-left: 6px solid green;
+            height: 500px;
+            position: absolute;
+            left: 20%;
+            margin-left: -3px;
+            top: 150px;
+        }
+    </style>
 </head>
 <body>
 
 <?php
      include "Navbar.html";
-?>
 
+?>
+<div class="container">
+
+    <!-- Headline Row -->
+    <div class="row">
+        <div class="col-xl-6  offset-xl-3 text-center">
+            <h1 class="bg-success text-white">Labbies</h1>
+        </div>
+
+        <span id="shoppingCart" class="oi oi-cart align-baseline clickable col-xl-1 text-right" data-toggle="modal" data-target="#exampleModalCenter" title="See your Current Shopping Cart">
+      </span>
+    </div>
+    </div>
+<div class = "vl">
+    <p><h1>Quality animals</h1>
+    <h2>are just the</h2>
+    <h1>beginning</h1>
+    </p>
+
+</div>
 </body>
 </html>

@@ -2,3 +2,6 @@
     position: absolute;
     bottom:0;
 }
+hr .style1 {
+    border-top: 5px solid darkgreen;
+}

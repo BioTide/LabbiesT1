@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title><!DOCTYPE html>
+        <html lang="en"><head>
+            <meta charset="utf-8">
+            <meta http-equiv="X-UA-Compatible" content="IE=edge">
+            <meta name="viewport" content="width=device-width, initial-scale=1">
+            <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+            <title>Animals Supplies</title>
+            <link href="https://cdnjs.cloudflare.com/ajax/libs/open-iconic/1.1.1/font/css/open-iconic-bootstrap.min.css" rel="stylesheet">
+            <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.css" rel="stylesheet">
+            <style>
+                .clickable {
+                    cursor: pointer
+                }
+            </style>
+        </head>
+<body>
+<div class="container">
+
+    <!-- Headline Row -->
+    <div class="row">
+        <div class="col-xl-6  offset-xl-3 text-center">
+            <h1 class="text-danger">Our Animals for Sale</h1>
+        </div>
+        <span id="shoppingCart" class="oi oi-cart align-baseline clickable col-xl-1" data-toggle="modal" data-target="#exampleModalCenter" title="See your Current Shopping Cart">
+      </span></div>
+
+    <!-- Animal Table Row -->
+    <div class="row">
+        <div class="col-xl-6 offset-xl-3">
+            <table class="table" id="animalTable">
+
+                <!-- Label Row -->
+                <thead>
+                <tr>
+                    <th>Species</th>
+                    <th class="text-right">Quantity</th>
+                    <th class="text-right">Price&nbsp;&nbsp;</th>
+                    <th></th> <!-- used for remove and edit buttons -->
+                </tr>
+                </thead>
+
+                <!-- Animal Rows - dynamically populated by jQuery code -->
+                <tbody><tr class="animalRow">
+                    <td>rats</td>
+                    <td style="text-align: right">30&nbsp;&nbsp;&nbsp;&nbsp;</td>
+                    <td style="text-align: right">$100.00</td>
+                    <td>
+             <span class="oi oi-x text-danger clickable invisible" title="Remove this product" onclick="removeProd(0)">
+             </span>
+                        <span class="oi oi-pencil text-secondary clickable invisible" title="Edit this product"></span>
+                    </td>
+                </tr><tr class="animalRow">
+                    <td>rabbits</td>
+                    <td style="text-align: right">25&nbsp;&nbsp;&nbsp;&nbsp;</td>
+                    <td style="text-align: right">$100.00</td>
+                    <td>
+             <span class="oi oi-x text-danger clickable invisible" title="Remove this product" onclick="removeProd(1)">
+             </span>
+                        <span class="oi oi-pencil text-secondary clickable invisible" title="Edit this product"></span>
+                    </td>
+                </tr><tr class="animalRow">
+                    <td>guinea pigs</td>
+                    <td style="text-align: right">112&nbsp;&nbsp;&nbsp;&nbsp;</td>
+                    <td style="text-align: right">$79.99</td>
+                    <td>
+             <span class="oi oi-x text-danger clickable invisible" title="Remove this product" onclick="removeProd(2)">
+             </span>
+                        <span class="oi oi-pencil text-secondary clickable invisible" title="Edit this product"></span>
+                    </td>
+                </tr><tr class="animalRow">
+                    <td>mice</td>
+                    <td style="text-align: right">144&nbsp;&nbsp;&nbsp;&nbsp;</td>
+                    <td style="text-align: right">$59.99</td>
+                    <td>
+             <span class="oi oi-x text-danger clickable invisible" title="Remove this product" onclick="removeProd(3)">
+             </span>
+                        <span class="oi oi-pencil text-secondary clickable invisible" title="Edit this product"></span>
+                    </td>
+                </tr><tr class="animalRow">
+                    <td>cancer mice</td>
+                    <td style="text-align: right">144&nbsp;&nbsp;&nbsp;&nbsp;</td>
+                    <td style="text-align: right">$129.99</td>
+                    <td>
+             <span class="oi oi-x text-danger clickable invisible" title="Remove this product" onclick="removeProd(4)">
+             </span>
+                        <span class="oi oi-pencil text-secondary clickable invisible" title="Edit this product"></span>
+                    </td>
+                </tr></tbody>
+
+                <!-- Add Row -->
+                <tfoot class="invisible">
+                <tr>
+                    <td><input type="text" id="speciesInput" value="mice"></td>
+                    <td><input type="text" id="qtyInput" value="144"></td>
+                    <td><input type="text" id="priceInput" value="12.99"></td>
+                    <td><span id="plusButton" class="oi oi-plus text-success clickable" title="Add"></span></td>
+                </tr>
+                </tfoot>
+            </table>
+        </div> <!-- end col -->
+    </div> <!-- end row -->
+
+    <!-- TODO display a plus icon to be used for adding a new product -->
+
+</div> <!-- end container -->
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLongTitle">Shopping Cart</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">×</span>
+                </button>
+            </div> <!-- end modal-header-->
+            <div class="modal-body">
+                <div class="container-fluid">
+                    <div class="row">
+                        <div class="col-xl-3"><b>Name</b></div>
+                        <div class="col-xl-3"><b>Price</b></div>
+                        <div class="col-xl-3"><b>Quantity</b></div>
+                        <div class="col-xl-3"><b>Total</b></div>
+                    </div> <!--ending row-->
+                    <div class="row">
+                        <div class="col-xl-3">rats</div>
+                        <div class="col-xl-3">$199.00</div>
+                        <div class="col-xl-3">4</div>
+                        <div class="col-xl-3">$396.00</div>
+                    </div> <!--ending row-->
+                    <div class="row">
+                        <div class="col-xl-3">mice</div>
+                        <div class="col-xl-3">$99.00</div>
+                        <div class="col-xl-3">1</div>
+                        <div class="col-xl-3">$99.00</div>
+                    </div> <!--ending row-->
+                    <div class="row">
+                        <div class="col-xl-3">rabbits</div>
+                        <div class="col-xl-3">$45.00</div>
+                        <div class="col-xl-3">2</div>
+                        <div class="col-xl-3">$90.00</div>
+                    </div> <!--ending row-->
+                    <div class="row">
+                        <div class="col-xl-12">Subtotal: $585.00</div>
+                    </div> <!--ending row-->
+                </div> <!--end container-fluid-->
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary">Checkout</button>
+                </div>
+            </div> <!-- end modal-content-->
+        </div>
+    </div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+    <script>
+        let animals = [];
+
+        /* global $ */
+        $(function() { //the DOM is ready for us to insert new data
+            $.getJSON( "test.json", function( data ) {
+                animals = data;
+                populateTable();
+            });
+
+            $('#plusButton').click(addProd);
+            $('#priceInput').keyup(function(event) {
+                if ( event.which == 13 ) {
+                    addProd();
+                }
+                event.preventDefault(); //meaning, We're DONE. Don't propagate up the DOM tree
+            });
+        });
+
+        function populateTable() {
+            //delete existing rows
+            $('.animalRow').remove();
+
+            for(let animal of animals) {
+                $('#animalTable').append(
+                    `<tr class="animalRow">
+           <td>${animal.species}</td>
+           <td style="text-align: right">${animal.quantity}&nbsp;&nbsp;&nbsp;&nbsp;</td>
+           <td style="text-align: right">$${animal.price.toFixed(2)}</td>
+           <td>
+             <span class="oi oi-x text-danger clickable invisible" title="Remove this product" 
+                onClick="removeProd(${animals.indexOf(animal)})">
+             </span>
+             <span class="oi oi-pencil text-secondary clickable invisible" title="Edit this product"></span>
+           </td>
+         </tr>`
+                );
+            }
+        }
+
+        function addProd() {
+            let species = $('#speciesInput').val();
+            let qty = Number($('#qtyInput').val());
+            let price = Number($('#priceInput').val());
+
+            //add animal object to animals
+            animals.push({
+                species: species,
+                quantity: qty,
+                price: price
+            });
+            //display animals
+            populateTable();
+
+            //blank out the add text boxes
+            $('#speciesInput').val('');
+            $('#qtyInput').val('');
+            $('#priceInput').val('');
+        }
+
+        function removeProd(i) {//FIXME make sure i is passed here
+            console.log(i);
+            console.log('BEFORE', JSON.stringify(animals,null,3));
+            animals.splice(i,1);
+            console.log('AFTER', JSON.stringify(animals,null,3));
+            populateTable();
+            //FIXME re-display the table
+            //
+        }
+
+        function addProdSubmit(e) {
+            alert('addProdSubmit() with e:' + e);
+        }
+        //MILESTONE
+
+        //TODO edit working, 25
+        //REFACTORING move style into head
+        //TODO save, 60
+        //TODO load, 10
+    </script>
+
+</body>
+</html></title>
+</head>
+<body>
+
+</body>
+</html>

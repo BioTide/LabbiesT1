@@ -19,7 +19,7 @@
     <!-- Headline Row -->
     <div class="row">
         <div class="col-xl-12 text-center">
-            <h1 class = "bg-info">Labbies</h1>
+            <h1 class = "bg-success text-white">Labbies</h1>
         </div>
         <br>
         <hr class = "style1">

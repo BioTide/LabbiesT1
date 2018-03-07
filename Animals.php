@@ -10,7 +10,15 @@
 <?php
     include "Navbar.html";
 ?>
+<div class="row">
+    <div class="col-xl-12">
+        <h1 class = "bg-success text-white text-center">Animals</h1>
+    </div>
+    <br>
+    <hr class = "style1">
+    <br>
 
+</div>
 <?php
     include "Footer.html";
 ?>

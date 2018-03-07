@@ -8,3 +8,6 @@
     height: 50px;
     width: 75px;
 }
+.table {
+    top-border: none;
+}

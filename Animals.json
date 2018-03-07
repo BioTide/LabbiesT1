@@ -1,15 +1,8 @@
 [
   {
-    "species": "rats",
-    "quantity": 30,
-    "price": 100.00,
-    "desc": "standard albino rats"
-  },
-  {
-    "species": "rabbits",
-    "quantity": 25,
-    "price": 100.00,
-    "desc": "standard albino rabbits"
+    "species": "fruit flies",
+    "quantity": 1000,
+    "price": 39.99
   },
   {
     "species": "guinea pigs",
@@ -23,10 +16,16 @@
     "price": 59.99,
     "desc": "standard albino mice"
   },
-
   {
-    "species": "fruit flies",
-    "quantity": 1000,
-    "price": 39.99
+    "species": "rabbits",
+    "quantity": 25,
+    "price": 100.00,
+    "desc": "standard albino rabbits"
+  },
+  {
+    "species": "rats",
+    "quantity": 30,
+    "price": 100.00,
+    "desc": "standard albino rats"
   }
 ]

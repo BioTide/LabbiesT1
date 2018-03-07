@@ -40,11 +40,11 @@
 
     </div>
 
-    <img src="fruitFly.jpg"     alt="Fruit Fly"   class="img-thumbnail">
-    <img src="mice.jpg"         alt="Mice"        class="img-thumbnail">
-    <img src="rabbit.jpg"       alt="Rabbit"      class="img-thumbnail">
-    <img src="guineaPig.jpg"    alt="Guinea Pig"  class="img-thumbnail">
-    <img src="rat.jpg"          alt="Rat"         class="img-thumbnail">
+    <img src="fruitFly_tn.jpg"     alt="Fruit Fly"   class="img-thumbnail">
+    <img src="mouse_tn.jpg"         alt="Mice"        class="img-thumbnail">
+    <img src="rabbit_tn.jpg"       alt="Rabbit"      class="img-thumbnail">
+    <img src="guinea pig_tn.jpg"    alt="Guinea Pig"  class="img-thumbnail">
+    <img src="rat_tn.jpg"          alt="Rat"         class="img-thumbnail">
 
     <br>
     <br>
@@ -53,8 +53,9 @@
         turnaround on every service that we provide. Give us a call and we will be happy
         to help you today!
     </p>
-
-    <footer class = "footer fixed-bottom text-center">
+    <br>
+    <br>
+    <footer class = "footer text-center">
         <p>
         <h5>Labbies</h5>
         77 Dog Ln, Orem, UT 84057

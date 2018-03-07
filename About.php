@@ -23,7 +23,6 @@
     </div>
 
     <!--About heading-->
-    <h2 class="h1 m-0">About us</h2>
     <p>
         Ellen joined Labbies in the summer of 2016. <br>
         She studied biology with minors in chemistry and classics at the University of Pittsburgh<br>

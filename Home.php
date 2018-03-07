@@ -18,8 +18,8 @@
 
     <!-- Headline Row -->
     <div class="row">
-        <div class="col-xl-12 text-center">
-            <h1 class = "bg-success text-white">Labbies</h1>
+        <div class="col-xl-12">
+            <h1 class = "bg-success text-white text-center">Labbies</h1>
         </div>
         <br>
         <hr class = "style1">

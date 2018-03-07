@@ -17,7 +17,15 @@
 <section class="container">
 
     <!--Contact heading-->
-    <h2 class="h1 m-0">Contact us</h2>
+    <div class="row">
+        <div class="col-xl-12">
+            <h1 class = "bg-success text-white text-center">Contact us</h1>
+        </div>
+        <br>
+        <hr class = "style1">
+        <br>
+
+    </div>
     <!--Contact text-->
     <p>
         Here at Labbies we care about our customers, and we would love to hear from you.

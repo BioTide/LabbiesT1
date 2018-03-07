@@ -12,9 +12,24 @@
     include "Navbar.html";
 ?>
 <div class="container">
+    <div class="row">
+        <div class="col-xl-12">
+            <h1 class = "bg-success text-white text-center">About</h1>
+        </div>
+        <br>
+        <hr class = "style1">
+        <br>
+
+    </div>
 
     <!--About heading-->
     <h2 class="h1 m-0">About us</h2>
+    <p>
+        Ellen joined Labbies in the summer of 2016. <br>
+        She studied biology with minors in chemistry and classics at the University of Pittsburgh<br>
+        and completed her graduate degree in biology at Utah Valley University. <br>
+        She has experience in whole organism biology and the science of indirect effects and interactions.
+    </p>
     <!--Contact text-->
     <div class="row">
         <div class="col-lg-7">

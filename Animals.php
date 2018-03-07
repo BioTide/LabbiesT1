@@ -30,32 +30,29 @@
     <!-- Animal Table Row -->
     <br>
     <div class="row">
-        <div class="col-xl-6 offset-xl-2">
-            <table class="table" id="animalTable">
 
-                <!-- Animal Table Row -->
-                <div class="row">
-                    <div class="col-xl-6 offset-xl-3">
-                        <table class="table" id="animalTable">
+        <div class="col-xl-6 offset-xl-3">
 
-                            <thead>
-                            <tr>
-                                <th>Species</th>
-                                <th class="text-right">Quantity</th>
-                                <th class="text-right">Price&nbsp;&nbsp;</th>
-                            </tr>
-                            </thead>
+                <table class="table" id="animalTable">
 
-                            <!-- Animal Rows - Dynamically populated by jQuery code -->
-                            <tbody></tbody>
+                    <thead>
+                        <tr>
+                            <th>Species</th>
+                            <th class="text-right">Quantity</th>
+                            <th class="text-right">Price&nbsp;&nbsp;</th>
+                        </tr>
+                    </thead>
 
-                        </table>
+                    <!-- Animal Rows - Dynamically populated by jQuery code -->
+                    <tbody></tbody>
 
-                    </div><!-- End col -->
+                </table>
 
-                </div><!-- End row -->
+            </div><!-- End col -->
 
-        </div><!-- End container -->
+        </div><!-- End row -->
+
+    </div><!-- End container -->
 
 </div> <!-- end container -->
 
@@ -84,8 +81,6 @@
     });
 
     function populateTable(){
-
-        $('.animalRow').remove();
 
         for(let animal of animals){
 

@@ -12,7 +12,10 @@
 ?>
 <div class="row">
     <div class="col-xl-12">
-        <h1 class = "bg-success text-white text-center">Animals</h1>
+        <h1 class = "bg-success text-white text-center">
+            Animals For Sale
+            <span id="shoppingCart" class="oi oi-cart align-baseline clickable col-xl-1" data-toggle="modal" data-target="#exampleModalCenter" title="See your Current Shopping Cart">
+        </h1>
     </div>
     <br>
     <hr class = "style1">
@@ -22,12 +25,7 @@
 <div class="container">
 
     <!-- Headline Row -->
-    <div class="row">
-        <div class="col-xl-6  offset-xl-3 text-center">
 
-        </div>
-        <span id="shoppingCart" class="oi oi-cart align-baseline clickable col-xl-1" data-toggle="modal" data-target="#exampleModalCenter" title="See your Current Shopping Cart">
-      </span></div>
 
     <!-- Animal Table Row -->
     <div class="row">

@@ -19,40 +19,39 @@
         <br>
         <hr class = "style1">
         <br>
-
     </div>
-
-    <!--About heading-->
+    <!--About text-->
     <p>
-        Ellen joined Labbies in the summer of 2016. <br>
-        She studied biology with minors in chemistry and classics at the University of Pittsburgh<br>
-        and completed her graduate degree in biology at Utah Valley University. <br>
-        She has experience in whole organism biology and the science of indirect effects and interactions.
+        <b>Labbies</b> is a lab animal supply company with a principal focus in quality well cared for animals.<br>
+        Our group has extensive experience with animals used for all types of testing.<br>
+        Due to having a highly qualified team we have the unique ability to provide excellent animals and customer service.<br>
+        Our inventory has the ability to provide quality products for small labs as well as large labs.<br><br><br>
     </p>
     <!--Contact text-->
     <div class="row">
-        <div class="col-lg-7">
-
+        <div class="col-lg-10">
             <div class="row text-center">
-                <div class="col-xl-4">
+                <div class="col-xl-3">
                     <span class="oi oi-person bg-success px-3 py-2 rounded text-white mb-2 d-inline-block"></span>
-                    <p>LuAnne Mitchell<br>Web Designer</p>
+                    <p><b>John Smith</b><br>Operations Manager<br>johns@labbies.com</p>
                 </div>
-
-                <div class="col-xl-4">
+                <div class="col-xl-3">
                     <span class="oi oi-person bg-success px-3 py-2 rounded text-white mb-2 d-inline-block"></span>
-                    <p>Jared Rittmanic<br>Web Designer</p>
+                    <p><b>Bob Smooth</b><br>Biology Manager<br>bobs@labbies.com</p>
                 </div>
-
-                <div class="col-xl-4">
+                <div class="col-xl-3">
                     <span class="oi oi-person bg-success px-3 py-2 rounded text-white mb-2 d-inline-block"></span>
-                    <p>JaNell Haynes<br>Web Designer</p>
+                    <p><b>Cynthia Erre</b><br>Animals Manager<br>cynthiae@labbies.com</p>
+                </div>
+                <div class="col-xl-3">
+                    <span class="oi oi-person bg-success px-3 py-2 rounded text-white mb-2 d-inline-block"></span>
+                    <p><b>Luke Coe</b><br>Operations Manager<br>lukec@labbies.com</p>
                 </div>
             </div>
-
         </div>
     </div>
-</div>
+    <p><br><br><br><br><b>Web Design</b> provided by LuAnne Mitchell, Jared Rittmanic, JaNell Haynes</p>
+</div> <!-- close div container -->
 
 <?php
     include "Footer.html";

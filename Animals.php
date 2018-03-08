@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Animals Labbies</title>
+    <title>Supplies Labbies</title>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/open-iconic/1.1.1/font/css/open-iconic-bootstrap.min.css" rel="stylesheet">
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.css" rel="stylesheet">
 </head>
@@ -13,7 +13,7 @@
 <div class="row">
     <div class="col-xl-12">
         <h1 class = "bg-success text-white text-center">
-            Animals For Sale
+            Supplies
             <span id="shoppingCart" class="oi oi-cart align-baseline clickable col-xl-1" data-toggle="modal" data-target="#exampleModalCenter" title="See your Current Shopping Cart">
         </h1>
     </div>
@@ -24,13 +24,13 @@
 </div>
 <div class="container">
     <br>
-    <!-- Animal Table Row -->
+    <!-- Supplies Table Row -->
     <div class="row">
         <div class="col-xl-6 offset-xl-3">
-            <table class="table" id="animalTable">
+            <table class="table" id="suppliesTable">
                 <thead>
                 <tr>
-                    <th>Species</th>
+                    <th>Item</th>
                     <th class="text-right">Quantity</th>
                     <th class="text-right">Price&nbsp;&nbsp;</th>
                 </tr>
@@ -56,7 +56,7 @@
             <div class="modal-body">
                 <div class="container-fluid">
                     <div class="row">
-                        <div class="col-xl-3"><b>Name</b></div>
+                        <div class="col-xl-3"><b>Item</b></div>
                         <div class="col-xl-3"><b>Price</b></div>
                         <div class="col-xl-3"><b>Quantity</b></div>
                         <div class="col-xl-3"><b>Total</b></div>
@@ -87,21 +87,21 @@
 
 <script>
     /*global $*/
-    let animals = [];
+    let supplies = [];
     $(function(){// The DOM is ready for us to insert new data
-        $.getJSON("Animals.json", function(data){
-            animals = data;
+        $.getJSON("Supplies.json", function(data){
+            supplies = data;
             populateTable();
         });
     });
     function populateTable(){
-        //$('.animalRow').remove();
-        for(let animal of animals){
+        //$('.supplyRow').remove();
+        for(let supply of supplies){
             $('#animalTable').append(
-                `<tr class="animalRow">
-                    <td>${animal.species}</td>
-                    <td class="text-right">${animal.quantity}&nbsp;&nbsp;&nbsp;&nbsp;</td>
-                    <td class="text-right">$${animal.price.toFixed(2)}</td>
+                `<tr class="supplyRow">
+                    <td>${supply.item}</td>
+                    <td class="text-right">${supply.quantity}&nbsp;&nbsp;&nbsp;&nbsp;</td>
+                    <td class="text-right">${supply.price.toFixed(2)}</td>
                 </tr>`
             );
         }

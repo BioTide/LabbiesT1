@@ -2,8 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Animals Labbies</title>
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/open-iconic/1.1.1/font/css/open-iconic-bootstrap.min.css" rel="stylesheet">
+    <title>Animalsef="https://cdnjs.cloudflare.com/ajax/libs/open-iconic/1.1.1/font/css/open-iconic-bootstrap.min.css" rel="stylesheet">
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.css" rel="stylesheet">
 </head>
 <body>
@@ -13,7 +12,7 @@ include "Navbar.html";
 <div class="row">
     <div class="col-xl-12">
         <h1 class = "bg-success text-white text-center">
-            Animals For Sale
+            Supplies
             <span id="shoppingCart" class="oi oi-cart align-baseline clickable col-xl-1" data-toggle="modal" data-target="#exampleModalCenter" title="See your Current Shopping Cart">
         </h1>
     </div>
@@ -26,7 +25,8 @@ include "Navbar.html";
     <br>
     <!-- Animal Table Row -->
     <div class="row">
-        <div class="col-xl-6 offset-xl-3">
+        Labbies</title>
+        <link hr <div class="col-xl-6 offset-xl-3">
             <table class="table" id="animalTable">
                 <thead>
                 <tr>

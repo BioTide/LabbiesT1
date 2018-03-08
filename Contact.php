@@ -7,7 +7,6 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/open-iconic/1.1.1/font/css/open-iconic-bootstrap.min.css" rel="stylesheet">
 </head>
-
 <body>
 
 <?php
@@ -55,15 +54,12 @@
                     <p>support@labbies.com</p>
                 </div>
             </div>
-
         </div>
     </div>
-
 </section>
 <?php
     include "Footer.html";
 ?>
 </body>
-
 </html>
 

@@ -20,21 +20,13 @@ include "Navbar.html";
     <br>
     <hr class = "style1">
     <br>
-
 </div>
 <div class="container">
-
-    <!-- Headline Row -->
-
-
-    <!-- Supplies Table Row -->
     <br>
-
     <!-- Supplies Table Row -->
     <div class="row">
         <div class="col-xl-6 offset-xl-3">
             <table class="table" id="suppliesTable">
-
                 <thead>
                 <tr>
                     <th>Item</th>
@@ -42,19 +34,12 @@ include "Navbar.html";
                     <th class="text-right">Price&nbsp;&nbsp;</th>
                 </tr>
                 </thead>
-
                 <!-- Supplies Rows - Dynamically populated by jQuery code -->
                 <tbody></tbody>
-
             </table>
-
         </div><!-- End col -->
-
     </div><!-- End row -->
-
 </div><!-- End container -->
-
-</div> <!-- end container -->
 
 <?php
 include "Footer.html";
@@ -65,30 +50,19 @@ include "Footer.html";
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
 
 <script>
-
     /*global $*/
-
     let supplies = [];
-
     $(function(){// The DOM is ready for us to insert new data
-
         $.getJSON("Supplies.json", function(data){
             console.log("Hello!");
-
-            supplies = data
+            supplies = data;
             populateSuppliesTable();
         });
-
     });
 
     function populateSuppliesTable(){
-
-        // $('.tableRow').remove();
-
         for(let supply of supplies){
-
             $('#suppliesTable').append(
-
                 `<tr class="suppliesRow">
                     <td>${supply.item}</td>
                     <td class="text-right">${supply.quantity}&nbsp;&nbsp;&nbsp;&nbsp;</td>
@@ -97,7 +71,6 @@ include "Footer.html";
             );
         }
     }
-
 </script>
 
 </body>

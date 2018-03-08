@@ -77,36 +77,27 @@
             </div> <!-- end modal-content-->
         </div>
     </div><!--end Modal-->
-
+<?php
+    include "Footer.html";
+?>
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
 
 <script>
-
     /*global $*/
-
     let animals = [];
-
     $(function(){// The DOM is ready for us to insert new data
-
         $.getJSON("Animals.json", function(data){
-
             animals = data;
             populateTable();
         });
-
     });
-
     function populateTable(){
-
-        $('.animalRow').remove();
-
+        //$('.animalRow').remove();
         for(let animal of animals){
-
             $('#animalTable').append(
-
                 `<tr class="animalRow">
                     <td>${animal.species}</td>
                     <td class="text-right">${animal.quantity}&nbsp;&nbsp;&nbsp;&nbsp;</td>
@@ -117,8 +108,6 @@
     }
 </script>
 
-<?php
-    include "Footer.html";
-?>
+
 </body>
 </html>

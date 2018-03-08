@@ -23,42 +23,61 @@
 
 </div>
 <div class="container">
-
-    <!-- Headline Row -->
-
-
-    <!-- Animal Table Row -->
     <br>
+    <!-- Animal Table Row -->
+    <div class="row">
+        <div class="col-xl-6 offset-xl-3">
+            <table class="table" id="animalTable">
+                <thead>
+                <tr>
+                    <th>Species</th>
+                    <th class="text-right">Quantity</th>
+                    <th class="text-right">Price&nbsp;&nbsp;</th>
+                </tr>
+                </thead>
+                <!-- Animal Rows - Dynamically populated by jQuery code -->
+                <tbody></tbody>
+            </table>
+        </div><!-- End col -->
+    </div><!-- End row -->
+</div><!-- End container -->
 
-                <!-- Animal Table Row -->
-                <div class="row">
-                    <div class="col-xl-6 offset-xl-3">
-                        <table class="table" id="animalTable">
 
-                            <thead>
-                            <tr>
-                                <th>Species</th>
-                                <th class="text-right">Quantity</th>
-                                <th class="text-right">Price&nbsp;&nbsp;</th>
-                            </tr>
-                            </thead>
+<!-- Modal -->
+<div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLongTitle">Shopping Cart</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">×</span>
+                </button>
+            </div> <!-- end modal-header-->
+            <div class="modal-body">
+                <div class="container-fluid">
+                    <div class="row">
+                        <div class="col-xl-3"><b>Name</b></div>
+                        <div class="col-xl-3"><b>Price</b></div>
+                        <div class="col-xl-3"><b>Quantity</b></div>
+                        <div class="col-xl-3"><b>Total</b></div>
+                    </div> <!--ending row-->
+                    <div class="row">
+                    </div> <!--ending row-->
+                    <div class="row">
+                    </div> <!--ending row-->
+                    <div class="row">
+                    </div> <!--ending row-->
+                    <div class="row">
+                    </div> <!--ending row-->
+                </div> <!--end container-fluid-->
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary">Checkout</button>
+                </div>
+            </div> <!-- end modal-content-->
+        </div>
+    </div><!--end Modal-->
 
-                            <!-- Animal Rows - Dynamically populated by jQuery code -->
-                            <tbody></tbody>
-
-                        </table>
-
-                    </div><!-- End col -->
-
-                </div><!-- End row -->
-
-        </div><!-- End container -->
-
-</div> <!-- end container -->
-
-<?php
-    include "Footer.html";
-?>
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
@@ -96,8 +115,10 @@
             );
         }
     }
-
 </script>
 
+<?php
+    include "Footer.html";
+?>
 </body>
 </html>

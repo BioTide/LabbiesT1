@@ -79,17 +79,6 @@
         });
 
     });
-    let supplies = [];
-
-    $(function(){// The DOM is ready for us to insert new data
-
-        $.getJSON("Supplies.json", function(data){
-
-            supplies = data;
-            populateTable();
-        });
-
-    });
 
     function populateTable(){
 

@@ -7,14 +7,15 @@
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.css" rel="stylesheet">
 </head>
 <body>
+
 <?php
-include "Navbar.html";
+    include "Navbar.html";
 ?>
 
 <div class="row">
     <div class="col-xl-12">
         <h1 class = "bg-success text-white text-center">
-            Animals For Sale
+            Supplies
             <span id="shoppingCart" class="oi oi-cart align-baseline clickable col-xl-1" data-toggle="modal" data-target="#exampleModalCenter" title="See your Current Shopping Cart">
         </h1>
     </div>
@@ -24,15 +25,16 @@ include "Navbar.html";
 </div>
 <div class="container">
     <br>
-    <!-- Animal Table Row -->
+    <!-- Supply Table Row -->
     <div class="row">
-        <div class="col-xl-6 offset-xl-3">
-            <table class="table" id="animalTable">
+        <div class="col-xl-7 offset-xl-3">
+            <table class="table" id="supplyTable">
                 <thead>
                 <tr>
-                    <th>Species</th>
+                    <th>Item</th>
                     <th class="text-right">Quantity</th>
                     <th class="text-right">Price&nbsp;&nbsp;</th>
+                    <th>Description</th>
                 </tr>
                 </thead>
                 <!-- Animal Rows - Dynamically populated by jQuery code -->
@@ -43,7 +45,7 @@ include "Navbar.html";
 </div><!-- End container -->
 
 <?php
-include "Footer.html";
+    include "Footer.html";
 ?>
 
 <!-- Modal -->
@@ -84,21 +86,21 @@ include "Footer.html";
 
 <script>
     /*global $*/
-    let animals = [];
+    let supplies = [];
     $(function(){// The DOM is ready for us to insert new data
-        $.getJSON("Animals.json", function(data){
-            animals = data;
+        $.getJSON("Supplies.json", function(data){
+            supplies = data;
             populateTable();
         });
     });
     function populateTable(){
-        //$('.animalRow').remove();
-        for(let animal of animals){
-            $('#animalTable').append(
-                `<tr class="animalRow">
-                    <td>${animal.species}</td>
-                    <td class="text-right">${animal.quantity}&nbsp;&nbsp;&nbsp;&nbsp;</td>
-                    <td class="text-right">$${animal.price.toFixed(2)}</td>
+        for(let supply of supplies){
+            $('#supplyTable').append(
+                `<tr class="container">
+                    <td>${supply.itemName}</td>
+                    <td class="text-right">${supply.quantity}&nbsp;&nbsp;&nbsp;&nbsp;</td>
+                    <td class="text-right">$${supply.price.toFixed(2)}</td>
+                    <td>${supply.desc}</td>
                 </tr>`
             );
         }

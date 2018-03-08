@@ -1,32 +1,32 @@
 [
   {
-    "item": "rat cage",
+    "itemName": "rat cage",
     "quantity": 1,
     "price": 500.00,
-    "desc": "Thirty - 2 foot by 3 foot cage "
+    "desc": "Thirty - 2 ft by 3 ft"
   },
   {
-    "item": "rabbit cage",
+    "itemName": "rabbit cage",
     "quantity": 1,
     "price": 650.00,
-    "desc": "Twenty - 2 1/2 foot by 3 foot cage."
+    "desc": "Twenty - 2 1/2 ft by 3 ft"
   },
   {
-    "item": "guinea pig cage",
+    "itemName": "guinea pig cage",
     "quantity": 1,
     "price": 400.00,
-    "desc": "Ten - 3 foot by 3 foot cage"
+    "desc": "Ten - 3 ft by 3 ft"
   },
   {
-    "item": "mice cage",
+    "itemName": "mice cage",
     "quantity": 1,
     "price": 500.00,
-    "desc": "Thirty - 2 foot by 3 foot cage"
+    "desc": "Thirty - 2 ft by 3 ft"
   },
   {
-    "item": "fruit flies container",
+    "itemName": "fruit flies container",
     "quantity": 1,
-    "price": 100.00
-    "desc": "One - 3 foot by 4 foot glass enclosure"
+    "price": 100.00,
+    "desc": "One - 3 ft by 4 ft glass enclosure"
   }
 ]

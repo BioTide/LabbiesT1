@@ -23,12 +23,10 @@
     "price": 500.00,
     "desc": "Thirty - 2 foot by 3 foot cage"
   },
-
   {
     "item": "fruit flies container",
     "quantity": 1,
     "price": 100.00
     "desc": "One - 3 foot by 4 foot glass enclosure"
-
   }
 ]

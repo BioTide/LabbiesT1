@@ -95,7 +95,7 @@
     function populateTable(){
         //$('.supplyRow').remove();
         for(let supply of supplies){
-            $('#animalTable').append(
+            $('#suppliesTable').append(
                 `<tr class="supplyRow">
                     <td>${supply.item}</td>
                     <td class="text-right">${supply.quantity}&nbsp;&nbsp;&nbsp;&nbsp;</td>

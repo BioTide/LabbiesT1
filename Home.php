@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <title> Labbies Home</title>
+    <link rel="shortcut icon" href="icon2_tn.jpg" type = "image/x-icon">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/open-iconic/1.1.1/font/css/open-iconic-bootstrap.min.css" rel="stylesheet">
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.css" rel="stylesheet">
     <link href="Animals.css">
@@ -40,11 +41,11 @@
 
     </div>
 
-    <img src="fruitFly_tn.jpg"     alt="Fruit Fly"   class="img-thumbnail">
-    <img src="mouse_tn.jpg"         alt="Mice"        class="img-thumbnail">
-    <img src="rabbit_tn.jpg"       alt="Rabbit"      class="img-thumbnail">
-    <img src="guinea pig_tn.jpg"    alt="Guinea Pig"  class="img-thumbnail">
-    <img src="rat_tn.jpg"          alt="Rat"         class="img-thumbnail">
+<!--    <img src="fruitFly_tn.jpg"     alt="Fruit Fly"   class="img-thumbnail">-->
+<!--    <img src="mouse_tn.jpg"         alt="Mice"        class="img-thumbnail">-->
+<!--    <img src="rabbit_tn.jpg"       alt="Rabbit"      class="img-thumbnail">-->
+<!--    <img src="guinea pig_tn.jpg"    alt="Guinea Pig"  class="img-thumbnail">-->
+<!--    <img src="rat_tn.jpg"          alt="Rat"         class="img-thumbnail">-->
 
     <br>
     <br>

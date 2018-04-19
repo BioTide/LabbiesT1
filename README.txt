@@ -25,4 +25,4 @@ Getting Started
         versionWithEarsIcon2_tn.jpg
 
 Authors
-    JaNell Haynes, Luanne Mitchell, and Jared Rittmanic
+    JaNell Haynes, Luanne Mitchell, Eric Lance, and Jared Rittmanic

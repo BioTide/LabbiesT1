@@ -53,26 +53,6 @@
 
     /*global $*/
 
-    $(document).ready(function(){
-
-        // Retrieve session data
-        let data = sessionStorage.getItem('adminRights');
-
-        // If the session has admin rights enabled
-        if(data === 'enabled')
-        {
-            // Display that admin rights are enabled
-            $('#adminWarning').css('display', 'block');
-        }
-
-        else
-        {
-            // Set Session Storage for admin rights
-            sessionStorage.setItem('adminRights', 'disabled');
-        }
-    });
-
-
     $('#adminCheck').click(function(){
 
         let tempName = $('#adminName').val();
@@ -97,9 +77,14 @@
             alert('Invalid Username');
         }
 
-    })
+    });
 
 </script>
+
+<?php
+include "AdminCheck.html";
+?>
+
 
 </body>
 </html>

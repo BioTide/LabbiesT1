@@ -24,4 +24,16 @@
             sessionStorage.setItem('adminRights', 'disabled');
         }
     });
+
+    // When admin rights warning is double clicked
+    $( "#adminWarning" ).dblclick(function() {
+
+        // Disable Admin Rights
+        sessionStorage.setItem('adminRights', 'disabled');
+        alert('Admin rights have been disabled.');
+
+        // Refresh the page
+        location.reload();
+    });
+
 </script>

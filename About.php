@@ -57,5 +57,9 @@
 <?php
     include "Footer.html";
 ?>
+
+<?php
+include "AdminCheck.html";
+?>
 </body>
 </html>

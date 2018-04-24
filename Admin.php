@@ -64,6 +64,12 @@
             // Display that admin rights are enabled
             $('#adminWarning').css('display', 'block');
         }
+
+        else
+        {
+            // Set Session Storage for admin rights
+            sessionStorage.setItem('adminRights', 'disabled');
+        }
     });
 
 

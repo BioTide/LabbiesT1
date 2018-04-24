@@ -1,3 +1,11 @@
+<style>
+    #adminWarning
+    {
+        /* Hide the admin phrase by default */
+        display: none;
+    }
+</style>
+
 <nav class="navbar navbar-expand-md navbar-dark bg-dark">
     <div class="container">
         <img src = "versionWithEarsIcon2_tn.jpg" alt = "icon" class = "img-thumbnail" height ="42" width ="42">
@@ -24,10 +32,10 @@
                     <a class="nav-link text-white" href="About.php">About</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link text-white" href="Admin.php">Admin</a>
+                    <a class="nav-link text-white" href="Admin.php">Sign-In</a>
                 </li>
-                <li class = "nav-item">
-                    <a class = "nav-link text-white">Search</a>
+                <li class = "nav-item" id="adminWarning">
+                    <a class = "nav-link text-danger">Elevated Priveleges Active</a>
                 </li>
             </ul>
         </div>

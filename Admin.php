@@ -6,6 +6,7 @@
     <link rel="icon" href="favicon.ico.bmp" type = "image/x-icon">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/open-iconic/1.1.1/font/css/open-iconic-bootstrap.min.css" rel="stylesheet">
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.css" rel="stylesheet">
+
 </head>
 <body>
 
@@ -20,14 +21,14 @@
 
     <form>
         <div class="form-group">
-            <label for="email">Username:</label>
-            <input type="email" class="form-control" id="email">
+            <label for="validationCustomUsername">Username:</label>
+            <input type="text" class="form-control" id="adminName">
         </div>
         <div class="form-group">
             <label for="pwd">Password:</label>
-            <input type="password" class="form-control" id="pwd">
+            <input type="password" class="form-control" id="adminPass">
         </div>
-        <button type="submit" class="btn btn-default">Submit</button>
+        <button type="submit" class="btn btn-default" id="adminCheck">Submit</button>
     </form>
 
     <br>
@@ -43,5 +44,42 @@
 <?php
     include "Footer.html";
 ?>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+
+<script>
+
+    /*global $*/
+
+    $('#adminCheck').click(function(){
+
+        let tempName = $('#adminName').val();
+        let tempPass = $('#adminPass').val();
+
+        if(tempName === 'Test'){
+
+            if(tempPass === '123') {
+
+                $('#adminWarning').css('display', 'block');
+                alert('Should have toggled admin privileges');
+            }
+
+            else{
+
+                alert('Invalid Username / Password');
+            }
+        }
+
+        else{
+
+            alert('Invalid Username / Password');
+        }
+
+    })
+
+</script>
+
 </body>
 </html>

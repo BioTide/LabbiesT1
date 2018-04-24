@@ -53,6 +53,20 @@
 
     /*global $*/
 
+    $(document).ready(function(){
+
+        // Retrieve session data
+        let data = sessionStorage.getItem('adminRights');
+
+        // If the session has admin rights enabled
+        if(data === 'enabled')
+        {
+            // Display that admin rights are enabled
+            $('#adminWarning').css('display', 'block');
+        }
+    });
+
+
     $('#adminCheck').click(function(){
 
         let tempName = $('#adminName').val();
@@ -62,19 +76,19 @@
 
             if(tempPass === '123') {
 
-                $('#adminWarning').css('display', 'block');
-                alert('Should have toggled admin privileges');
+                // Set Session Storage TODO
+                sessionStorage.setItem('adminRights', 'enabled');
             }
 
             else{
 
-                alert('Invalid Username / Password');
+                alert('Invalid Password');
             }
         }
 
         else{
 
-            alert('Invalid Username / Password');
+            alert('Invalid Username');
         }
 
     })

@@ -76,7 +76,7 @@
 
             if(tempPass === '123') {
 
-                // Set Session Storage TODO
+                // Set Session Storage for admin rights
                 sessionStorage.setItem('adminRights', 'enabled');
             }
 

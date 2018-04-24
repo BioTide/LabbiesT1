@@ -1,0 +1,39 @@
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+
+<script>
+
+    /*global $*/
+
+    $(document).ready(function(){
+
+        // Retrieve session data
+        let data = sessionStorage.getItem('adminRights');
+
+        // If the session has admin rights enabled
+        if(data === 'enabled') {
+
+            // Display that admin rights are enabled
+            $('#adminWarning').css('display', 'block');
+        }
+
+        // Otherwise, disable admin rights
+        else {
+
+            sessionStorage.setItem('adminRights', 'disabled');
+        }
+    });
+
+    // When admin rights warning is double clicked
+    $( "#adminWarning" ).dblclick(function() {
+
+        // Disable Admin Rights
+        sessionStorage.setItem('adminRights', 'disabled');
+        alert('Admin rights have been disabled.');
+
+        // Refresh the page
+        location.reload();
+    });
+
+</script>

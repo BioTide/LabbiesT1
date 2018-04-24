@@ -51,11 +51,15 @@
             </div>
         </div>
     </div>
-    <p><br><br><br><br><b>Web Design</b> provided by LuAnne Mitchell, Jared Rittmanic, JaNell Haynes</p>
+    <p><br><br><br><br><b>Web Design</b> provided by LuAnne Mitchell, Jared Rittmanic, Eric Lance, and JaNell Haynes</p>
 </div> <!-- close div container -->
 
 <?php
     include "Footer.html";
+?>
+
+<?php
+include "AdminCheck.html";
 ?>
 </body>
 </html>

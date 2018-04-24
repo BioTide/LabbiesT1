@@ -121,6 +121,8 @@ include "Footer.html";
     }
 </script>
 
-
+<?php
+include "AdminCheck.html";
+?>
 </body>
 </html>

@@ -6,6 +6,9 @@
     <link rel="icon" href="favicon.ico.bmp" type = "image/x-icon">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/open-iconic/1.1.1/font/css/open-iconic-bootstrap.min.css" rel="stylesheet">
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.css" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
 </head>
 <body>
 <?php
@@ -32,40 +35,19 @@
             <table class="table" id="animalTable">
                 <thead>
                 <tr>
-                    <th>Photo</th>
-                    <th style="cursor: pointer">Id</th>
-                    <th>
-                        <span id="idColUp" clickable>▲</span>
-                        <span id="idColDown">▼</span>
-                    </th>
-                    <th style="cursor: pointer">Species</th>
-                    <th>
-                        <span id="speciesColUp" clickable>▲</span>
-                        <span id="speciesColDown">▼</span>
-                    </th>
-                    <th class="text-right" style="cursor: pointer">Quantity</th>
-                    <th>
-                        <span id="quantityColUp" clickable>▲</span>
-                        <span id="quantityColDown">▼</span>
-                    </th>
-                    <th class="text-right" style="cursor: pointer">Price&nbsp;&nbsp;</th>
-                    <th>
-                        <span id="priceColUp" clickable>▲</span>
-                        <span id="priceColDown">▼</span>
-                    </th>
-                    <th>Description</th>
-                    <th style="cursor: pointer">Inventory</th>
-                    <th>
-                        <span id="inventoryColUp" clickable>▲</span>
-                        <span id="inventoryColDown">▼</span>
-                    </th>
-                </tr>
-                </thead>
-                <!-- Animal Rows - Dynamically populated by jQuery code -->
+                    <th>Species</th>
+                    <th class="text-right">Quantity</th>
+                    <th class="text-right">Price&nbsp;&nbsp;</th>
+                    </button>
+              <!-- Animal Rows - Dynamically populated by jQuery code -->
                 <tbody></tbody>
             </table>
         </div><!-- End col -->
     </div><!-- End row -->
+<!--<<<<<<< HEAD-->
+
+
+<!--=======-->
     <div class="row" id="aniList">
         <table class="table" id="animalList">
             <thead>
@@ -76,6 +58,7 @@
     <div class="row" id="aniTiles">
 
     </div>
+<!-- >>>>>>> origin/master -->
 </div><!-- End container -->
 <?php
 include "Footer.html";
@@ -118,9 +101,7 @@ include "Footer.html";
 </div>
 
 
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+
 
 <script>
     /*global $*/
@@ -134,28 +115,3 @@ include "Footer.html";
     function populateTable(){
         //$('.animalRow').remove();
         for(let animal of animals){
-            $('#animalTable').append(
-                `<tr class="animalRow">
-                    <td>${animal.photo}</td>
-                    <td>${animal.id}</td>
-                    <td></td>
-                    <td>${animal.species}</td>
-                    <td></td>
-                    <td class="text-right">${animal.quantity}&nbsp;&nbsp;&nbsp;&nbsp;</td>
-                    <td></td>
-                    <td class="text-right">$${animal.price.toFixed(2)}</td>
-                    <td></td>
-                    <td>${animal.desc}</td>
-                    <td>${animal.inv}</td>
-                    <td></td>
-                </tr>`
-            );
-        }
-    }
-</script>
-
-<?php
-include "AdminCheck.html";
-?>
-</body>
-</html>

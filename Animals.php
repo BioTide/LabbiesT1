@@ -33,7 +33,7 @@
                 <thead>
                 <tr>
                     <th>Photo</th>
-                    <th style="cursor: pointer">Id</th>
+                    <th style="cursor: pointer" onclick="sortDesc('id')">Id</th>
                     <th>
                         <span id="idColUp" clickable>▲</span>
                         <span id="idColDown">▼</span>
@@ -151,6 +151,9 @@ include "Footer.html";
                 </tr>`
             );
         }
+    }
+    function sortDesc(sortOn){
+        alert(sortOn);
     }
 </script>
 

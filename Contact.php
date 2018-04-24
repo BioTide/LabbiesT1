@@ -28,13 +28,67 @@
 
     </div>
     <!--Contact text-->
-    <p>
-        Here at Labbies we care about our customers, and we would love to hear from you.
-        <br>
-        Feel free to reach us at our support e-mail, or by direct phone call.
-        <br>
-        Or if you'd like, stop by at our Orem location to talk with us in person!
-    </p>
+
+    <form id = "contactForm">
+        <div class = "row">
+            <div class = "col-md-6">
+                <div class = "form-group">
+                    <label for = "formName">First Name *</label>
+                    <input id = "formName" type = "text" name = "name" class = "form-control" placeholder = "John" required = "required">
+                </div>
+            </div>
+
+            <div class = "col-md-6">
+                <div class = "form-group">
+                    <label for = "formLast">Last Name *</label>
+                    <input id = "formLast" type = "text" name = "lastName" class = "form-control" placeholder = "Doe" required = "required">
+                </div>
+            </div>
+        </div>
+
+        <div class = "row">
+            <div class = "col-md-6">
+                <div class = "form-group">
+                    <label for = "formEmail">Email *</label>
+                    <input id = "formEmail" type = "email" name = "email" class = "form-control" placeholder = "john.doe@example.com" required = "required">
+                </div>
+            </div>
+
+            <div class = "col-md-6">
+                <div class = "form-group">
+                    <label for = "formPhone">Phone</label>
+                    <input id = "formPhone" type = "tel" name = "phone" class = "form-control" placeholder = "(XXX) XXX-XXXX">
+                </div>
+            </div>
+        </div>
+
+        <div class = "row">
+            <div class = "col-md-12">
+                <div class = "form-group">
+                    <label for = "formCompany">Company</label>
+                    <input id = "formCompany" type = "tel" name = "company" class = "form-control" placeholder = "Company Name">
+                </div>
+            </div>
+        </div>
+
+        <div class = "row">
+            <div class = "col-md-12">
+                <div class = "form-group">
+                    <label for = "formMessage">Message *</label>
+                    <textarea id = "formMessage" name = "message" class = "form-control" placeholder = "Message" rows = "4" required = "required"></textarea>
+                </div>
+            </div>
+            <div class = "col-md-12">
+                <input type = "submit" class = "btn btn-success btn-send" value = "Send message">
+            </div>
+        </div>
+
+        <div class = "row">
+            <div class = "col-md-12">
+                <br><p class = "text-muted"><strong>*</strong> These fields are required.</p>
+            </div>
+        </div>
+    </form>
 
     <div class="row">
         <div class="col-lg-7">
@@ -56,7 +110,6 @@
                 </div>
             </div>
         </div>
-    </div>
 </section>
 <?php
     include "Footer.html";

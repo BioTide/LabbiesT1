@@ -23,10 +23,11 @@
     <br>
 
 </div>
+
 <div class="container">
     <br>
     <!-- Animal Table Row -->
-    <div class="row">
+    <div class="row" id="aniTable">
         <div class="col-xl-6 offset-xl-3">
             <table class="table" id="animalTable">
                 <thead>
@@ -41,6 +42,16 @@
             </table>
         </div><!-- End col -->
     </div><!-- End row -->
+    <div class="row" id="aniList">
+        <table class="table" id="animalList">
+            <thead>
+                <tr></tr>
+            </thead>
+        </table>
+    </div>
+    <div class="row" id="aniTiles">
+
+    </div>
 </div><!-- End container -->
 <?php
 include "Footer.html";

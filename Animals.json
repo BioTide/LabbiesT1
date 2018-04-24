@@ -1,31 +1,47 @@
 [
   {
+    "id": "A1",
     "species": "fruit flies",
+    "photo": "fruitfly.jpg",
     "quantity": 1000,
-    "price": 39.99
+    "price": 39.99,
+    "desc": "standard albino fruit flies",
+    "inv": 20000
   },
   {
+    "id": "A2",
     "species": "guinea pigs",
+    "photo": "guineapig.jpg",
     "quantity": 112,
     "price": 79.99,
-    "desc": "standard albino pigs"
+    "desc": "standard albino pigs",
+    "inv": 5000
   },
   {
+    "id": "A3",
     "species": "mice",
+    "photo": "mice.jpg",
     "quantity": 144,
     "price": 59.99,
-    "desc": "standard albino mice"
+    "desc": "standard albino mice",
+    "inv": 5000
   },
   {
+    "id": "A4",
     "species": "rabbits",
+    "photo": "rabbits.jpg",
     "quantity": 25,
     "price": 100.00,
-    "desc": "standard albino rabbits"
+    "desc": "standard albino rabbits",
+    "inv": 3000
   },
   {
+    "id": "A5",
     "species": "rats",
+    "photo": "rats.jpg",
     "quantity": 30,
     "price": 100.00,
-    "desc": "standard albino rats"
+    "desc": "standard albino rats",
+    "inv": 3000
   }
 ]

@@ -32,9 +32,33 @@
             <table class="table" id="animalTable">
                 <thead>
                 <tr>
-                    <th>Species</th>
-                    <th class="text-right">Quantity</th>
-                    <th class="text-right">Price&nbsp;&nbsp;</th>
+                    <th>Photo</th>
+                    <th style="cursor: pointer">Id</th>
+                    <th>
+                        <span id="idColUp" clickable>▲</span>
+                        <span id="idColDown">▼</span>
+                    </th>
+                    <th style="cursor: pointer">Species</th>
+                    <th>
+                        <span id="speciesColUp" clickable>▲</span>
+                        <span id="speciesColDown">▼</span>
+                    </th>
+                    <th class="text-right" style="cursor: pointer">Quantity</th>
+                    <th>
+                        <span id="quantityColUp" clickable>▲</span>
+                        <span id="quantityColDown">▼</span>
+                    </th>
+                    <th class="text-right" style="cursor: pointer">Price&nbsp;&nbsp;</th>
+                    <th>
+                        <span id="priceColUp" clickable>▲</span>
+                        <span id="priceColDown">▼</span>
+                    </th>
+                    <th>Description</th>
+                    <th style="cursor: pointer">Inventory</th>
+                    <th>
+                        <span id="inventoryColUp" clickable>▲</span>
+                        <span id="inventoryColDown">▼</span>
+                    </th>
                 </tr>
                 </thead>
                 <!-- Animal Rows - Dynamically populated by jQuery code -->
@@ -112,9 +136,18 @@ include "Footer.html";
         for(let animal of animals){
             $('#animalTable').append(
                 `<tr class="animalRow">
+                    <td>${animal.photo}</td>
+                    <td>${animal.id}</td>
+                    <td></td>
                     <td>${animal.species}</td>
+                    <td></td>
                     <td class="text-right">${animal.quantity}&nbsp;&nbsp;&nbsp;&nbsp;</td>
+                    <td></td>
                     <td class="text-right">$${animal.price.toFixed(2)}</td>
+                    <td></td>
+                    <td>${animal.desc}</td>
+                    <td>${animal.inv}</td>
+                    <td></td>
                 </tr>`
             );
         }

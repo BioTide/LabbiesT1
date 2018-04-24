@@ -32,9 +32,37 @@
             <table class="table" id="supplyTable">
                 <thead>
                 <tr>
-                    <th>Item</th>
-                    <th class="text-right">Quantity</th>
-                    <th class="text-right">Price&nbsp;&nbsp;</th>
+                    <th>Photo</th>
+                    <th style="cursor: pointer">Id</th>
+                    <th>
+                        <span id="itemIdColUp" clickable>▲</span>
+                        <span id="itemIdColDown">▼</span>
+                    </th>
+                    <th style="cursor: pointer">Item</th>
+                    <th>
+                        <span id="itemNameColUp" clickable>▲</span>
+                        <span id="itemNameColDown">▼</span>
+                    </th>
+                    <th style="cursor: pointer">Category</th>
+                    <th>
+                        <span id="itemCategoryColUp" clickable>▲</span>
+                        <span id="itemCategoryColDown">▼</span>
+                    </th>
+                    <th class="text-right" style="cursor: pointer">Quantity</th>
+                    <th>
+                        <span id="itemQtyColUp" clickable>▲</span>
+                        <span id="itemQtyColDown">▼</span>
+                    </th>
+                    <th class="text-right" style="cursor: pointer">Price&nbsp;&nbsp;</th>
+                    <th>
+                        <span id="itemPriceColUp" clickable>▲</span>
+                        <span id="itemPriceColDown">▼</span>
+                    </th>
+                    <th style="cursor: pointer">Size</th>
+                    <th>
+                        <span id="itemSizeColUp" clickable>▲</span>
+                        <span id="itemSizeColDown">▼</span>
+                    </th>
                     <th>Description</th>
                 </tr>
                 </thead>
@@ -98,10 +126,20 @@
         for(let supply of supplies){
             $('#supplyTable').append(
                 `<tr class="container">
+                    <td>${supply.itemPhoto}</td>
+                    <td>${supply.itemId}</td>
+                    <td></td>
                     <td>${supply.itemName}</td>
-                    <td class="text-right">${supply.quantity}&nbsp;&nbsp;&nbsp;&nbsp;</td>
-                    <td class="text-right">$${supply.price.toFixed(2)}</td>
-                    <td>${supply.desc}</td>
+                    <td></td>
+                    <td>${supply.itemCategory}</td>
+                    <td></td>
+                    <td class="text-right">${supply.itemQuantity}&nbsp;&nbsp;&nbsp;&nbsp;</td>
+                    <td></td>
+                    <td class="text-right">$${supply.itemPrice.toFixed(2)}</td>
+                    <td></td>
+                    <td>${supply.itemSize}</td>
+                    <td></td>
+                    <td>${supply.itemDesc}</td>
                 </tr>`
             );
         }

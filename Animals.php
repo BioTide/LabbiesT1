@@ -6,9 +6,6 @@
     <link rel="icon" href="favicon.ico.bmp" type = "image/x-icon">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/open-iconic/1.1.1/font/css/open-iconic-bootstrap.min.css" rel="stylesheet">
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.css" rel="stylesheet">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
 </head>
 <body>
 <?php
@@ -26,10 +23,11 @@
     <br>
 
 </div>
+
 <div class="container">
     <br>
     <!-- Animal Table Row -->
-    <div class="row">
+    <div class="row" id="aniTable">
         <div class="col-xl-6 offset-xl-3">
             <table class="table" id="animalTable">
                 <thead>
@@ -37,14 +35,23 @@
                     <th>Species</th>
                     <th class="text-right">Quantity</th>
                     <th class="text-right">Price&nbsp;&nbsp;</th>
-                    </button>
-              <!-- Animal Rows - Dynamically populated by jQuery code -->
+                </tr>
+                </thead>
+                <!-- Animal Rows - Dynamically populated by jQuery code -->
                 <tbody></tbody>
             </table>
         </div><!-- End col -->
     </div><!-- End row -->
+    <div class="row" id="aniList">
+        <table class="table" id="animalList">
+            <thead>
+                <tr></tr>
+            </thead>
+        </table>
+    </div>
+    <div class="row" id="aniTiles">
 
-
+    </div>
 </div><!-- End container -->
 <?php
 include "Footer.html";
@@ -87,7 +94,9 @@ include "Footer.html";
 </div>
 
 
-
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
 
 <script>
     /*global $*/
@@ -101,63 +110,19 @@ include "Footer.html";
     function populateTable(){
         //$('.animalRow').remove();
         for(let animal of animals){
-            $('#animalTable').append(`<tr class="animalRow">
-                    <td class="species">${animal.species}</td>
-                    <td class="qty text-right">${animal.quantity}&nbsp;&nbsp;&nbsp;&nbsp;</td>
+            $('#animalTable').append(
+                `<tr class="animalRow">
+                    <td>${animal.species}</td>
+                    <td class="text-right">${animal.quantity}&nbsp;&nbsp;&nbsp;&nbsp;</td>
                     <td class="text-right">$${animal.price.toFixed(2)}</td>
-                    <td><span class="oi oi-x text-danger clickable" title="Remove this product" onclick="removeProd('animalRow')"></span></td>
-                    <td><span class="oi oi-pencil text-secondary clickable" title="Edit this product"></span></td>
-                    <!---->
                 </tr>`
             );
         }
-        $('#animalTable').append(`<tr class="animalRow">
-                <form>
-                <td><input type="text" id="speciesInput"></td>
-                <td><input class="text-right" type="text" name="qty" id="qtyInput"></td>
-                <td><input class="text-right" type="text" name="price" id="priceInput" ></td>
-                <td><span class="oi oi-plus text-success clickable" title="Add product" onclick="addProd()"></span></td>
-            </tr></form>`);
-
-    }
-    function addProd() {
-// alert($('#speciesInput').val());
-//         alert($('#qtyInput').val());
-//         alert($('#priceInput').val());
-
-
-        let species = $('#speciesInput').val();
-        let qty = Number($('#qtyInput').val());
-        let price = Number($('#priceInput').val());
-
-        //add animal object to animals
-        animals.push({
-            species: species,
-            quantity: qty,
-            price: price
-        });
-        $('.animalRow').remove();
-        //display animals
-        populateTable();
-
-        //blank out the add text boxes
-        $('#speciesInput').val('');
-        $('#qtyInput').val('');
-        $('#priceInput').val('');
-    }
-    function removeProd(i) {//FIXME make sure i is passed here
-        console.log(i);
-        console.log('BEFORE', JSON.stringify(animals,null,3));
-        //$(i).remove();
-        animals.splice(i,1);
-        $('.animalRow').remove();
-        console.log('AFTER', JSON.stringify(animals,null,3));
-        populateTable();
-        // FIXME re-display the table
-        //
     }
 </script>
 
-
+<?php
+include "AdminCheck.html";
+?>
 </body>
 </html>

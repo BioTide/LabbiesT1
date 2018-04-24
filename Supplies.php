@@ -107,5 +107,10 @@
         }
     }
 </script>
+
+<?php
+include "AdminCheck.html";
+?>
+
 </body>
 </html>

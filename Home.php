@@ -10,7 +10,7 @@
 <body>
 
 <?php
-    include "Navbar.html";
+include "Navbar.html";
 ?>
 
 <div class="container">
@@ -39,11 +39,11 @@
 
     </div>
 
-<!--    <img src="fruitFly_tn.jpg"     alt="Fruit Fly"   class="img-thumbnail">-->
-<!--    <img src="mouse_tn.jpg"         alt="Mice"        class="img-thumbnail">-->
-<!--    <img src="rabbit_tn.jpg"       alt="Rabbit"      class="img-thumbnail">-->
-<!--    <img src="guinea pig_tn.jpg"    alt="Guinea Pig"  class="img-thumbnail">-->
-<!--    <img src="rat_tn.jpg"          alt="Rat"         class="img-thumbnail">-->
+    <!--    <img src="fruitFly_tn.jpg"     alt="Fruit Fly"   class="img-thumbnail">-->
+    <!--    <img src="mouse_tn.jpg"         alt="Mice"        class="img-thumbnail">-->
+    <!--    <img src="rabbit_tn.jpg"       alt="Rabbit"      class="img-thumbnail">-->
+    <!--    <img src="guinea pig_tn.jpg"    alt="Guinea Pig"  class="img-thumbnail">-->
+    <!--    <img src="rat_tn.jpg"          alt="Rat"         class="img-thumbnail">-->
 
     <br>
     <br>
@@ -61,8 +61,14 @@
         </p>
     </footer>
 </div>
+
 <?php
-    include "Footer.html";
+include "Footer.html";
 ?>
+
+<?php
+include "AdminCheck.html";
+?>
+
 </body>
 </html>

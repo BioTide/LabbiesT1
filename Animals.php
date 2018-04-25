@@ -158,21 +158,18 @@ include "Footer.html";
             `<tr class="animalRow">
 
                 <form>
-
-                    <td>
-                        <input type="text" id="speciesInput">
-                    </td>
+		            <td><input type = "image" id ="photoInput" title="Add Photo"></td>
+                    <td><input type = "text" id = "idInput" title="Animal ID"></td>
                     <td></td>
-                    <td class="text-right">
-                        <input type="text" name="qty" id="qtyInput">&nbsp;&nbsp;&nbsp;&nbsp;
-                    </td>
+                    <td><input type="text" id="speciesInput" title="Animal Name"></td>
                     <td></td>
-                    <td class="text-right">
-                        <input type="text" name="price" id="priceInput" >
-                    </td>
+                    <td class="text-right"><input type="text" id="qtyInput" title="Quantity">&nbsp;&nbsp;&nbsp;&nbsp;</td>
                     <td></td>
+                    <td class="text-right"><input type="text" id="priceInput" title="Price"></td>
+                    <td></td>
+                    <td><input type = "text" id="descInput" title="Description"></td>
+                    <td><input type = "text" id="invInput" title="Inventory"</td>
                     <td><span class="oi oi-plus text-success clickable" title="Add product" onclick="addProd()"></span></td>
-
                     <td></td>
                 </form>
                 </tr>`
@@ -180,15 +177,23 @@ include "Footer.html";
     }
 
     function addProd() {
+        let animalPhoto = $('#photoInput').val();
+        let animalID = $('#idInput').val();
         let species = $('#speciesInput').val();
         let qty = Number($('#qtyInput').val());
         let price = Number($('#priceInput').val());
+        let description = $('#descInput').val();
+        let inventory = $('#invInput').val();
 
         //add animal object to animals
         animals.push({
+            photo: animalPhoto,
+            id: animalID,
             species: species,
             quantity: qty,
             price: price
+            desc: description,
+            inv: inventory
         });
 
         $('.animalRow').remove();
@@ -196,6 +201,8 @@ include "Footer.html";
         populateTable();
 
         //blank out the add text boxes
+        $('#photoInput').val('');
+        $('#idInput').val('');
         $('#speciesInput').val('');
         $('#qtyInput').val('');
         $('#priceInput').val('');

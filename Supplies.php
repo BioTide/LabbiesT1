@@ -33,44 +33,43 @@
                 <thead>
                 <tr>
                     <th>Photo</th>
-                    <th style="cursor: pointer">Id</th>
+                    <th  style="cursor: pointer">Id</th>
+                    <th style="cursor: pointer" onclick="sortDesc('itemName')">Item</th>
                     <th>
-                        <span id="itemIdColUp" clickable>▲</span>
-                        <span id="itemIdColDown">▼</span>
-                    </th>
-                    <th style="cursor: pointer">Item</th>
-                    <th>
-                        <span id="itemNameColUp" clickable>▲</span>
-                        <span id="itemNameColDown">▼</span>
+                        <span class="arrows" id="itemNameColUp" clickable>▲</span>
+                        <span class="arrows" id="itemNameColDown">▼</span>
                     </th>
                     <th style="cursor: pointer">Category</th>
                     <th>
-                        <span id="itemCategoryColUp" clickable>▲</span>
-                        <span id="itemCategoryColDown">▼</span>
+                        <span class="arrows" id="itemCategoryColUp" clickable>▲</span>
+                        <span class="arrows" id="itemCategoryColDown">▼</span>
                     </th>
                     <th class="text-right" style="cursor: pointer">Quantity</th>
                     <th>
-                        <span id="itemQtyColUp" clickable>▲</span>
-                        <span id="itemQtyColDown">▼</span>
+                        <span class="arrows" id="itemQtyColUp" clickable>▲</span>
+                        <span class="arrows" id="itemQtyColDown">▼</span>
                     </th>
                     <th class="text-right" style="cursor: pointer">Price&nbsp;&nbsp;</th>
                     <th>
-                        <span id="itemPriceColUp" clickable>▲</span>
-                        <span id="itemPriceColDown">▼</span>
+                        <span class="arrows" id="itemPriceColUp" clickable>▲</span>
+                        <span class="arrows" id="itemPriceColDown">▼</span>
                     </th>
                     <th style="cursor: pointer">Size</th>
-                    <th>
-                        <span id="itemSizeColUp" clickable>▲</span>
-                        <span id="itemSizeColDown">▼</span>
-                    </th>
                     <th>Description</th>
                 </tr>
                 </thead>
-                <!-- Animal Rows - Dynamically populated by jQuery code -->
+                <!-- Supply Rows - Dynamically populated by jQuery code -->
                 <tbody></tbody>
             </table>
         </div><!-- End col -->
     </div><!-- End row -->
+    <div id="aniList">
+        <table id="animalList">
+            <thead>
+            <tr></tr>
+            </thead>
+        </table>
+    </div>
 </div><!-- End container -->
 
 <?php
@@ -123,12 +122,12 @@
         });
     });
     function populateTable(){
+        $('.arrows').hide();
         for(let supply of supplies){
             $('#supplyTable').append(
                 `<tr class="container">
                     <td>${supply.itemPhoto}</td>
                     <td>${supply.itemId}</td>
-                    <td></td>
                     <td>${supply.itemName}</td>
                     <td></td>
                     <td>${supply.itemCategory}</td>
@@ -138,12 +137,73 @@
                     <td class="text-right">$${supply.itemPrice.toFixed(2)}</td>
                     <td></td>
                     <td>${supply.itemSize}</td>
-                    <td></td>
                     <td>${supply.itemDesc}</td>
                 </tr>`
             );
         }
     }
+    function sortDesc(sortOn){
+        let arrow = sortOn + 'ColUp';
+        if(!($('#arrow').is(":visible"))) {
+            //alert(arrow);
+            //sort desc
+            supplies.sort(compareSuppliesByNames);
+            console.log("Original: " + JSON.stringify(supplies, null, 10));
+            populateTable();
+            //show lower arrow
+
+        }
+        //hide all arrows
+        $('.arrows').hide();
+        $('#itemNameColUp').show();
+
+        //$('#itemNameColUp').hide();
+        //$('#itemNameColDown').hide();
+        //$('#itemCategoryColUp').hide();
+        //$('#itemCategoryColDown').hide();
+        //$('#itemQtyColUp').hide();
+        //$('#itemQtyColDown').hide();
+        //$('#itemPriceColUp').hide();
+        //$('#itemPriceColDown').hide();
+
+
+
+        //else{
+            //show upper arrow
+            //sort desc
+        //}
+    }
+    function compareStrings(a,b){
+        a = a.toLocaleLowerCase();
+        b = b.toLocaleLowerCase();
+        if(a < b){return -1;}
+        if(a > b){return 1;}
+        //a == b
+        return 0;
+    }
+    function compareStringsDesc(a, b){
+        return compareStrings(b, a);
+    }
+    function compareNumbers(a,b){
+        return a - b;
+    }
+    function compareNumbersDesc(a,b){
+        return compareNumbers(b,a);
+    }
+
+    function compareSuppliesByPrices(a,b){
+        a = a.price;
+        b = b.price;
+        return compareNumbers(a,b);
+    }
+
+
+    function compareSuppliesByNames(a,b){
+        a = a.itemName;
+        b = b.itemName;
+        return compareStrings(a,b);
+    }
+
 </script>
 
 <?php

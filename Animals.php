@@ -168,11 +168,11 @@ include "Footer.html";
                     <td class="text-right"><input type="text" id="priceInput" title="Price"></td>
                     <td></td>
                     <td><input type = "text" id="descInput" title="Description"></td>
-                    <td><input type = "text" id="invInput" title="Inventory"</td>
+                    <td><input type = "text" id="invInput" title="Inventory"></td>
                     <td><span class="oi oi-plus text-success clickable" title="Add product" onclick="addProd()"></span></td>
                     <td></td>
                 </form>
-                </tr>`
+            </tr>`
         );
     }
 
@@ -191,7 +191,7 @@ include "Footer.html";
             id: animalID,
             species: species,
             quantity: qty,
-            price: price
+            price: price,
             desc: description,
             inv: inventory
         });
@@ -206,6 +206,8 @@ include "Footer.html";
         $('#speciesInput').val('');
         $('#qtyInput').val('');
         $('#priceInput').val('');
+        $('#descInput').val('');
+        $('#invInput').val('');
     }
 
     function removeProd(i) {//FIXME make sure i is passed here

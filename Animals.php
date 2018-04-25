@@ -132,7 +132,7 @@ include "Footer.html";
         });
     });
     function populateTable(){
-        //$('.animalRow').remove();
+
         for(let animal of animals){
             $('#animalTable').append(
                 `<tr class="animalRow">
@@ -145,13 +145,74 @@ include "Footer.html";
                     <td></td>
                     <td class="text-right">$${animal.price.toFixed(2)}</td>
                     <td></td>
+                    <td><span class="oi oi-x text-danger clickable" title="Remove this product" onClick="removeProd(${animals.indexOf(animal)})"></span>
+                        <span class="oi oi-pencil text-secondary clickable" title="Edit this product"></span>
+                    </td>
                     <td>${animal.desc}</td>
                     <td>${animal.inv}</td>
                     <td></td>
                 </tr>`
             );
         }
+        $('#animalTable').append(
+            `<tr class="animalRow">
+
+                <form>
+
+                    <td>
+                        <input type="text" id="speciesInput">
+                    </td>
+                    <td></td>
+                    <td class="text-right">
+                        <input type="text" name="qty" id="qtyInput">&nbsp;&nbsp;&nbsp;&nbsp;
+                    </td>
+                    <td></td>
+                    <td class="text-right">
+                        <input type="text" name="price" id="priceInput" >
+                    </td>
+                    <td></td>
+                    <td><span class="oi oi-plus text-success clickable" title="Add product" onclick="addProd()"></span></td>
+
+                    <td></td>
+                </form>
+                </tr>`
+        );
     }
+
+    function addProd() {
+        let species = $('#speciesInput').val();
+        let qty = Number($('#qtyInput').val());
+        let price = Number($('#priceInput').val());
+
+        //add animal object to animals
+        animals.push({
+            species: species,
+            quantity: qty,
+            price: price
+        });
+
+        $('.animalRow').remove();
+        //display animals
+        populateTable();
+
+        //blank out the add text boxes
+        $('#speciesInput').val('');
+        $('#qtyInput').val('');
+        $('#priceInput').val('');
+    }
+
+    function removeProd(i) {//FIXME make sure i is passed here
+        console.log(i);
+        console.log('BEFORE', JSON.stringify(animals,null,3));
+        animals.splice(i,1);
+        console.log('AFTER', JSON.stringify(animals,null,3));
+        $('.animalRow').remove();
+
+        populateTable();
+        //FIXME re-display the table
+        //
+    }
+
     function sortDesc(sortOn){
         alert(sortOn);
     }

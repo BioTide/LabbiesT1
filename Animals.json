@@ -11,6 +11,12 @@
     "desc": "standard albino pigs"
   },
   {
+    "species": "toads",
+    "quantity": 10,
+    "price": 79.99,
+    "desc": "fire bellied toads"
+  },
+  {
     "species": "mice",
     "quantity": 144,
     "price": 59.99,
@@ -23,9 +29,27 @@
     "desc": "standard albino rabbits"
   },
   {
+    "species": "rabbit specimens",
+    "quantity": 25,
+    "price": 100.00,
+    "desc": "dead rabbit specimens"
+  },
+  {
     "species": "rats",
     "quantity": 30,
     "price": 100.00,
     "desc": "standard albino rats"
+  },
+  {
+    "species": "brown rats",
+    "quantity": 30,
+    "price": 100.00,
+    "desc": "rattus norvegicus"
+  },
+  {
+    "species": "axolotls",
+    "quantity": 30,
+    "price": 100.00,
+    "desc": "ambystoma mexicanum"
   }
 ]

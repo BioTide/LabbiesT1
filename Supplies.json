@@ -27,6 +27,30 @@
     "itemName": "fruit flies container",
     "quantity": 1,
     "price": 100.00,
+    "desc": "250 - 32 oz. fruit fly cup and lid"
+  },
+  {
+    "itemName": "flightless fruit flies culture",
+    "quantity": 1,
+    "price": 7.00,
+    "desc": "One - contains 40-50 medium adult flies"
+  },
+  {
+    "itemName": "toad cage",
+    "quantity": 1,
+    "price": 100.00,
     "desc": "One - 3 ft by 4 ft glass enclosure"
+  },
+  {
+    "itemName": "axolotl cage",
+    "quantity": 1,
+    "price": 100.00,
+    "desc": "One - 3 ft by 3 ft glass enclosure"
+  },
+  {
+    "itemName": "rodent food",
+    "quantity": 1,
+    "price": 10.00,
+    "desc": "One - 3 lb bag"
   }
 ]

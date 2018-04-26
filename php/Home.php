@@ -6,26 +6,22 @@
     <link rel="icon" href="favicon.ico.bmp" type = "image/x-icon">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/open-iconic/1.1.1/font/css/open-iconic-bootstrap.min.css" rel="stylesheet">
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.css" rel="stylesheet">
+    <link rel="stylesheet" href="../Animals.css" type="text/css">
 </head>
 <body>
 
 <?php
-include "Navbar.html";
+include "../Navbar.html";
 ?>
-
-<div class="container">
 
     <!-- Headline Row -->
     <div class="row">
         <div class="col-xl-12">
             <h1 class = "bg-success text-white text-center">Labbies</h1>
         </div>
-        <br>
-        <hr class = "style1">
-        <br>
-
     </div>
 
+<div class="container">
     <div>
         <p>
         <h2>Quality animals</h2>
@@ -33,7 +29,7 @@ include "Navbar.html";
         <h3>beginning</h3>
         </p>
         <p> Labbies offers a wide range of Certified Virus Free (CVF) laboratory animals.
-            The presence of murine viruses compromises many types of research and the use
+            The presence of urine viruses compromises many types of research and the use
             of CVF animals minimizes the compromise.
         </p>
 
@@ -63,11 +59,11 @@ include "Navbar.html";
 </div>
 
 <?php
-include "Footer.html";
+include "../Footer.html";
 ?>
 
 <?php
-include "AdminCheck.html";
+include "../AdminCheck.html";
 ?>
 
 </body>

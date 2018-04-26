@@ -6,12 +6,13 @@
     <link rel="icon" href="favicon.ico.bmp" type = "image/x-icon">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/open-iconic/1.1.1/font/css/open-iconic-bootstrap.min.css" rel="stylesheet">
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.css" rel="stylesheet">
+    <link rel="stylesheet" href="../Animals.css" type="text/css">
 
 </head>
 <body>
 
 <?php
-    include "Navbar.html";
+    include "../Navbar.html";
 ?>
 
 <div class="container">
@@ -42,7 +43,7 @@
     </footer>
 </div>
 <?php
-    include "Footer.html";
+    include "../Footer.html";
 ?>
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
@@ -82,7 +83,7 @@
 </script>
 
 <?php
-include "AdminCheck.html";
+include "../AdminCheck.html";
 ?>
 
 

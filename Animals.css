@@ -1,16 +1,61 @@
 .footer {
-    position: absolute;
     bottom:0;
-    text: center;
+    width:100%;
+    text-align:center;
 }
 
 .img-thumbnail   {
     height: 50px;
     width: 75px;
 }
+
 .table {
-    top-border: none;
+    border-top: none;
 }
+
+.flex-container {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    color:white;
+}
+
+.flex-item {
+    height: 120px;
+    width: 300px;
+    border: 1px solid #626262;
+    margin: 3px;
+    padding: 10px 0 0 10px;
+}
+
+.info-container{
+    display: inline-block;
+    vertical-align: top;
+    padding: 0 0 0 5px;
+    box-sizing: border-box;
+}
+
+.info-container p{
+    padding: 0;
+    margin: 0 0 10px;
+}
+
 img {
     border: none;
+}
+
+#aniList {
+    display:none;
+}
+
+#aniGrid {
+    display:none;
+}
+
+#supList {
+    display:none;
+}
+
+#supGrid {
+    display:none;
 }

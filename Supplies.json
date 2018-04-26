@@ -1,114 +1,56 @@
 [
   {
-    "itemId": "S1",
-    "itemName": "small cage",
-    "itemCategory": "cage",
-    "itemPhoto": "smallCage.jpg",
-    "itemDesc": "1 ft by 2 ft wire cage",
-    "itemSize": "small",
-    "itemQuantity": 10,
-    "itemPrice": 150.00,
-    "itemInv": 300
-
+    "itemName": "rat cage",
+    "quantity": 1,
+    "price": 500.00,
+    "desc": "Thirty - 2 ft by 3 ft"
   },
   {
-    "itemId": "S2",
-    "itemName": "medium cage",
-    "itemCategory": "cage",
-    "itemPhoto": "mediumCage.jpg",
-    "itemDesc": "2 ft by 3 ft wire cage",
-    "itemSize": "medium",
-    "itemQuantity": 10,
-    "itemPrice": 200.00
+    "itemName": "rabbit cage",
+    "quantity": 1,
+    "price": 650.00,
+    "desc": "Twenty - 2 1/2 ft by 3 ft"
   },
   {
-    "itemId": "S3",
-    "itemName": "large cage",
-    "itemCategory": "cage",
-    "itemPhoto": "largeCage.jpg",
-    "itemDesc": "3 ft by 4 ft",
-    "itemSize": "large",
-    "itemQuantity": 6,
-    "itemPrice": 300.00
+    "itemName": "guinea pig cage",
+    "quantity": 1,
+    "price": 400.00,
+    "desc": "Ten - 3 ft by 3 ft"
   },
   {
-    "itemId": "S4",
-    "itemName": "Fruit Fly Container",
-    "itemCategory": "cage",
-    "itemPhoto": "FruitFlyContainer.jpg",
-    "itemDesc": "3 ft by 4 ft glass enclosure",
-    "itemSize": "one size",
-    "itemQuantity": 1,
-    "itemPrice": 200.00
+    "itemName": "mice cage",
+    "quantity": 1,
+    "price": 500.00,
+    "desc": "Thirty - 2 ft by 3 ft"
   },
   {
-    "itemId": "S5",
-    "itemName": "Rabbit Pellets",
-    "itemCategory": "food",
-    "itemPhoto": "rabbitPellets.jpg",
-    "itemDesc": "20 lb bag",
-    "itemSize": "one size",
-    "itemQuantity": 1,
-    "itemPrice": 25.00
+    "itemName": "fruit flies container",
+    "quantity": 1,
+    "price": 100.00,
+    "desc": "250 - 32 oz. fruit fly cup and lid"
   },
   {
-    "itemId": "S5",
-    "itemName": "Fruit Fly Food",
-    "itemCategory": "food",
-    "itemPhoto": "fruitFlyFood.jpg",
-    "itemDesc": "3 lb bag",
-    "itemSize": "one size",
-    "itemQuantity": 1,
-    "itemPrice": 10.00
+    "itemName": "flightless fruit flies culture",
+    "quantity": 1,
+    "price": 7.00,
+    "desc": "One - contains 40-50 medium adult flies"
   },
   {
-    "itemId": "S6",
-    "itemName": "guinea pig food",
-    "itemCategory": "food",
-    "itemPhoto": "guineaPigFood.jpg",
-    "itemDesc": "20 lb bag",
-    "itemSize": "one size",
-    "itemQuantity": 1,
-    "itemPrice": 25.00
+    "itemName": "toad cage",
+    "quantity": 1,
+    "price": 100.00,
+    "desc": "One - 3 ft by 4 ft glass enclosure"
   },
   {
-    "itemId": "S7",
-    "itemName": "Mice food",
-    "itemCategory": "food",
-    "itemPhoto": "miceFood.jpg",
-    "itemDesc": "20 lb bag",
-    "itemSize": "one size",
-    "itemQuantity": 1,
-    "itemPrice": 25.00
+    "itemName": "axolotl cage",
+    "quantity": 1,
+    "price": 100.00,
+    "desc": "One - 3 ft by 3 ft glass enclosure"
   },
   {
-    "itemId": "S8",
-    "itemName": "Rat Food",
-    "itemCategory": "food",
-    "itemPhoto": "ratFood.jpg",
-    "itemDesc": "20 lb bag",
-    "itemSize": "one size",
-    "itemQuantity": 1,
-    "itemPrice": 25.00
-  },
-  {
-    "itemId": "S9",
-    "itemName": "Auto Water Bottle",
-    "itemCategory": "water",
-    "itemPhoto": "waterBottle.jpg",
-    "itemDesc": "3 ft by 4 ft glass enclosure",
-    "itemSize": "one size",
-    "itemQuantity": 1,
-    "itemPrice": 15.00
-  },
-  {
-    "itemId": "S10",
-    "itemName": "water dish",
-    "itemCategory": "water",
-    "itemPhoto": "waterDish.jpg",
-    "itemDesc": "4 inch by 4 inch water dish",
-    "itemSize": "one size",
-    "itemQuantity": 1,
-    "itemPrice": 7.00
+    "itemName": "rodent food",
+    "quantity": 1,
+    "price": 10.00,
+    "desc": "One - 3 lb bag"
   }
 ]

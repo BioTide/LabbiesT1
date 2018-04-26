@@ -7,28 +7,23 @@
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/open-iconic/1.1.1/font/css/open-iconic-bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="../Animals.css" type="text/css">
 </head>
 <body>
 
 <?php
-    include "Navbar.html";
+    include "../Navbar.html";
 ?>
 
 <!-- Contact info -->
-<section class="container">
-
     <!--Contact heading-->
     <div class="row">
         <div class="col-xl-12">
             <h1 class = "bg-success text-white text-center">Contact us</h1>
         </div>
-        <br>
-        <hr class = "style1">
-        <br>
-
     </div>
     <!--Contact text-->
-
+<section class="container">
     <form id = "contactForm">
         <div class = "row">
             <div class = "col-md-6">
@@ -112,11 +107,11 @@
         </div>
 </section>
 <?php
-    include "Footer.html";
+    include "../Footer.html";
 ?>
 
 <?php
-include "AdminCheck.html";
+include "../AdminCheck.html";
 ?>
 </body>
 </html>

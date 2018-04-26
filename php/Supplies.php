@@ -38,6 +38,10 @@
                 <thead>
                 <tr>
                     <th>Item</th>
+                    <th>Id</th>
+                    <th>Category</th>
+                    <th>Size</th>
+                    <th>Invetory</th>
                     <th class="text-right">Quantity</th>
                     <th class="text-right">Price&nbsp;&nbsp;</th>
                     <th>Description</th>
@@ -190,6 +194,10 @@
             $('#supplyTable').append(
                 `<tr class="container">
                     <td>${supply.itemName}</td>
+                    <td>${supply.itemId}</td>
+                    <td>${supply.itemCategory}</td>
+                    <td>${supply.itemSize}</td>
+                    <td>${supply.itemInventory}</td>
                     <td class="text-right">${supply.quantity}&nbsp;&nbsp;&nbsp;&nbsp;</td>
                     <td class="text-right">$${supply.price.toFixed(2)}</td>
                     <td>${supply.desc}</td>

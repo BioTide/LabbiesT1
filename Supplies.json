@@ -1,56 +1,95 @@
 [
   {
+    "itemId": "S1",
     "itemName": "rat cage",
+    "itemCategory": "cage",
+    "itemPhoto": "ratCage.jpg",
+    "itemSize": "small",
     "quantity": 1,
     "price": 500.00,
+    "itemInv": 300,
     "desc": "Thirty - 2 ft by 3 ft"
   },
   {
+    "itemId": "S2",
     "itemName": "rabbit cage",
+    "itemCategory": "cage",
+    "itemPhoto": "rabbitCage.jpg",
+    "itemSize": "medium",
     "quantity": 1,
     "price": 650.00,
+    "itemInv": 300,
     "desc": "Twenty - 2 1/2 ft by 3 ft"
   },
   {
+    "itemId": "S3",
     "itemName": "guinea pig cage",
+    "itemCategory": "cage",
+    "itemPhoto": "guineaPigCage",
+    "itemSize": "medium",
     "quantity": 1,
     "price": 400.00,
+    "itemInv": 400,
     "desc": "Ten - 3 ft by 3 ft"
   },
   {
+    "itemId": "S4",
     "itemName": "mice cage",
+    "itemCategory": "cage",
+    "itemSize": "medium",
     "quantity": 1,
     "price": 500.00,
+    "itemInv": 350,
     "desc": "Thirty - 2 ft by 3 ft"
   },
   {
+    "itemId": "S5",
     "itemName": "fruit flies container",
+    "itemCategory": "cage",
+    "itemSize": "large",
     "quantity": 1,
     "price": 100.00,
+    "itemInv": 200,
     "desc": "250 - 32 oz. fruit fly cup and lid"
   },
   {
+    "itemId": "S6",
     "itemName": "flightless fruit flies culture",
+    "itemCategory": "product",
+    "itemSize": "one size",
     "quantity": 1,
     "price": 7.00,
+    "itemInv": 368,
     "desc": "One - contains 40-50 medium adult flies"
   },
   {
+    "itemId": "S7",
     "itemName": "toad cage",
+    "itemCategory": "cage",
+    "itemSize": "small",
     "quantity": 1,
     "price": 100.00,
+    "itemInv": 232,
     "desc": "One - 3 ft by 4 ft glass enclosure"
   },
   {
+    "itemId": "S8",
     "itemName": "axolotl cage",
+    "itemCategory": "cage",
+    "itemSize": "medium",
     "quantity": 1,
     "price": 100.00,
+    "itemInv": 149,
     "desc": "One - 3 ft by 3 ft glass enclosure"
   },
   {
+    "itemId": "S9",
     "itemName": "rodent food",
+    "itemCategory": "food",
+    "itemSize": "medium",
     "quantity": 1,
     "price": 10.00,
+    "itemInv": 45,
     "desc": "One - 3 lb bag"
   }
 ]

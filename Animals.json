@@ -2,7 +2,7 @@
   {
     "id": "A1",
     "species": "fruit flies",
-    "photo": "fruitflies.jpg",
+    "photo": "../images/fruit-flies.jpg",
     "quantity": 1000,
     "price": 39.99,
     "desc": "standard fruit Flies",
@@ -11,7 +11,7 @@
   {
     "id": "A2",
     "species": "guinea pigs",
-    "photo": "guineaPig.jpg",
+    "photo": "../images/guinea_pig.jpg",
     "quantity": 112,
     "price": 79.99,
     "desc": "standard albino pigs",
@@ -20,7 +20,7 @@
   {
     "id": "A3",
     "species": "toads",
-    "photo": "toads.jpg",
+    "photo": "../images/toad.jpg",
     "quantity": 10,
     "price": 79.99,
     "desc": "fire bellied toads",
@@ -29,7 +29,7 @@
   {
     "id": "A4",
     "species": "mice",
-    "photo": "mice.jpg",
+    "photo": "../images/mice.jpg",
     "quantity": 144,
     "price": 59.99,
     "desc": "standard albino mice",
@@ -38,7 +38,7 @@
   {
     "id": "A5",
     "species": "rabbits",
-    "photo": "rabbits.jpg",
+    "photo": "../images/rabbit.jpg",
     "quantity": 25,
     "price": 100.00,
     "desc": "standard albino rabbits",
@@ -47,7 +47,7 @@
   {
     "id": "A6",
     "species": "rabbit specimens",
-    "photo": "rabbitSpec.jpg",
+    "photo": "../images/rabbit-specimen.jpg",
     "quantity": 25,
     "price": 100.00,
     "desc": "dead rabbit specimens",
@@ -56,7 +56,7 @@
   {
     "id": "A7",
     "species": "rats",
-    "photo": "rats.jpg",
+    "photo": "../images/rat.jpg",
     "quantity": 30,
     "price": 100.00,
     "desc": "standard albino rats",
@@ -65,7 +65,7 @@
   {
     "id": "A8",
     "species": "brown rats",
-    "photo": "brownrats.jpg",
+    "photo": "../images/brown-rat.jpg",
     "quantity": 30,
     "price": 100.00,
     "desc": "rattus norvegicus",
@@ -74,7 +74,7 @@
   {
     "id": "A9",
     "species": "axolotls",
-    "photo": "axolotls.jpg",
+    "photo": "../images/axolotl.jpg",
     "quantity": 30,
     "price": 100.00,
     "desc": "ambystoma mexicanum",

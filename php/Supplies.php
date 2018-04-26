@@ -38,6 +38,7 @@
             <table class="table" id="supplyTable">
                 <thead>
                 <tr>
+                    <th>Photo</th>
                     <th>Item</th>
                     <th>Id</th>
                     <th>Category</th>
@@ -192,9 +193,12 @@
         });
     });
     function populateTable(){
+        $('#supList').hide();
+        $('#supGrid').hide();
         for(let supply of supplies){
             $('#supplyTable').append(
                 `<tr class="container">
+                    <td><img src="${supply.itemPhoto}" height="100px" width="100px"></td>
                     <td>${supply.itemName}</td>
                     <td>${supply.itemId}</td>
                     <td>${supply.itemCategory}</td>
@@ -205,8 +209,6 @@
                     <td>${supply.desc}</td>
                 </tr>`
             );
-            $('#supList').hide();
-            $('#supGrid').hide();
         }
     }
 

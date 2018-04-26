@@ -201,7 +201,7 @@ include "../Footer.html";
         for(let animal of animals){
             $('#animalTable').append(
                 `<tr class="animalRow">
-                    <td>${animal.photo}</td>
+                    <td><img src="${animal.photo}" height="100px" width="100px"></td>
                     <td>${animal.species}</td>
                     <td>${animal.id}</td>
                     <td class="text-right">${animal.quantity}&nbsp;&nbsp;&nbsp;&nbsp;</td>

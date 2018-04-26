@@ -120,17 +120,17 @@
 
 <div class="container-fluid">
     <div class="row" id="supGrid">
-        <div class="col-1"></div>
-        <div class="col-2"><figure><img src="../images/rat-cage.jpg" width="100px" height="100px"><figcaption>Rat Cage</figcaption></figure></div>
-        <div class="col-2"><figure><img src="../images/rabbit-cage.jpg" width="100px" height="100px"><figcaption>Rabbit Cage</figcaption></figure></div>
-        <div class="col-2"><figure><img src="../images/gp-cage.png" width="100px" height="100px"><figcaption>Guinea Pig Cage</figcaption></figure></div>
-        <div class="col-2"><figure><img src="../images/mice-cage.jpg" width="100px" height="100px"><figcaption>Mice Cage</figcaption></figure></div>
-        <div class="col-2"><figure><img src="../images/ff-cage.jpg" width="100px" height="100px"><figcaption>Fruit Flies Container</figcaption></figure></div>
-        <div class="col-2"><figure><img src="../images/ff-culture.jpg" width="100px" height="100px"><figcaption>Fruit Fly Culture</figcaption></figure></div>
-        <div class="col-2"><figure><img src="../images/toad-cage.jpg" width="100px" height="100px"><figcaption>Toad Cage</figcaption></figure></div>
-        <div class="col-2"><figure><img src="../images/axolotl-cage.jpg" width="100px" height="100px"><figcaption>Axolotl Cage</figcaption></figure></div>
-        <div class="col-2"><figure><img src="../images/rodent-food.jpg" width="100px" height="100px"><figcaption>Rodent Food</figcaption></figure></div>
-        <div class="col-1"></div>
+        <div class="col-sm-1"></div>
+        <div class="col-sm-1"><figure><img src="../images/rat-cage.jpg" width="100px" height="100px"><figcaption>Rat Cage</figcaption></figure></div>
+        <div class="col-sm-1"><figure><img src="../images/rabbit-cage.jpg" width="100px" height="100px"><figcaption>Rabbit Cage</figcaption></figure></div>
+        <div class="col-sm-1"><figure><img src="../images/gp-cage.png" width="100px" height="100px"><figcaption>Guinea Pig Cage</figcaption></figure></div>
+        <div class="col-sm-1"><figure><img src="../images/mice-cage.jpg" width="100px" height="100px"><figcaption>Mice Cage</figcaption></figure></div>
+        <div class="col-sm-1"><figure><img src="../images/ff-cage.jpg" width="100px" height="100px"><figcaption>Fruit Flies Container</figcaption></figure></div>
+        <div class="col-sm-1"><figure><img src="../images/ff-culture.jpg" width="100px" height="100px"><figcaption>Fruit Fly Culture</figcaption></figure></div>
+        <div class="col-sm-1"><figure><img src="../images/toad-cage.jpg" width="100px" height="100px"><figcaption>Toad Cage</figcaption></figure></div>
+        <div class="col-sm-1"><figure><img src="../images/axolotl-cage.jpg" width="100px" height="100px"><figcaption>Axolotl Cage</figcaption></figure></div>
+        <div class="col-sm-1"><figure><img src="../images/rodent-food.jpg" width="100px" height="100px"><figcaption>Rodent Food</figcaption></figure></div>
+        <div class="col-sm-2"></div>
     </div>
     <br>
 </div>
@@ -195,6 +195,8 @@
                     <td>${supply.desc}</td>
                 </tr>`
             );
+            $('#supList').hide();
+            $('#supGrid').hide();
         }
     }
 

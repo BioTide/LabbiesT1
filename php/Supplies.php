@@ -197,7 +197,7 @@
                     <td>${supply.itemId}</td>
                     <td>${supply.itemCategory}</td>
                     <td>${supply.itemSize}</td>
-                    <td>${supply.itemInventory}</td>
+                    <td>${supply.itemInv}</td>
                     <td class="text-right">${supply.quantity}&nbsp;&nbsp;&nbsp;&nbsp;</td>
                     <td class="text-right">$${supply.price.toFixed(2)}</td>
                     <td>${supply.desc}</td>

@@ -85,26 +85,22 @@
         </div>
     </form>
 
-    <div class="row">
-        <div class="col-lg-7">
-
-            <div class="row text-center">
-                <div class="col-xl-4">
-                    <span class="oi oi-globe bg-success px-3 py-2 rounded text-white mb-2 d-inline-block"></span>
-                    <p>77 Dog Ln<br>Orem, UT<br>84057</p>
-                </div>
-
-                <div class="col-xl-4">
-                    <span class="oi oi-phone bg-success px-3 py-2 rounded text-white mb-2 d-inline-block"></span>
-                    <p>123-456-7890</p>
-                </div>
-
-                <div class="col-xl-4">
-                    <span class="oi oi-envelope-closed bg-success px-3 py-2 rounded text-white mb-2 d-inline-block"></span>
-                    <p>support@labbies.com</p>
-                </div>
-            </div>
+    <div class="row text-center">
+        <div class="col-xl-4">
+            <span class="oi oi-globe bg-success px-3 py-2 rounded text-white mb-2 d-inline-block"></span>
+            <p>77 Dog Ln<br>Orem, UT<br>84057</p>
         </div>
+
+        <div class="col-xl-4">
+            <span class="oi oi-phone bg-success px-3 py-2 rounded text-white mb-2 d-inline-block"></span>
+            <p>123-456-7890</p>
+        </div>
+
+        <div class="col-xl-4">
+            <span class="oi oi-envelope-closed bg-success px-3 py-2 rounded text-white mb-2 d-inline-block"></span>
+            <p>support@labbies.com</p>
+        </div>
+    </div>
 </section>
 <?php
     include "../Footer.html";

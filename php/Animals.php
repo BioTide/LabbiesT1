@@ -118,17 +118,17 @@
 
 <div class="container-fluid">
     <div class="row" id="aniGrid">
-        <div class="col-1"></div>
-        <div class="col-2"><figure><img src="../images/fruit-flies.jpg" width="100px" height="100px"><figcaption>Fruit Flies</figcaption></figure></div>
-        <div class="col-2"><figure><img src="../images/guinea_pig.jpg" width="100px" height="100px"><figcaption>Guinea Pigs</figcaption></figure></div>
-        <div class="col-2"><figure><img src="../images/mice.jpg" width="100px" height="100px"><figcaption>Mice</figcaption></figure></div>
-        <div class="col-2"><figure><img src="../images/rabbit.jpg" width="100px" height="100px"><figcaption>Rabbits</figcaption></figure></div>
-        <div class="col-2"><figure><img src="../images/rabbit-specimen.jpg" width="100px" height="100px"><figcaption>Rabbit Specimens</figcaption></figure></div>
-        <div class="col-2"><figure><img src="../images/rat.jpg" width="100px" height="100px"><figcaption>Rats</figcaption></figure></div>
-        <div class="col-2"><figure><img src="../images/brown-rat.jpg" width="100px" height="100px"><figcaption>Brown Rats</figcaption></figure></div>
-        <div class="col-2"><figure><img src="../images/axolotl.jpg" width="100px" height="100px"><figcaption>Axolotls</figcaption></figure></div>
-        <div class="col-2"><figure><img src="../images/toad.jpg" width="100px" height="100px"><figcaption>Toads</figcaption></figure></div>
-        <div class="col-1"></div>
+        <div class="col-sm-1"></div>
+        <div class="col-sm-1"><figure><img src="../images/fruit-flies.jpg" width="100px" height="100px"><figcaption>Fruit Flies</figcaption></figure></div>
+        <div class="col-sm-1"><figure><img src="../images/guinea_pig.jpg" width="100px" height="100px"><figcaption>Guinea Pigs</figcaption></figure></div>
+        <div class="col-sm-1"><figure><img src="../images/mice.jpg" width="100px" height="100px"><figcaption>Mice</figcaption></figure></div>
+        <div class="col-sm-1"><figure><img src="../images/rabbit.jpg" width="100px" height="100px"><figcaption>Rabbits</figcaption></figure></div>
+        <div class="col-sm-1"><figure><img src="../images/rabbit-specimen.jpg" width="100px" height="100px"><figcaption>Rabbit Specimens</figcaption></figure></div>
+        <div class="col-sm-1"><figure><img src="../images/rat.jpg" width="100px" height="100px"><figcaption>Rats</figcaption></figure></div>
+        <div class="col-sm-1"><figure><img src="../images/brown-rat.jpg" width="100px" height="100px"><figcaption>Brown Rats</figcaption></figure></div>
+        <div class="col-sm-1"><figure><img src="../images/axolotl.jpg" width="100px" height="100px"><figcaption>Axolotls</figcaption></figure></div>
+        <div class="col-sm-1"><figure><img src="../images/toad.jpg" width="100px" height="100px"><figcaption>Toads</figcaption></figure></div>
+        <div class="col-sm-2"></div>
     </div>
     <br>
 </div><!-- End container -->
@@ -196,6 +196,8 @@ include "../Footer.html";
                     <td class="text-right">$${animal.price.toFixed(2)}</td>
                 </tr>`
             );
+            $('#aniList').hide();
+            $('#aniGrid').hide();
         }
     }
 

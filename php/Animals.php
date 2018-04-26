@@ -49,63 +49,63 @@
 
     <div class="row" id="aniList">
         <div class="flex-container">
-            <div class="flex-item bg-success"><img src="../images/fruit-flies.jpg" width="100px" height="100px"/>
+            <div class="flex-item bg-secondary"><img src="../images/fruit-flies.jpg" width="100px" height="100px"/>
                 <div class="info-container">
                     <p class="text-center"><b>Fruit Flies</b></p>
                     <p>$39.99 per unit of 1000</p>
                     <p>Live "red eye" fruit fly.</p>
                 </div>
             </div>
-            <div class="flex-item bg-success"><img src="../images/guinea_pig.jpg" width="100px" height="100px">
+            <div class="flex-item bg-secondary"><img src="../images/guinea_pig.jpg" width="100px" height="100px">
                 <div class="info-container">
                     <p class="text-center"><b>Guinea Pigs</b></p>
                     <p>$79.99 per unit of 112</p>
                     <p>The domestic guinea pig</p>
                 </div>
             </div>
-            <div class="flex-item bg-success"><img src="../images/toad.jpg" width="100px" height="100px">
+            <div class="flex-item bg-secondary"><img src="../images/toad.jpg" width="100px" height="100px">
                 <div class="info-container">
                     <p class="text-center"><b>Toads</b></p>
                     <p>$79.99 per unit of 10</p>
                     <p>Fire Bellied Toads</p>
                 </div>
             </div>
-            <div class="flex-item bg-success"><img src="../images/mice.jpg" width="100px" height="100px">
+            <div class="flex-item bg-secondary"><img src="../images/mice.jpg" width="100px" height="100px">
                 <div class="info-container">
                     <p class="text-center"><b>Mice</b></p>
                     <p>$59.99 per unit of 144</p>
                     <p>Premium white mice</p>
                 </div>
             </div>
-            <div class="flex-item bg-success"><img src="../images/rabbit.jpg" width="100px" height="100px">
+            <div class="flex-item bg-secondary"><img src="../images/rabbit.jpg" width="100px" height="100px">
                 <div class="info-container">
                     <p class="text-center"><b>Rabbits</b></p>
                     <p>$100. per unit of 25</p>
                     <p>NZ White Rabbits</p>
                 </div>
             </div>
-            <div class="flex-item bg-success"><img src="../images/rabbit-specimen.jpg" width="100px" height="100px">
+            <div class="flex-item bg-secondary"><img src="../images/rabbit-specimen.jpg" width="100px" height="100px">
                 <div class="info-container">
                     <p class="text-center"><b>Rabbit Specimens</b></p>
                     <p>$100. per unit of 25</p>
                     <p>Dead Rabbit Specimens</p>
                 </div>
             </div>
-            <div class="flex-item bg-success"><img src="../images/rat.jpg" width="100px" height="100px">
+            <div class="flex-item bg-secondary"><img src="../images/rat.jpg" width="100px" height="100px">
                 <div class="info-container">
                     <p class="text-center">Rats</p>
                     <p>$100 per unit of 30</p>
                     <p>White Rats</p>
                 </div>
             </div>
-            <div class="flex-item bg-success"><img src="../images/brown-rat.jpg" width="100px" height="100px">
+            <div class="flex-item bg-secondary"><img src="../images/brown-rat.jpg" width="100px" height="100px">
                 <div class="info-container">
                     <p class="text-center">Brown Rats</p>
                     <p>$100 per unit of 30</p>
                     <p>Rattus norvegicus</p>
                 </div>
             </div>
-            <div class="flex-item bg-success"><img src="../images/axolotl.jpg" width="100px" height="100px">
+            <div class="flex-item bg-secondary"><img src="../images/axolotl.jpg" width="100px" height="100px">
                 <div class="info-container">
                     <p class="text-center">Axolotls</p>
                     <p>$100 per unit of 30</p>

@@ -36,9 +36,13 @@
             <table class="table" id="animalTable">
                 <thead>
                 <tr>
+                    <th>Photo</th>
                     <th>Species</th>
+                    <th>Id</th>
                     <th class="text-right">Quantity</th>
                     <th class="text-right">Price&nbsp;&nbsp;</th>
+                    <th>Description</th>
+                    <th>Inventory</th>
                 </tr>
                 </thead>
                 <!-- Animal Rows - Dynamically populated by jQuery code -->
@@ -191,9 +195,13 @@ include "../Footer.html";
         for(let animal of animals){
             $('#animalTable').append(
                 `<tr class="animalRow">
+                    <td>${animal.photo}</td>
                     <td>${animal.species}</td>
+                    <td>${animal.id}</td>
                     <td class="text-right">${animal.quantity}&nbsp;&nbsp;&nbsp;&nbsp;</td>
                     <td class="text-right">$${animal.price.toFixed(2)}</td>
+                    <td>${animal.desc}</td>
+                    <td>${animal.inv}</td>
                 </tr>`
             );
             $('#aniList').hide();

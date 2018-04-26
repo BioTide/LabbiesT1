@@ -97,5 +97,16 @@
     "price": 10.00,
     "itemInv": 45,
     "desc": "One - 3 lb bag"
+  },
+  {
+    "itemId": "S10",
+    "itemName": "Bullfrog Habitat",
+    "itemCategory": "cage",
+    "itemPhoto":"../images/bullfrog-cage.jpg",
+    "itemSize": "large",
+    "quantity": 1,
+    "price": 100.00,
+    "itemInv": 49,
+    "desc": "One - 1 ft by 4 ft glass enclosure"
   }
 ]

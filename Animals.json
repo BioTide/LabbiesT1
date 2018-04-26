@@ -79,5 +79,14 @@
     "price": 100.00,
     "desc": "ambystoma mexicanum",
     "inv": 921
+  },
+  {
+    "id": "A10",
+    "species": "bullfrogs",
+    "photo": "../images/bullfrog.jpg",
+    "quantity": 10,
+    "price": 100.00,
+    "desc": "rana catesbeiana",
+    "inv": 343
   }
 ]

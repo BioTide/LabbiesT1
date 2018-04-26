@@ -57,70 +57,81 @@
     </div><!-- End row -->
 
     <div class="row" id="supList">
-        <div class="flex-container">
-            <div class="flex-item bg-secondary"><img src="../images/rat-cage.jpg" width="100px" height="100px"/>
-                <div class="info-container">
-                    <p class="text-center"><b>Rat Cage</b></p>
-                    <p>$500 per unit of 30</p>
-                    <p>2 ft. by 3 ft.</p>
+        <div class="row">
+            <div class="col-sm-1"></div>
+            <div class="col-sm-10 flex-container">
+                <div class="flex-item bg-secondary"><img src="../images/rat-cage.jpg" width="100px" height="100px"/>
+                    <div class="info-container">
+                        <p class="text-center"><b>Rat Cage</b></p>
+                        <p>$500 per unit of 30</p>
+                        <p>2 ft. by 3 ft.</p>
+                    </div>
+                </div>
+                <div class="flex-item bg-secondary"><img src="../images/rabbit-cage.jpg" width="100px" height="100px">
+                    <div class="info-container">
+                        <p class="text-center"><b>Rabbit Cage</b></p>
+                        <p>$650 per unit of 20</p>
+                        <p>2 1/2 ft by 3 ft</p>
+                    </div>
+                </div>
+                <div class="flex-item bg-secondary"><img src="../images/gp-cage.png" width="100px" height="100px">
+                    <div class="info-container">
+                        <p class="text-center"><b>Guinea Pig Cage</b></p>
+                        <p>$400 per unit of 10</p>
+                        <p>3 ft by 3 ft</p>
+                    </div>
+                </div>
+                <div class="flex-item bg-secondary"><img src="../images/mice-cage.jpg" width="100px" height="100px">
+                    <div class="info-container">
+                        <p class="text-center"><b>Mice Cages</b></p>
+                        <p>$500 per unit of 30</p>
+                        <p>2 ft by 3 ft</p>
+                    </div>
+                </div>
+                <div class="flex-item bg-secondary"><img src="../images/ff-cage.jpg" width="100px" height="100px">
+                    <div class="info-container">
+                        <p class="text-center"><b>Fruit Fly Container</b></p>
+                        <p>$100 per unit of 250</p>
+                        <p>32 oz. cup and lid</p>
+                    </div>
+                </div>
+                <div class="flex-item bg-secondary"><img src="../images/ff-culture.jpg" width="100px" height="100px">
+                    <div class="info-container">
+                        <p class="text-center"><b>Fruit Fly Culture</b></p>
+                        <p>$7 per unit of 1</p>
+                        <p>contains 40-50 adult flies</p>
+                    </div>
+                </div>
+                <div class="flex-item bg-secondary"><img src="../images/toad-cage.jpg" width="100px" height="100px">
+                    <div class="info-container">
+                        <p class="text-center">Toad Cage</p>
+                        <p>$100 per unit of 1</p>
+                        <p>3 ft by 4 ft enclosure</p>
+                    </div>
+                </div>
+                <div class="flex-item bg-secondary"><img src="../images/axolotl-cage.jpg" width="100px" height="100px">
+                    <div class="info-container">
+                        <p class="text-center">Axolotl Cage</p>
+                        <p>$100 per unit of 1</p>
+                        <p>3 ft by 3 ft enclosure</p>
+                    </div>
+                </div>
+                <div class="flex-item bg-secondary"><img src="../images/rodent-food.jpg" width="100px" height="100px">
+                    <div class="info-container">
+                        <p class="text-center">Rodent Food</p>
+                        <p>$10 per unit of 1</p>
+                        <p>3 lb. bag</p>
+                    </div>
+                </div>
+                <div class="flex-item bg-secondary"><img src="../images/bullfrog-cage.jpg" width="100px" height="100px">
+                    <div class="info-container">
+                        <p class="text-center">Bullfrog Habitat</p>
+                        <p>$100 per unit of 1</p>
+                        <p>1 ft by 4 ft</p>
+                    </div>
                 </div>
             </div>
-            <div class="flex-item bg-secondary"><img src="../images/rabbit-cage.jpg" width="100px" height="100px">
-                <div class="info-container">
-                    <p class="text-center"><b>Rabbit Cage</b></p>
-                    <p>$650 per unit of 20</p>
-                    <p>2 1/2 ft by 3 ft</p>
-                </div>
-            </div>
-            <div class="flex-item bg-secondary"><img src="../images/gp-cage.png" width="100px" height="100px">
-                <div class="info-container">
-                    <p class="text-center"><b>Guinea Pig Cage</b></p>
-                    <p>$400 per unit of 10</p>
-                    <p>3 ft by 3 ft</p>
-                </div>
-            </div>
-            <div class="flex-item bg-secondary"><img src="../images/mice-cage.jpg" width="100px" height="100px">
-                <div class="info-container">
-                    <p class="text-center"><b>Mice Cages</b></p>
-                    <p>$500 per unit of 30</p>
-                    <p>2 ft by 3 ft</p>
-                </div>
-            </div>
-            <div class="flex-item bg-secondary"><img src="../images/ff-cage.jpg" width="100px" height="100px">
-                <div class="info-container">
-                    <p class="text-center"><b>Fruit Fly Container</b></p>
-                    <p>$100 per unit of 250</p>
-                    <p>32 oz. cup and lid</p>
-                </div>
-            </div>
-            <div class="flex-item bg-secondary"><img src="../images/ff-culture.jpg" width="100px" height="100px">
-                <div class="info-container">
-                    <p class="text-center"><b>Fruit Fly Culture</b></p>
-                    <p>$7 per unit of 1</p>
-                    <p>contains 40-50 adult flies</p>
-                </div>
-            </div>
-            <div class="flex-item bg-secondary"><img src="../images/toad-cage.jpg" width="100px" height="100px">
-                <div class="info-container">
-                    <p class="text-center">Toad Cage</p>
-                    <p>$100 per unit of 1</p>
-                    <p>3 ft by 4 ft enclosure</p>
-                </div>
-            </div>
-            <div class="flex-item bg-secondary"><img src="../images/axolotl-cage.jpg" width="100px" height="100px">
-                <div class="info-container">
-                    <p class="text-center">Axolotl Cage</p>
-                    <p>$100 per unit of 1</p>
-                    <p>3 ft by 3 ft enclosure</p>
-                </div>
-            </div>
-            <div class="flex-item bg-secondary"><img src="../images/rodent-food.jpg" width="100px" height="100px">
-                <div class="info-container">
-                    <p class="text-center">Rodent Food</p>
-                    <p>$10 per unit of 1</p>
-                    <p>3 lb. bag</p>
-                </div>
-            </div>
+            <div class="col-sm-1"></div>
         </div>
     </div>
 </div>
@@ -137,7 +148,8 @@
         <div class="col-sm-1"><figure><img src="../images/toad-cage.jpg" width="100px" height="100px"><figcaption>Toad Cage</figcaption></figure></div>
         <div class="col-sm-1"><figure><img src="../images/axolotl-cage.jpg" width="100px" height="100px"><figcaption>Axolotl Cage</figcaption></figure></div>
         <div class="col-sm-1"><figure><img src="../images/rodent-food.jpg" width="100px" height="100px"><figcaption>Rodent Food</figcaption></figure></div>
-        <div class="col-sm-2"></div>
+        <div class="col-sm-1"><figure><img src="../images/bullfrog-cage.jpg" width="100px" height="100px"><figcaption>Bullfrog Habitat</figcaption></figure></div>
+        <div class="col-sm-1"></div>
     </div>
     <br>
 </div>

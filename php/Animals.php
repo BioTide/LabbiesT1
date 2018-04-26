@@ -56,7 +56,8 @@
     </div><!-- End row -->
 
     <div class="row" id="aniList">
-        <div class="flex-container">
+        <div class="col-sm-1"></div>
+        <div class="col-sm-10 flex-container">
             <div class="flex-item bg-secondary"><img src="../images/fruit-flies.jpg" width="100px" height="100px"/>
                 <div class="info-container">
                     <p class="text-center"><b>Fruit Flies</b></p>
@@ -120,7 +121,15 @@
                     <p>Ambystoma mexicanum</p>
                 </div>
             </div>
+            <div class="flex-item bg-secondary"><img src="../images/bullfrog.jpg" width="100px" height="100px">
+                <div class="info-container">
+                    <p class="text-center">Bullfrogs</p>
+                    <p>$100 per unit of 10</p>
+                    <p>Rana catesbeiana</p>
+                </div>
+            </div>
         </div>
+        <div class="col-sm-1"></div>
     </div>
 </div>
 
@@ -136,7 +145,8 @@
         <div class="col-sm-1"><figure><img src="../images/brown-rat.jpg" width="100px" height="100px"><figcaption>Brown Rats</figcaption></figure></div>
         <div class="col-sm-1"><figure><img src="../images/axolotl.jpg" width="100px" height="100px"><figcaption>Axolotls</figcaption></figure></div>
         <div class="col-sm-1"><figure><img src="../images/toad.jpg" width="100px" height="100px"><figcaption>Toads</figcaption></figure></div>
-        <div class="col-sm-2"></div>
+        <div class="col-sm-1"><figure><img src="../images/bullfrog.jpg" width="100px" height="100px"><figcaption>Bullfrog</figcaption></figure></div>
+        <div class="col-sm-1"></div>
     </div>
     <br>
 </div><!-- End container -->

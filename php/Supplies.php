@@ -22,7 +22,7 @@
         </h1>
     </div>
 </div>
-
+<br>
 <div class="text-center">
     <button class="btn" data-toggle="tooltip" data-placement="top" title="Table View" id="tableBtn"><span class="oi oi-spreadsheet"></span></button>
     <button class="btn" data-toggle="tooltip" data-placement="top" title="Grid View" id="gridBtn"><span class="oi oi-grid-two-up"></span></button>
@@ -33,7 +33,8 @@
     <br>
     <!-- Supply Table Row -->
     <div class="row" id="supTable">
-        <div class="col-xl-7 offset-xl-3">
+        <div class="col-sm-2"></div>
+        <div class="col-sm-8">
             <table class="table" id="supplyTable">
                 <thead>
                 <tr>
@@ -51,6 +52,7 @@
                 <tbody></tbody>
             </table>
         </div><!-- End col -->
+        <div class="col-sm-2"></div>
     </div><!-- End row -->
 
     <div class="row" id="supList">

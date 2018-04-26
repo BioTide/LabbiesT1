@@ -1,55 +1,83 @@
 [
   {
+    "id": "A1",
     "species": "fruit flies",
+    "photo": "fruitflies.jpg",
     "quantity": 1000,
-    "price": 39.99
+    "price": 39.99,
+    "desc": "standard fruit Flies",
+    "inv": 1000000
   },
   {
+    "id": "A2",
     "species": "guinea pigs",
+    "photo": "guineaPig.jpg",
     "quantity": 112,
     "price": 79.99,
-    "desc": "standard albino pigs"
+    "desc": "standard albino pigs",
+    "inv": 1567
   },
   {
+    "id": "A3",
     "species": "toads",
+    "photo": "toads.jpg",
     "quantity": 10,
     "price": 79.99,
-    "desc": "fire bellied toads"
+    "desc": "fire bellied toads",
+    "inv": 176
   },
   {
+    "id": "A4",
     "species": "mice",
+    "photo": "mice.jpg",
     "quantity": 144,
     "price": 59.99,
-    "desc": "standard albino mice"
+    "desc": "standard albino mice",
+    "inv": 17889
   },
   {
+    "id": "A5",
     "species": "rabbits",
+    "photo": "rabbits.jpg",
     "quantity": 25,
     "price": 100.00,
-    "desc": "standard albino rabbits"
+    "desc": "standard albino rabbits",
+    "inv": 897
   },
   {
+    "id": "A6",
     "species": "rabbit specimens",
+    "photo": "rabbitSpec.jpg",
     "quantity": 25,
     "price": 100.00,
-    "desc": "dead rabbit specimens"
+    "desc": "dead rabbit specimens",
+    "inv": 789
   },
   {
+    "id": "A7",
     "species": "rats",
+    "photo": "rats.jpg",
     "quantity": 30,
     "price": 100.00,
-    "desc": "standard albino rats"
+    "desc": "standard albino rats",
+    "inv": 786
   },
   {
+    "id": "A8",
     "species": "brown rats",
+    "photo": "brownrats.jpg",
     "quantity": 30,
     "price": 100.00,
-    "desc": "rattus norvegicus"
+    "desc": "rattus norvegicus",
+    "inv": 957
   },
   {
+    "id": "A9",
     "species": "axolotls",
+    "photo": "axolotls.jpg",
     "quantity": 30,
     "price": 100.00,
-    "desc": "ambystoma mexicanum"
+    "desc": "ambystoma mexicanum",
+    "inv": 921
   }
 ]

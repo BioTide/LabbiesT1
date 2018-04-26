@@ -1,20 +1,30 @@
 [
   {
+    "id": "A1",
     "species": "fruit flies",
+    "photo": "fruitflies.jpg",
     "quantity": 1000,
-    "price": 39.99
+    "price": 39.99,
+    "desc": "standard fruit Flies",
+    "inv": 1000000
   },
   {
+    "id": "A2",
     "species": "guinea pigs",
+    "photo": "guineaPig.jpg",
     "quantity": 112,
     "price": 79.99,
-    "desc": "standard albino pigs"
+    "desc": "standard albino pigs",
+    "inv": 1567
   },
   {
+    "id": "A3",
     "species": "toads",
+    "photo": "toads.jpg",
     "quantity": 10,
     "price": 79.99,
-    "desc": "fire bellied toads"
+    "desc": "fire bellied toads",
+    "inv": 176
   },
   {
     "species": "mice",

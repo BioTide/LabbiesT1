@@ -205,7 +205,7 @@ include "../Footer.html";
         });
     });
     function populateTable(){
-        //$('.animalRow').remove();
+        $('.animalRow').remove();
         for(let animal of animals){
             $('#animalTable').append(
                 `<tr class="animalRow">
@@ -226,17 +226,16 @@ include "../Footer.html";
             `<tr class="animalRow">
 
                 <form>
-		            <td><input type = "image" id ="photoInput" title="Add Photo"></td>
+
+		            <td><input action="*.php" type="file" accept="image/*" height="100px" width="100px"id ="photoInput" title="Add Photo">
+		            </td>
                     <td><input type = "text" id = "idInput" title="Animal ID"></td>
-                    <td></td>
                     <td><input type="text" id="speciesInput" title="Animal Name"></td>
-                    <td></td>
                     <td class="text-right"><input type="text" id="qtyInput" title="Quantity">&nbsp;&nbsp;&nbsp;&nbsp;</td>
-                    <td></td>
                     <td class="text-right"><input type="text" id="priceInput" title="Price"></td>
-                    <td></td>
                     <td><input type = "text" id="descInput" title="Description"></td>
                     <td><input type = "text" id="invInput" title="Inventory"></td>
+                    <td></td>
                     <td><span class="oi oi-plus text-success clickable" title="Add product" onclick="addProd()"></span></td>
                     <td></td>
                 </form>
@@ -245,48 +244,52 @@ include "../Footer.html";
         $('#aniList').hide();
         $('#aniGrid').hide();
     }
-    // function addProd() {
-    //
-    //     let animalPhoto = $('#photoInput').val();
-    //     let animalID = $('#idInput').val();
-    //     let species = $('#speciesInput').val();
-    //     let qty = Number($('#qtyInput').val());
-    //     let price = Number($('#priceInput').val());
-    //     let description = $('#descInput').val();
-    //     let inventory = $('#invInput').val();
-    //
-    //     //add animal object to animals
-    //     animals.push({
-    //         photo: animalPhoto,
-    //         id: animalID,
-    //         species: species,
-    //         quantity: qty,
-    //         price: price,
-    //         desc: description,
-    //         inv: inventory
-    //     });
-    //
-    //     $('.animalRow').remove();
-    //
-    //     //display animals
-    //     populateTable();
-    //
-    //     //blank out the add text boxes
-    //     $('#photoInput').val('');
-    //     $('#idInput').val('');
-    //     $('#speciesInput').val('');
-    //     $('#qtyInput').val('');
-    //     $('#priceInput').val('');
-    //     $('#descInput').val('');
-    //     $('#invInput').val('');
-    // }
-    //
-    // function removeProd(i) {//FIXME make sure i is passed here
-    //     console.log(i);
-    //     console.log('BEFORE', JSON.stringify(animals,null,3));
-    //     animals.splice(i,1);
-    //     console.log('AFTER', JSON.stringify(animals,null,3));
-    //     $('.row').remove();
+    function addProd() {
+
+        let animalPhoto = $('#photoInput').val();
+        let animalID = $('#idInput').val();
+        let species = $('#speciesInput').val();
+        let qty = Number($('#qtyInput').val());
+        let price = Number($('#priceInput').val());
+        let description = $('#descInput').val();
+        let inventory = Number($('#invInput').val());
+
+        //add animal object to animals
+        animals.push({
+            photo: animalPhoto,
+            id: animalID,
+            species: species,
+            quantity: qty,
+            price: price,
+            desc: description,
+            inv: inventory
+        });
+
+        $('.animalRow').remove();
+
+        //display animals
+        populateTable();
+
+        //blank out the add text boxes
+        $('#photoInput').val('');
+        $('#idInput').val('');
+        $('#speciesInput').val('');
+        $('#qtyInput').val('');
+        $('#priceInput').val('');
+        $('#descInput').val('');
+        $('#invInput').val('');
+    }
+
+    function removeProd(i) {
+
+        $('#aniList').hide();
+        $('#aniGrid').hide();
+
+        animals.splice(i,1);
+
+        $('.animalRow').remove();
+        populateTable();
+    }
 
     $('#tableBtn').on('click', function(event){
        $('#aniTable').show();

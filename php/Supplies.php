@@ -43,7 +43,7 @@
                     <th>Id</th>
                     <th>Category</th>
                     <th>Size</th>
-                    <th>Invetory</th>
+                    <th>Inventory</th>
                     <th class="text-right">Quantity</th>
                     <th class="text-right">Price&nbsp;&nbsp;</th>
                     <th>Description</th>

@@ -46,6 +46,8 @@
                     <th class="text-right">Price&nbsp;&nbsp;</th>
                     <th>Description</th>
                     <th>Inventory</th>
+                    <th id="editPencil"><span class="oi oi-pencil text-warning clickable" title="Edit product(s)" onClick="editProd()"></span></th>
+                    <th id="saveCheckMark"><span class="oi oi-check text-success clickable" title="Save product(s)" onClick="saveProd()"></span></th>
                 </tr>
                 </thead>
                 <!-- Animal Rows - Dynamically populated by jQuery code -->
@@ -196,7 +198,9 @@ include "../Footer.html";
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
 
 <script>
+
     /*global $*/
+
     let animals = [];
     $(function(){// The DOM is ready for us to insert new data
         $.getJSON("../Animals.json", function(data){
@@ -204,30 +208,34 @@ include "../Footer.html";
             populateTable();
         });
     });
+
     function populateTable(){
+
         $('.animalRow').remove();
+
         for(let animal of animals){
             $('#animalTable').append(
                 `<tr class="animalRow">
                     <td><img src="${animal.photo}" height="100px" width="100px"></td>
-                    <td>${animal.species}</td>
-                    <td>${animal.id}</td>
-                    <td class="text-right">${animal.quantity}&nbsp;&nbsp;&nbsp;&nbsp;</td>
-                    <td class="text-right">$${animal.price.toFixed(2)}</td>
-                    <td>${animal.desc}</td>
-                    <td>${animal.inv}</td>
+                    <td contenteditable="false" class="editable">${animal.species}</td>
+                    <td contenteditable="false" class="editable">${animal.id}</td>
+                    <td contenteditable="false" class="text-right editable">${animal.quantity}&nbsp;&nbsp;&nbsp;&nbsp;</td>
+                    <td contenteditable="false" class="text-right editable">$${animal.price.toFixed(2)}</td>
+                    <td contenteditable="false" class="editable">${animal.desc}</td>
+                    <td contenteditable="false" class="editable">${animal.inv}</td>
                     <td></td>
                     <td><span class="oi oi-x text-danger clickable" title="Remove this product" onClick="removeProd(${animals.indexOf(animal)})"></span></td>
-                    <td><span class="oi oi-pencil text-secondary clickable" title="Edit this product"></span></td>
                 </tr>`
+                    //<td><span class="oi oi-pencil text-secondary clickable" title="Edit this product" onClick="editProd()"></span></td>
             );
-        }
+
+        }<!-- End for loop -->
+
         $('#aniTable').append(
             `<tr class="animalRow">
 
                 <form>
-
-		            <td><input action="*.php" type="file" accept="image/*" height="100px" width="100px"id ="photoInput" title="Add Photo">
+		            <td><input type="file" accept="image/*" height="100px" width="100px"id ="photoInput" title="Add Photo">
 		            </td>
                     <td><input type = "text" id = "idInput" title="Animal ID"></td>
                     <td><input type="text" id="speciesInput" title="Animal Name"></td>
@@ -241,9 +249,12 @@ include "../Footer.html";
                 </form>
             </tr>`
         );
+
         $('#aniList').hide();
         $('#aniGrid').hide();
-    }
+
+    }<!-- End populateTable -->
+
     function addProd() {
 
         let animalPhoto = $('#photoInput').val();
@@ -278,7 +289,10 @@ include "../Footer.html";
         $('#priceInput').val('');
         $('#descInput').val('');
         $('#invInput').val('');
-    }
+
+        saveProd();
+
+    }<!-- End addProd -->
 
     function removeProd(i) {
 
@@ -288,7 +302,29 @@ include "../Footer.html";
         animals.splice(i,1);
 
         $('.animalRow').remove();
-        populateTable();
+
+        populateTable()
+
+        saveProd();
+    }
+
+    function editProd(){
+
+        $('#editPencil').hide();
+        $('#saveCheckMark').show();
+
+        $('#aniList').hide();
+        $('#aniGrid').hide();
+
+        $('.editable').attr('contenteditable', 'true');
+    }
+
+    function saveProd(){
+
+        $('#editPencil').show();
+        $('#saveCheckMark').hide();
+
+        // TODO - Save to JSON
     }
 
     $('#tableBtn').on('click', function(event){
@@ -308,6 +344,7 @@ include "../Footer.html";
         $('#aniTable').hide();
         $('#aniList').hide();
     });
+
 </script>
 
 <?php

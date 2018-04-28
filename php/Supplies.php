@@ -205,11 +205,13 @@
         });
     });
     function populateTable(){
-        $('#supList').hide();
-        $('#supGrid').hide();
+        // $('#supList').hide();
+        // $('#supGrid').hide();
+        $('.supplyRow').remove();
+
         for(let supply of supplies){
             $('#supplyTable').append(
-                `<tr class="container">
+                `<tr class="supplyRow">
                     <td><img src="${supply.itemPhoto}" height="100px" width="100px"></td>
                     <td>${supply.itemName}</td>
                     <td>${supply.itemId}</td>
@@ -219,9 +221,91 @@
                     <td class="text-right">${supply.quantity}&nbsp;&nbsp;&nbsp;&nbsp;</td>
                     <td class="text-right">$${supply.price.toFixed(2)}</td>
                     <td>${supply.desc}</td>
+                    <td></td>
+                    <td><span class="oi oi-x text-danger clickable" title="Remove this product" onClick="removeProd(${supplies.indexOf(supply)})"></span></td>
+                    <td><span class="oi oi-pencil text-secondary clickable" title="Edit this product"></span></td>
                 </tr>`
             );
         }
+        $('#supplyTable').append(
+            `<tr class="supplyRow">
+
+                <form>
+		            <td><input type="file" action="*.php" accept="image/*" id ="itemPhotoInput" title="Add Photo">
+		            </td>
+                    <td><input type="text" id = "itemNameInput" title="Item Name"></td>
+                    <td><input type="text" id="itemIdInput" title="Item ID"></td>
+                    <td><input type="text" id="itemCategoryInput" title="Item Category"></td>
+                    <td><input type="text" id="itemSizeInput" title="Item Size"></td>
+                    <td><input type="number" id="itemInvInput" title="Item Inventory"></td>
+                    <td class="text-right"><input type="text" id="quantityInput" title="Quantity">&nbsp;&nbsp;&nbsp;&nbsp;</td>
+                    <td class="text-right"><input type="text" id="priceInput" title="Price"></td>
+                    <td><input type = "text" id="descInput" title="Description"></td>
+                    <td></td>
+                    <td><span class="oi oi-plus text-success clickable" title="Add product" onclick="addProd()"></span></td>
+                    <td></td>
+                </form>
+            </tr>`
+        );
+        $('#supList').hide();
+        $('#supGrid').hide();
+    }
+
+    // addProd Function
+    // Purpose: Get user input to add additional item
+    function addProd() {
+
+        let photo = $('#itemPhotoInput').val();
+        let name = $('#itemNameInput').val();
+        let id = $('#itemIdInput').val();
+        let category = $('#itemCategoryInput').val();
+        let size = $('#itemSizeInput').val();
+        let inventory = Number($('#itemInvInput').val());
+        let quantity = Number($('#quantityInput').val());
+        let price = Number($('#priceInput').val());
+        let description = $('#descInput').val();
+
+        //add supply item to supplies
+        supplies.push({
+            itemId: id,
+            itemName: name,
+            itemCategory: category,
+            itemPhoto: photo,
+            itemSize: size,
+            quantity: quantity,
+            price: price,
+            itemInv: inventory,
+            desc: description
+        });
+
+        // remove previous table
+        //$('#supplyTable').remove();
+
+        //display table including new item
+        populateTable();
+
+        //blank out the add text boxes
+        $('#itemPhotoInput').val('');
+        $('#itemNameInput').val('');
+        $('#itemIdInput').val('');
+        $('#itemCategoryInput').val('');
+        $('#itemSizeInput').val('');
+        $('#itemInvInput').val('');
+        $('#quantityInput').val('');
+        $('#priceInput').val('');
+        $('#descInput').val('');
+    }
+
+    function removeProd(i) {
+
+        $('#supList').hide();
+        $('#supGrid').hide();
+
+        supplies.splice(i,1);
+        $('.supplyRow').remove();
+
+
+        populateTable();
     }
 
     $('#tableBtn').on('click', function(event){

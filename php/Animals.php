@@ -46,6 +46,8 @@
                     <th class="text-right">Price&nbsp;&nbsp;</th>
                     <th>Description</th>
                     <th>Inventory</th>
+                    <th id="editPencil"><span class="oi oi-pencil text-warning clickable" title="Edit product(s)" onClick="editProd()"></span></th>
+                    <th id="saveCheckMark"><span class="oi oi-check text-success clickable" title="Save product(s)" onClick="saveProd()"></span></th>
                 </tr>
                 </thead>
                 <!-- Animal Rows - Dynamically populated by jQuery code -->
@@ -196,7 +198,9 @@ include "../Footer.html";
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
 
 <script>
+
     /*global $*/
+
     let animals = [];
     $(function(){// The DOM is ready for us to insert new data
         $.getJSON("../Animals.json", function(data){
@@ -204,89 +208,124 @@ include "../Footer.html";
             populateTable();
         });
     });
+
     function populateTable(){
-        //$('.animalRow').remove();
+
+        $('.animalRow').remove();
+
         for(let animal of animals){
             $('#animalTable').append(
                 `<tr class="animalRow">
                     <td><img src="${animal.photo}" height="100px" width="100px"></td>
-                    <td>${animal.species}</td>
-                    <td>${animal.id}</td>
-                    <td class="text-right">${animal.quantity}&nbsp;&nbsp;&nbsp;&nbsp;</td>
-                    <td class="text-right">$${animal.price.toFixed(2)}</td>
-                    <td>${animal.desc}</td>
-                    <td>${animal.inv}</td>
+                    <td contenteditable="false" class="editable">${animal.species}</td>
+                    <td contenteditable="false" class="editable">${animal.id}</td>
+                    <td contenteditable="false" class="text-right editable">${animal.quantity}&nbsp;&nbsp;&nbsp;&nbsp;</td>
+                    <td contenteditable="false" class="text-right editable">$${animal.price.toFixed(2)}</td>
+                    <td contenteditable="false" class="editable">${animal.desc}</td>
+                    <td contenteditable="false" class="editable">${animal.inv}</td>
                     <td></td>
                     <td><span class="oi oi-x text-danger clickable" title="Remove this product" onClick="removeProd(${animals.indexOf(animal)})"></span></td>
-                    <td><span class="oi oi-pencil text-secondary clickable" title="Edit this product"></span></td>
                 </tr>`
+                    //<td><span class="oi oi-pencil text-secondary clickable" title="Edit this product" onClick="editProd()"></span></td>
             );
-        }
+
+        }<!-- End for loop -->
+
         $('#aniTable').append(
             `<tr class="animalRow">
 
                 <form>
-		            <td><input type = "image" id ="photoInput" title="Add Photo"></td>
+		            <td><input type="file" accept="image/*" height="100px" width="100px"id ="photoInput" title="Add Photo">
+		            </td>
                     <td><input type = "text" id = "idInput" title="Animal ID"></td>
-                    <td></td>
                     <td><input type="text" id="speciesInput" title="Animal Name"></td>
-                    <td></td>
                     <td class="text-right"><input type="text" id="qtyInput" title="Quantity">&nbsp;&nbsp;&nbsp;&nbsp;</td>
-                    <td></td>
                     <td class="text-right"><input type="text" id="priceInput" title="Price"></td>
-                    <td></td>
                     <td><input type = "text" id="descInput" title="Description"></td>
                     <td><input type = "text" id="invInput" title="Inventory"></td>
+                    <td></td>
                     <td><span class="oi oi-plus text-success clickable" title="Add product" onclick="addProd()"></span></td>
                     <td></td>
                 </form>
             </tr>`
         );
+
         $('#aniList').hide();
         $('#aniGrid').hide();
+
+    }<!-- End populateTable -->
+
+    function addProd() {
+
+        let animalPhoto = $('#photoInput').val();
+        let animalID = $('#idInput').val();
+        let species = $('#speciesInput').val();
+        let qty = Number($('#qtyInput').val());
+        let price = Number($('#priceInput').val());
+        let description = $('#descInput').val();
+        let inventory = Number($('#invInput').val());
+
+        //add animal object to animals
+        animals.push({
+            photo: animalPhoto,
+            id: animalID,
+            species: species,
+            quantity: qty,
+            price: price,
+            desc: description,
+            inv: inventory
+        });
+
+        $('.animalRow').remove();
+
+        //display animals
+        populateTable();
+
+        //blank out the add text boxes
+        $('#photoInput').val('');
+        $('#idInput').val('');
+        $('#speciesInput').val('');
+        $('#qtyInput').val('');
+        $('#priceInput').val('');
+        $('#descInput').val('');
+        $('#invInput').val('');
+
+        saveProd();
+
+    }<!-- End addProd -->
+
+    function removeProd(i) {
+
+        $('#aniList').hide();
+        $('#aniGrid').hide();
+
+        animals.splice(i,1);
+
+        $('.animalRow').remove();
+
+        populateTable()
+
+        saveProd();
     }
-    // function addProd() {
-    //
-    //     let animalPhoto = $('#photoInput').val();
-    //     let animalID = $('#idInput').val();
-    //     let species = $('#speciesInput').val();
-    //     let qty = Number($('#qtyInput').val());
-    //     let price = Number($('#priceInput').val());
-    //     let description = $('#descInput').val();
-    //     let inventory = $('#invInput').val();
-    //
-    //     //add animal object to animals
-    //     animals.push({
-    //         photo: animalPhoto,
-    //         id: animalID,
-    //         species: species,
-    //         quantity: qty,
-    //         price: price,
-    //         desc: description,
-    //         inv: inventory
-    //     });
-    //
-    //     $('.animalRow').remove();
-    //
-    //     //display animals
-    //     populateTable();
-    //
-    //     //blank out the add text boxes
-    //     $('#photoInput').val('');
-    //     $('#idInput').val('');
-    //     $('#speciesInput').val('');
-    //     $('#qtyInput').val('');
-    //     $('#priceInput').val('');
-    //     $('#descInput').val('');
-    //     $('#invInput').val('');
-    // }
-    //
-    // function removeProd(i) {//FIXME make sure i is passed here
-    //     console.log(i);
-    //     console.log('BEFORE', JSON.stringify(animals,null,3));
-    //     animals.splice(i,1);
-    //     console.log('AFTER', JSON.stringify(animals,null,3));
-    //     $('.row').remove();
+
+    function editProd(){
+
+        $('#editPencil').hide();
+        $('#saveCheckMark').show();
+
+        $('#aniList').hide();
+        $('#aniGrid').hide();
+
+        $('.editable').attr('contenteditable', 'true');
+    }
+
+    function saveProd(){
+
+        $('#editPencil').show();
+        $('#saveCheckMark').hide();
+
+        // TODO - Save to JSON
+    }
 
     $('#tableBtn').on('click', function(event){
        $('#aniTable').show();
@@ -305,6 +344,7 @@ include "../Footer.html";
         $('#aniTable').hide();
         $('#aniList').hide();
     });
+
 </script>
 
 <?php

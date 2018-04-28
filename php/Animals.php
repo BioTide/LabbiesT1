@@ -202,6 +202,7 @@ include "../Footer.html";
     /*global $*/
 
     let animals = [];
+
     $(function(){// The DOM is ready for us to insert new data
         $.getJSON("../Animals.json", function(data){
             animals = data;
@@ -218,7 +219,7 @@ include "../Footer.html";
                 `<tr class="animalRow">
                     <td><img src="${animal.photo}" height="100px" width="100px"></td>
                     <td contenteditable="false" class="editable">${animal.species}</td>
-                    <td contenteditable="false" class="editable">${animal.id}</td>
+                    <td>${animal.id}</td>
                     <td contenteditable="false" class="text-right editable">${animal.quantity}&nbsp;&nbsp;&nbsp;&nbsp;</td>
                     <td contenteditable="false" class="text-right editable">$${animal.price.toFixed(2)}</td>
                     <td contenteditable="false" class="editable">${animal.desc}</td>
@@ -290,8 +291,6 @@ include "../Footer.html";
         $('#descInput').val('');
         $('#invInput').val('');
 
-        saveProd();
-
     }<!-- End addProd -->
 
     function removeProd(i) {
@@ -304,8 +303,6 @@ include "../Footer.html";
         $('.animalRow').remove();
 
         populateTable()
-
-        saveProd();
     }
 
     function editProd(){
@@ -324,8 +321,16 @@ include "../Footer.html";
         $('#editPencil').show();
         $('#saveCheckMark').hide();
 
-        // TODO - Save to JSON
-    }
+        let tblTest = $('table#animalTable tr').get().map(function(row) {
+            return $(row).find('td').get().map(function(cell) {
+                return $(cell).html();
+            });
+        });
+
+        let localTable = JSON.stringify(tblTest);
+        sessionStorage.setItem('tableReplacement', localTable);
+
+    }// End saveProd function
 
     $('#tableBtn').on('click', function(event){
        $('#aniTable').show();
@@ -343,6 +348,23 @@ include "../Footer.html";
         $('#aniGrid').show();
         $('#aniTable').hide();
         $('#aniList').hide();
+    });
+
+    $(document).ready(function(){
+
+        // Retrieve session data
+        let data = sessionStorage.getItem('tableReplacement');
+
+        // If the session has admin rights enabled
+        if(data)
+        {
+            // TODO - Display the new table
+            let testObj = JSON.parse(data);
+            console.log(testObj);
+
+
+        }
+
     });
 
 </script>

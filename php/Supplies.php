@@ -13,164 +13,165 @@
 <?php
     include "../Navbar.html";
 ?>
-
-<div class="row bg-success text-white text-center">
-    <div class="col-sm-3"></div>
-    <div class="col-sm-6">
-        <h1>
-            Supplies
-            <span id="shoppingCart" class="oi oi-cart align-baseline clickable col-xl-1" data-toggle="modal" data-target="#exampleModalCenter" title="See your Current Shopping Cart">
-        </h1>
-    </div>
-    <div class="col-sm-3"></div>
-</div>
-<br>
-<div class="text-center">
-    <button class="btn" data-toggle="tooltip" data-placement="top" title="Table View" id="tableBtn"><span class="oi oi-spreadsheet"></span></button>
-    <button class="btn" data-toggle="tooltip" data-placement="top" title="Grid View" id="gridBtn"><span class="oi oi-grid-two-up"></span></button>
-    <button class="btn" data-toggle="tooltip" data-placement="top" title="List View" id="listBtn"><span class="oi oi-list"></span></button>
-</div>
-
-<div class="container">
+<div class="container-fluid">
+    <div class="row bg-success text-white text-center">
+        <div class="col-sm-3"></div>
+        <div class="col-sm-6">
+            <h1>
+                Supplies
+                <span id="shoppingCart" class="oi oi-cart align-baseline clickable col-xl-1" data-toggle="modal" data-target="#exampleModalCenter" title="See your Current Shopping Cart">
+            </h1>
+        </div>
+        <div class="col-sm-3"></div>
+    </div><!-- end of Supplies header -->
     <br>
-    <!-- Supply Table Row -->
-    <div class="row text-center" id="supTable">
-        <div class="col-sm-2">
-            <table class="table" id="supplyTable">
-                <thead>
-                <tr>
-                    <th>Photo</th>
-                    <th style="cursor: pointer" onclick="sortDesc('itemName')">Item</th>
-                    <th>
-                        <span class="arrows" id="itemNameColUp" clickable>▲</span>
-                        <span class="arrows" id="itemNameColDown">▼</span>
-                    </th>
-                    <th>Id</th>
-                    <th style="cursor: pointer">Category</th>
-                    <th>
-                        <span class="arrows" id="itemCategoryColUp" clickable>▲</span>
-                        <span class="arrows" id="itemCategoryColDown">▼</span>
-                    </th>
-                    <th>Size</th>
-                    <th>Inventory</th>
-                    <th class="text-right" style="cursor: pointer">Quantity</th>
-                    <th>
-                        <span class="arrows" id="itemQtyColUp" clickable>▲</span>
-                        <span class="arrows" id="itemQtyColDown">▼</span>
-                    </th>
-                    <th class="text-right" style="cursor: pointer">Price&nbsp;&nbsp;</th>
-                    <th>
-                        <span class="arrows" id="itemPriceColUp" clickable>▲</span>
-                        <span class="arrows" id="itemPriceColDown">▼</span>
-                    </th>
-                    <th>Description</th>
-                </tr>
-                </thead>
-                <!-- Animal Rows - Dynamically populated by jQuery code -->
-                <tbody></tbody>
-            </table>
-        </div><!-- End col -->
-        <div class="col-sm-2"></div>
-    </div><!-- End row -->
+    <div class="text-center">
+        <button class="btn" data-toggle="tooltip" data-placement="top" title="Table View" id="tableBtn"><span class="oi oi-spreadsheet"></span></button>
+        <button class="btn" data-toggle="tooltip" data-placement="top" title="Grid View" id="gridBtn"><span class="oi oi-grid-two-up"></span></button>
+        <button class="btn" data-toggle="tooltip" data-placement="top" title="List View" id="listBtn"><span class="oi oi-list"></span></button>
+    </div> <!-- end of diff views -->
 
-    <div class="row" id="supList">
-        <div class="row">
-            <div class="col-sm-1"></div>
-            <div class="col-sm-1 flex-container">
-                <div class="flex-item bg-secondary"><img src="../images/rat-cage.jpg" width="100px" height="100px"/>
-                    <div class="info-container">
-                        <p class="text-center"><b>Rat Cage</b></p>
-                        <p>$500 per unit of 30</p>
-                        <p>2 ft. by 3 ft.</p>
+    <div>
+        <br>
+        <!-- Supply Table Row -->
+        <div class="row" id="supTable">
+            <div>
+                <table class="table table-responsive" id="supplyTable">
+                    <thead>
+                    <tr>
+                        <th class="text-center">Photo</th>
+                        <th class="text-center" style="cursor: pointer" onclick="sortItem()">Item</th>
+                        <th>
+                            <span class="arrows" id="itemNameColUp" clickable>▲</span>
+                            <span class="arrows" id="itemNameColDown">▼</span>
+                        </th>
+                        <th class="text-center">Id</th>
+                        <th class="text-center" style="cursor: pointer" onclick="sortCategory()">Category</th>
+                        <th>
+                            <span class="arrows" id="itemCategoryColUp" clickable>▲</span>
+                            <span class="arrows" id="itemCategoryColDown">▼</span>
+                        </th>
+                        <th class="text-center">Size</th>
+                        <th class="text-center">Inventory</th>
+                        <th class="text-right" style="cursor: pointer" onclick="sortQuantity()">Quantity</th>
+                        <th>
+                            <span class="arrows" id="itemQtyColUp" clickable>▲</span>
+                            <span class="arrows" id="itemQtyColDown">▼</span>
+                        </th>
+                        <th class="text-right" style="cursor: pointer" onclick="sortPrice()">Price&nbsp;&nbsp;</th>
+                        <th>
+                            <span class="arrows" id="itemPriceColUp" clickable>▲</span>
+                            <span class="arrows" id="itemPriceColDown">▼</span>
+                        </th>
+                        <th>Description</th>
+                    </tr>
+                    </thead>
+                    <!-- Animal Rows - Dynamically populated by jQuery code -->
+                    <tbody></tbody>
+                </table>
+            </div><!-- End col -->
+
+        </div><!-- End row -->
+
+        <div class="row" id="supList">
+            <div class="row">
+                <div class="col-sm-1"></div>
+                <div class="col-sm-1 flex-container">
+                    <div class="flex-item bg-secondary"><img src="../images/rat-cage.jpg" width="100px" height="100px"/>
+                        <div class="info-container">
+                            <p class="text-center"><b>Rat Cage</b></p>
+                            <p>$500 per unit of 30</p>
+                            <p>2 ft. by 3 ft.</p>
+                        </div>
+                    </div>
+                    <div class="flex-item bg-secondary"><img src="../images/rabbit-cage.jpg" width="100px" height="100px">
+                        <div class="info-container">
+                            <p class="text-center"><b>Rabbit Cage</b></p>
+                            <p>$650 per unit of 20</p>
+                            <p>2 1/2 ft by 3 ft</p>
+                        </div>
+                    </div>
+                    <div class="flex-item bg-secondary"><img src="../images/gp-cage.png" width="100px" height="100px">
+                        <div class="info-container">
+                            <p class="text-center"><b>Guinea Pig Cage</b></p>
+                            <p>$400 per unit of 10</p>
+                            <p>3 ft by 3 ft</p>
+                        </div>
+                    </div>
+                    <div class="flex-item bg-secondary"><img src="../images/mice-cage.jpg" width="100px" height="100px">
+                        <div class="info-container">
+                            <p class="text-center"><b>Mice Cages</b></p>
+                            <p>$500 per unit of 30</p>
+                            <p>2 ft by 3 ft</p>
+                        </div>
+                    </div>
+                    <div class="flex-item bg-secondary"><img src="../images/ff-cage.jpg" width="100px" height="100px">
+                        <div class="info-container">
+                            <p class="text-center"><b>Fruit Fly Container</b></p>
+                            <p>$100 per unit of 250</p>
+                            <p>32 oz. cup and lid</p>
+                        </div>
+                    </div>
+                    <div class="flex-item bg-secondary"><img src="../images/ff-culture.jpg" width="100px" height="100px">
+                        <div class="info-container">
+                            <p class="text-center"><b>Fruit Fly Culture</b></p>
+                            <p>$7 per unit of 1</p>
+                            <p>contains 40-50 adult flies</p>
+                        </div>
+                    </div>
+                    <div class="flex-item bg-secondary"><img src="../images/toad-cage.jpg" width="100px" height="100px">
+                        <div class="info-container">
+                            <p class="text-center">Toad Cage</p>
+                            <p>$100 per unit of 1</p>
+                            <p>3 ft by 4 ft enclosure</p>
+                        </div>
+                    </div>
+                    <div class="flex-item bg-secondary"><img src="../images/axolotl-cage.jpg" width="100px" height="100px">
+                        <div class="info-container">
+                            <p class="text-center">Axolotl Cage</p>
+                            <p>$100 per unit of 1</p>
+                            <p>3 ft by 3 ft enclosure</p>
+                        </div>
+                    </div>
+                    <div class="flex-item bg-secondary"><img src="../images/rodent-food.jpg" width="100px" height="100px">
+                        <div class="info-container">
+                            <p class="text-center">Rodent Food</p>
+                            <p>$10 per unit of 1</p>
+                            <p>3 lb. bag</p>
+                        </div>
+                    </div>
+                    <div class="flex-item bg-secondary"><img src="../images/bullfrog-cage.jpg" width="100px" height="100px">
+                        <div class="info-container">
+                            <p class="text-center">Bullfrog Habitat</p>
+                            <p>$100 per unit of 1</p>
+                            <p>1 ft by 4 ft</p>
+                        </div>
                     </div>
                 </div>
-                <div class="flex-item bg-secondary"><img src="../images/rabbit-cage.jpg" width="100px" height="100px">
-                    <div class="info-container">
-                        <p class="text-center"><b>Rabbit Cage</b></p>
-                        <p>$650 per unit of 20</p>
-                        <p>2 1/2 ft by 3 ft</p>
-                    </div>
-                </div>
-                <div class="flex-item bg-secondary"><img src="../images/gp-cage.png" width="100px" height="100px">
-                    <div class="info-container">
-                        <p class="text-center"><b>Guinea Pig Cage</b></p>
-                        <p>$400 per unit of 10</p>
-                        <p>3 ft by 3 ft</p>
-                    </div>
-                </div>
-                <div class="flex-item bg-secondary"><img src="../images/mice-cage.jpg" width="100px" height="100px">
-                    <div class="info-container">
-                        <p class="text-center"><b>Mice Cages</b></p>
-                        <p>$500 per unit of 30</p>
-                        <p>2 ft by 3 ft</p>
-                    </div>
-                </div>
-                <div class="flex-item bg-secondary"><img src="../images/ff-cage.jpg" width="100px" height="100px">
-                    <div class="info-container">
-                        <p class="text-center"><b>Fruit Fly Container</b></p>
-                        <p>$100 per unit of 250</p>
-                        <p>32 oz. cup and lid</p>
-                    </div>
-                </div>
-                <div class="flex-item bg-secondary"><img src="../images/ff-culture.jpg" width="100px" height="100px">
-                    <div class="info-container">
-                        <p class="text-center"><b>Fruit Fly Culture</b></p>
-                        <p>$7 per unit of 1</p>
-                        <p>contains 40-50 adult flies</p>
-                    </div>
-                </div>
-                <div class="flex-item bg-secondary"><img src="../images/toad-cage.jpg" width="100px" height="100px">
-                    <div class="info-container">
-                        <p class="text-center">Toad Cage</p>
-                        <p>$100 per unit of 1</p>
-                        <p>3 ft by 4 ft enclosure</p>
-                    </div>
-                </div>
-                <div class="flex-item bg-secondary"><img src="../images/axolotl-cage.jpg" width="100px" height="100px">
-                    <div class="info-container">
-                        <p class="text-center">Axolotl Cage</p>
-                        <p>$100 per unit of 1</p>
-                        <p>3 ft by 3 ft enclosure</p>
-                    </div>
-                </div>
-                <div class="flex-item bg-secondary"><img src="../images/rodent-food.jpg" width="100px" height="100px">
-                    <div class="info-container">
-                        <p class="text-center">Rodent Food</p>
-                        <p>$10 per unit of 1</p>
-                        <p>3 lb. bag</p>
-                    </div>
-                </div>
-                <div class="flex-item bg-secondary"><img src="../images/bullfrog-cage.jpg" width="100px" height="100px">
-                    <div class="info-container">
-                        <p class="text-center">Bullfrog Habitat</p>
-                        <p>$100 per unit of 1</p>
-                        <p>1 ft by 4 ft</p>
-                    </div>
-                </div>
+                <div class="col-sm-1"></div>
             </div>
-            <div class="col-sm-1"></div>
         </div>
     </div>
-</div>
-
-<div class="container-fluid">
-    <div class="row" id="supGrid">
-        <div class="col-sm-1"></div>
-        <div class="col-sm-1"><figure><img src="../images/rat-cage.jpg" width="100px" height="100px"><figcaption>Rat Cage</figcaption></figure></div>
-        <div class="col-sm-1"><figure><img src="../images/rabbit-cage.jpg" width="100px" height="100px"><figcaption>Rabbit Cage</figcaption></figure></div>
-        <div class="col-sm-1"><figure><img src="../images/gp-cage.png" width="100px" height="100px"><figcaption>Guinea Pig Cage</figcaption></figure></div>
-        <div class="col-sm-1"><figure><img src="../images/mice-cage.jpg" width="100px" height="100px"><figcaption>Mice Cage</figcaption></figure></div>
-        <div class="col-sm-1"><figure><img src="../images/ff-cage.jpg" width="100px" height="100px"><figcaption>Fruit Flies Container</figcaption></figure></div>
-        <div class="col-sm-1"><figure><img src="../images/ff-culture.jpg" width="100px" height="100px"><figcaption>Fruit Fly Culture</figcaption></figure></div>
-        <div class="col-sm-1"><figure><img src="../images/toad-cage.jpg" width="100px" height="100px"><figcaption>Toad Cage</figcaption></figure></div>
-        <div class="col-sm-1"><figure><img src="../images/axolotl-cage.jpg" width="100px" height="100px"><figcaption>Axolotl Cage</figcaption></figure></div>
-        <div class="col-sm-1"><figure><img src="../images/rodent-food.jpg" width="100px" height="100px"><figcaption>Rodent Food</figcaption></figure></div>
-        <div class="col-sm-1"><figure><img src="../images/bullfrog-cage.jpg" width="100px" height="100px"><figcaption>Bullfrog Habitat</figcaption></figure></div>
-        <div class="col-sm-1"></div>
+    <div class="container-fluid">
+        <div class="row" id="supGrid">
+            <div class="col-sm-1"></div>
+            <div class="col-sm-1"><figure><img src="../images/rat-cage.jpg" width="100px" height="100px"><figcaption>Rat Cage</figcaption></figure></div>
+            <div class="col-sm-1"><figure><img src="../images/rabbit-cage.jpg" width="100px" height="100px"><figcaption>Rabbit Cage</figcaption></figure></div>
+            <div class="col-sm-1"><figure><img src="../images/gp-cage.png" width="100px" height="100px"><figcaption>Guinea Pig Cage</figcaption></figure></div>
+            <div class="col-sm-1"><figure><img src="../images/mice-cage.jpg" width="100px" height="100px"><figcaption>Mice Cage</figcaption></figure></div>
+            <div class="col-sm-1"><figure><img src="../images/ff-cage.jpg" width="100px" height="100px"><figcaption>Fruit Flies Container</figcaption></figure></div>
+            <div class="col-sm-1"><figure><img src="../images/ff-culture.jpg" width="100px" height="100px"><figcaption>Fruit Fly Culture</figcaption></figure></div>
+            <div class="col-sm-1"><figure><img src="../images/toad-cage.jpg" width="100px" height="100px"><figcaption>Toad Cage</figcaption></figure></div>
+            <div class="col-sm-1"><figure><img src="../images/axolotl-cage.jpg" width="100px" height="100px"><figcaption>Axolotl Cage</figcaption></figure></div>
+            <div class="col-sm-1"><figure><img src="../images/rodent-food.jpg" width="100px" height="100px"><figcaption>Rodent Food</figcaption></figure></div>
+            <div class="col-sm-1"><figure><img src="../images/bullfrog-cage.jpg" width="100px" height="100px"><figcaption>Bullfrog Habitat</figcaption></figure></div>
+            <div class="col-sm-1"></div>
+        </div>
+        <br>
     </div>
-    <br>
+
+    <!-- End container -->
 </div>
-<!-- End container -->
 
 <?php
     include "../Footer.html";
@@ -219,6 +220,7 @@
         $.getJSON("../Supplies.json", function(data){
             supplies = data;
             populateTable();
+            $('.arrows').hide();
         });
     });
     function populateTable(){
@@ -229,20 +231,20 @@
         for(let supply of supplies){
             $('#supplyTable').append(
                 `<tr class="supplyRow">
-                    <td><img src="${supply.itemPhoto}" height="100px" width="100px"></td>
-                    <td>${supply.itemName}</td>
+                    <td class="text-center"><img src="${supply.itemPhoto}" height="100px" width="100px"></td>
+                    <td class="text-center">${supply.itemName}</td>
                     <td></td>
-                    <td>${supply.itemId}</td>
-                    <td>${supply.itemCategory}</td>
+                    <td class="text-center">${supply.itemId}</td>
+                    <td class="text-center">${supply.itemCategory}</td>
                     <td></td>
-                    <td>${supply.itemSize}</td>
-                    <td>${supply.itemInv}</td>
+                    <td class="text-center">${supply.itemSize}</td>
+                    <td class="text-center">${supply.itemInv}</td>
                     <td class="text-right">${supply.quantity}&nbsp;&nbsp;&nbsp;&nbsp;</td>
                     <td></td>
                     <td class="text-right">$${supply.price.toFixed(2)}</td>
                     <td></td>
                     <td>${supply.desc}</td>
-                    <td></td>
+
                     <td><span class="oi oi-x text-danger clickable" title="Remove this product" onClick="removeProd(${supplies.indexOf(supply)})"></span></td>
                     <td><span class="oi oi-pencil text-secondary clickable" title="Edit this product"></span></td>
                 </tr>`
@@ -250,7 +252,6 @@
         }
         $('#supplyTable').append(
             `<tr class="supplyRow">
-
                 <form>
 		            <td><input type="file" action="*.php" accept="image/*" id ="itemPhotoInput" title="Add Photo">
 		            </td>
@@ -275,7 +276,6 @@
     // addProd Function
     // Purpose: Get user input to add additional item
     function addProd() {
-
         let photo = $('#itemPhotoInput').val();
         let name = $('#itemNameInput').val();
         let id = $('#itemIdInput').val();
@@ -318,7 +318,6 @@
     }
 
     function removeProd(i) {
-
         $('#supList').hide();
         $('#supGrid').hide();
 
@@ -329,25 +328,61 @@
         populateTable();
     }
 
-    function sortDesc(sortOn){
-        let arrow = sortOn + 'ColUp';
-        if(!($('#arrow').is(":visible"))) {
+    function sortItem(){
+        if(!($('#itemNameColUp').is(":visible"))) {
             //alert(arrow);
             //sort desc
             supplies.sort(compareSuppliesByNames);
+            populateTable();
+            //show lower arrow
+            $('.arrows').hide();
+            $('#itemNameColUp').show();
+        }
+        else{
+            //sort ascending
+            supplies.sort(compareSuppliesByNamesDesc);
+            populateTable();
+            //show upper arrow
+            $('.arrows').hide();
+            $('#itemNameColDown').show();
+        }
+    }
+    function compareSuppliesByNamesDesc(a, b){
+        return compareSuppliesByNames(b, a);
+    }
+    function compareSuppliesByNames(a,b){
+        a = a.itemName;
+        b = b.itemName;
+        return compareStrings(a,b);
+    }
+    function sortCategory(){
+        //let arrow = sortOn + 'ColUp';
+        if(!($('#itemCategoryColUp').is(":visible"))) {
+            //alert(arrow);
+            //sort desc
+            supplies.sort(compareSuppliesByCategories);
             console.log("Original: " + JSON.stringify(supplies, null, 10));
             populateTable();
             //show lower arrow
-
+            $('.arrows').hide();
+            $('#itemCategoryColUp').show();
         }
-        //hide all arrows
-        $('.arrows').hide();
-        $('#itemNameColUp').show();
-
-        //else{
-        //show upper arrow
-        //sort desc
-        //}
+        else{
+            //sort ascending
+            supplies.sort(compareSuppliesByCategoriesDesc);
+            populateTable();
+            //show upper arrow
+            $('.arrows').hide();
+            $('#itemCategoryColDown').show();
+        }
+    }
+    function compareSuppliesByCategoriesDesc(a, b){
+        return compareSuppliesByCategories(b, a);
+    }
+    function compareSuppliesByCategories(a,b){
+        a = a.itemCategory;
+        b = b.itemCategory;
+        return compareStrings(a,b);
     }
     function compareStrings(a,b){
         a = a.toLocaleLowerCase();
@@ -357,27 +392,64 @@
         //a == b
         return 0;
     }
-    function compareStringsDesc(a, b){
-        return compareStrings(b, a);
+    function sortQuantity(){
+        //let arrow = sortOn + 'ColUp';
+        if(!($('#itemQtyColUp').is(":visible"))) {
+            //sort desc
+            supplies.sort(compareSuppliesByQuantity);
+            console.log("Original: " + JSON.stringify(supplies, null, 10));
+            populateTable();
+            //show lower arrow
+            $('.arrows').hide();
+            $('#itemQtyColUp').show();
+        }
+        else{
+            //sort ascending
+            supplies.sort(compareSuppliesByQuantityDesc);
+            populateTable();
+            //show upper arrow
+            $('.arrows').hide();
+            $('#itemQtyColDown').show();
+        }
+    }
+    function compareSuppliesByQuantityDesc(a, b){
+        return compareSuppliesByQuantity(b, a);
+    }
+    function compareSuppliesByQuantity(a,b){
+        a = a.quantity;
+        b = b.quantity;
+        return compareNumbers(a,b);
     }
     function compareNumbers(a,b){
         return a - b;
     }
-    function compareNumbersDesc(a,b){
-        return compareNumbers(b,a);
-    }
 
-    function compareSuppliesByPrices(a,b){
-        a = a.price;
-        b = b.price;
+    function sortPrice(){
+        if(!($('#itemPriceColUp').is(":visible"))) {
+            //sort desc
+            supplies.sort(compareSuppliesByPrice);
+            console.log("Original: " + JSON.stringify(supplies, null, 10));
+            populateTable();
+            //show lower arrow
+            $('.arrows').hide();
+            $('#itemPriceColUp').show();
+        }
+        else{
+            //sort ascending
+            supplies.sort(compareSuppliesByPriceDesc);
+            populateTable();
+            //show upper arrow
+            $('.arrows').hide();
+            $('#itemPriceColDown').show();
+        }
+    }
+    function compareSuppliesByPriceDesc(a, b){
+        return compareSuppliesByPrice(b, a);
+    }
+    function compareSuppliesByPrice(a,b){
+        a = a.quantity;
+        b = b.quantity;
         return compareNumbers(a,b);
-    }
-
-
-    function compareSuppliesByNames(a,b){
-        a = a.itemName;
-        b = b.itemName;
-        return compareStrings(a,b);
     }
 
     $('#tableBtn').on('click', function(event){

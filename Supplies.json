@@ -5,7 +5,7 @@
     "itemCategory": "cage",
     "itemPhoto": "../images/rat-cage.jpg",
     "itemSize": "small",
-    "quantity": 1,
+    "quantity": 25,
     "price": 500.00,
     "itemInv": 300,
     "desc": "Thirty - 2 ft by 3 ft"
@@ -16,7 +16,7 @@
     "itemCategory": "cage",
     "itemPhoto": "../images/rabbit-cage.jpg",
     "itemSize": "medium",
-    "quantity": 1,
+    "quantity": 10,
     "price": 650.00,
     "itemInv": 300,
     "desc": "Twenty - 2 1/2 ft by 3 ft"
@@ -27,7 +27,7 @@
     "itemCategory": "cage",
     "itemPhoto": "../images/gp-cage.png",
     "itemSize": "medium",
-    "quantity": 1,
+    "quantity": 15,
     "price": 400.00,
     "itemInv": 400,
     "desc": "Ten - 3 ft by 3 ft"
@@ -38,7 +38,7 @@
     "itemCategory": "cage",
     "itemPhoto":"../images/mice-cage.jpg",
     "itemSize": "medium",
-    "quantity": 1,
+    "quantity": 17,
     "price": 500.00,
     "itemInv": 350,
     "desc": "Thirty - 2 ft by 3 ft"
@@ -49,7 +49,7 @@
     "itemCategory": "cage",
     "itemPhoto":"../images/ff-cage.jpg",
     "itemSize": "large",
-    "quantity": 1,
+    "quantity": 2,
     "price": 100.00,
     "itemInv": 200,
     "desc": "250 - 32 oz. fruit fly cup and lid"
@@ -60,7 +60,7 @@
     "itemCategory": "product",
     "itemPhoto":"../images/ff-culture.jpg",
     "itemSize": "one size",
-    "quantity": 1,
+    "quantity": 18,
     "price": 7.00,
     "itemInv": 368,
     "desc": "One - contains 40-50 medium adult flies"
@@ -71,7 +71,7 @@
     "itemCategory": "cage",
     "itemPhoto":"../images/toad-cage.jpg",
     "itemSize": "small",
-    "quantity": 1,
+    "quantity": 9,
     "price": 100.00,
     "itemInv": 232,
     "desc": "One - 3 ft by 4 ft glass enclosure"
@@ -82,7 +82,7 @@
     "itemCategory": "cage",
     "itemPhoto":"../images/axolotl-cage.jpg",
     "itemSize": "medium",
-    "quantity": 1,
+    "quantity": 3,
     "price": 100.00,
     "itemInv": 149,
     "desc": "One - 3 ft by 3 ft glass enclosure"
@@ -104,7 +104,7 @@
     "itemCategory": "cage",
     "itemPhoto":"../images/bullfrog-cage.jpg",
     "itemSize": "large",
-    "quantity": 1,
+    "quantity": 7,
     "price": 100.00,
     "itemInv": 49,
     "desc": "One - 1 ft by 4 ft glass enclosure"

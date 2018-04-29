@@ -199,6 +199,7 @@
                     <div class="row"></div> <!--ending row-->
                     <div class="row"></div> <!--ending row-->
                 </div> <!--end container-fluid-->
+                <div class="container-fluid" id="modalRow"></div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
                     <button type="button" class="btn btn-primary">Checkout</button>
@@ -246,6 +247,7 @@
 
                     <td><span class="oi oi-x text-danger clickable" title="Remove this product" onClick="removeProd(${supplies.indexOf(supply)})"></span></td>
                     <td><span class="oi oi-pencil text-secondary clickable" title="Edit this product"></span></td>
+                    <td><span class="oi oi-check text-success" title="Add to Cart" onclick="addCart(${supplies.indexOf(supply)})"></span></td>
                 </tr>`
             );
         }
@@ -271,7 +273,20 @@
         $('#supList').hide();
         $('#supGrid').hide();
     }
+    function addCart(i){
+        alert(supplies[i].itemName + " added to cart");
+        console.log(supplies[i].itemName);
+        let cartName = supplies[i].itemName;
+        $('#modalRow').append(
+            '<div class="row">' +
+                '<div class="col-xl-3 text-left"><b>' + supplies[i].itemName + '</b></div>' +
+                '<div class="col-xl-3"><b>$' + supplies[i].price.toFixed(2) + '</b></div>' +
+                '<div class="col-xl-3"><b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;' + supplies[i].quantity + '</b></div>' +
+                '<div class="col-xl-3"><b></b></div>' +
+            '</div>'
+        );
 
+    }
     // addProd Function
     // Purpose: Get user input to add additional item
     function addProd() {
@@ -322,7 +337,6 @@
 
         supplies.splice(i,1);
         $('.supplyRow').remove();
-
 
         populateTable();
     }

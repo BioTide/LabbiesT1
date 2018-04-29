@@ -42,28 +42,28 @@
                     <th>Photo</th>
                     <th style="cursor: pointer" onclick="sortSpecies()">Species</th>
                     <th>
-                        <span class="arrows" id="speciesColUp" clickable>▲</span>
+                        <span class="arrows" id="speciesColUp" >▲</span>
                         <span class="arrows" id="speciesColDown">▼</span>
                     </th>
                     <th>Id</th>
                     <th class="text-right" style="cursor: pointer" onclick="sortQuantity()">Quantity</th>
                     <th>
-                        <span class="arrows" id="quantityColUp" clickable>▲</span>
+                        <span class="arrows" id="quantityColUp">▲</span>
                         <span class="arrows" id="quantityColDown">▼</span>
                     </th>
                     <th class="text-right" style="cursor: pointer" onclick="sortPrice()">Price&nbsp;&nbsp;</th>
                     <th>
-                        <span class="arrows" id="priceColUp" clickable>▲</span>
+                        <span class="arrows" id="priceColUp">▲</span>
                         <span class="arrows" id="priceColDown">▼</span>
                     </th>
                     <th>Description</th>
                     <th style="cursor: pointer" onclick="sortInventory()">Inventory</th>
                     <th>
-                        <span class="arrows" id="inventoryColUp" clickable>▲</span>
+                        <span class="arrows" id="inventoryColUp">▲</span>
                         <span class="arrows" id="inventoryColDown">▼</span>
                     </th>
-                    <th id="editPencil"><span class="oi oi-pencil text-warning clickable" title="Edit product(s)" onClick="editProd()"></span></th>
-                    <th id="saveCheckMark"><span class="oi oi-check text-success clickable" title="Save product(s)" onClick="saveProd()"></span></th>
+                    <th id="editPencil"><span class="oi oi-pencil text-warning" title="Edit product(s)" onclick="editProd()"></span></th>
+                    <th id="saveCheckMark"><span class="oi oi-check text-success" title="Save product(s)" onclick="saveProd()"></span></th>
                 </tr>
                 </thead>
                 <!-- Animal Rows - Dynamically populated by jQuery code -->
@@ -190,7 +190,7 @@ include "../Footer.html";
                         <div class="col-xl-3"><b>Quantity</b></div>
                         <div class="col-xl-3"><b>Total</b></div>
                     </div> <!--ending row-->
-                    <div class="row">
+                    <div class="row"  id="cartName">
                     </div> <!--ending row-->
                     <div class="row">
                     </div> <!--ending row-->
@@ -245,11 +245,10 @@ include "../Footer.html";
                     <td contenteditable="false" class="editable">${animal.desc}</td>
                     <td contenteditable="false" class="editable">${animal.inv}</td>
                     <td></td>
-                    <td><span class="oi oi-x text-danger clickable" title="Remove this product" onClick="removeProd(${animals.indexOf(animal)})"></span></td>
-                    <td><span class="oi oi-plus text-success clickable" title="Add To Cart" onclick="addCart(${animals.indexOf(animal)})"></span></td>
-
+                    <td><span class="oi oi-x text-danger" title="Remove this product" onclick="removeProd(${animals.indexOf(animal)})"></span></td>
+                    <td><span class="oi oi-plus text-success" title="Add To Cart" onclick="addCart(${animals.indexOf(animal)})"></span></td>
+                    <td><span class="oi oi-plus text-success" title="Add product" onclick="alert('hi')"></span></td>
                 </tr>`
-                    //<td><span class="oi oi-pencil text-secondary clickable" title="Edit this product" onClick="editProd()"></span></td>
             );
 
         }<!-- End for loop -->
@@ -267,7 +266,7 @@ include "../Footer.html";
                     <td><input type = "text" id="descInput" title="Description"></td>
                     <td><input type = "text" id="invInput" title="Inventory"></td>
                     <td></td>
-                    <td><span class="oi oi-plus text-success clickable" title="Add product" onclick="addProd()"></span></td>
+                    <td><span class="oi oi-plus text-success" title="Add product" onclick="addProd()"></span></td>
 
                     <td></td>
                 </form>
@@ -355,8 +354,9 @@ include "../Footer.html";
 
     }// End saveProd function
 
-    function addCart(){
-
+    function addCart(index){
+        alert(index);
+        console.log(index);
     }
 
     function sortSpecies(){

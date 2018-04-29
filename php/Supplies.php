@@ -74,9 +74,8 @@
         </div><!-- End row -->
 
         <div class="row" id="supList">
-            <div class="row">
-                <div class="col-sm-1"></div>
-                <div class="col-sm-1 flex-container">
+            <div class="col-sm-1"></div>
+                <div class="col-sm-10 flex-container">
                     <div class="flex-item bg-secondary"><img src="../images/rat-cage.jpg" width="100px" height="100px"/>
                         <div class="info-container">
                             <p class="text-center"><b>Rat Cage</b></p>

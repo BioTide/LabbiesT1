@@ -14,13 +14,15 @@
     include "../Navbar.html";
 ?>
 
-<div class="row">
-    <div class="col-xl-12">
-        <h1 class = "bg-success text-white text-center">
+<div class="row bg-success text-white text-center">
+    <div class="col-sm-3"></div>
+    <div class="col-sm-6">
+        <h1>
             Supplies
             <span id="shoppingCart" class="oi oi-cart align-baseline clickable col-xl-1" data-toggle="modal" data-target="#exampleModalCenter" title="See your Current Shopping Cart">
         </h1>
     </div>
+    <div class="col-sm-3"></div>
 </div>
 <br>
 <div class="text-center">
@@ -32,20 +34,35 @@
 <div class="container">
     <br>
     <!-- Supply Table Row -->
-    <div class="row" id="supTable">
-        <div class="col-sm-2"></div>
-        <div class="col-sm-8">
+    <div class="row text-center" id="supTable">
+        <div class="col-sm-2">
             <table class="table" id="supplyTable">
                 <thead>
                 <tr>
                     <th>Photo</th>
-                    <th>Item</th>
+                    <th style="cursor: pointer" onclick="sortDesc('itemName')">Item</th>
+                    <th>
+                        <span class="arrows" id="itemNameColUp" clickable>▲</span>
+                        <span class="arrows" id="itemNameColDown">▼</span>
+                    </th>
                     <th>Id</th>
-                    <th>Category</th>
+                    <th style="cursor: pointer">Category</th>
+                    <th>
+                        <span class="arrows" id="itemCategoryColUp" clickable>▲</span>
+                        <span class="arrows" id="itemCategoryColDown">▼</span>
+                    </th>
                     <th>Size</th>
                     <th>Inventory</th>
-                    <th class="text-right">Quantity</th>
-                    <th class="text-right">Price&nbsp;&nbsp;</th>
+                    <th class="text-right" style="cursor: pointer">Quantity</th>
+                    <th>
+                        <span class="arrows" id="itemQtyColUp" clickable>▲</span>
+                        <span class="arrows" id="itemQtyColDown">▼</span>
+                    </th>
+                    <th class="text-right" style="cursor: pointer">Price&nbsp;&nbsp;</th>
+                    <th>
+                        <span class="arrows" id="itemPriceColUp" clickable>▲</span>
+                        <span class="arrows" id="itemPriceColDown">▼</span>
+                    </th>
                     <th>Description</th>
                 </tr>
                 </thead>
@@ -59,7 +76,7 @@
     <div class="row" id="supList">
         <div class="row">
             <div class="col-sm-1"></div>
-            <div class="col-sm-10 flex-container">
+            <div class="col-sm-1 flex-container">
                 <div class="flex-item bg-secondary"><img src="../images/rat-cage.jpg" width="100px" height="100px"/>
                     <div class="info-container">
                         <p class="text-center"><b>Rat Cage</b></p>
@@ -214,12 +231,16 @@
                 `<tr class="supplyRow">
                     <td><img src="${supply.itemPhoto}" height="100px" width="100px"></td>
                     <td>${supply.itemName}</td>
+                    <td></td>
                     <td>${supply.itemId}</td>
                     <td>${supply.itemCategory}</td>
+                    <td></td>
                     <td>${supply.itemSize}</td>
                     <td>${supply.itemInv}</td>
                     <td class="text-right">${supply.quantity}&nbsp;&nbsp;&nbsp;&nbsp;</td>
+                    <td></td>
                     <td class="text-right">$${supply.price.toFixed(2)}</td>
+                    <td></td>
                     <td>${supply.desc}</td>
                     <td></td>
                     <td><span class="oi oi-x text-danger clickable" title="Remove this product" onClick="removeProd(${supplies.indexOf(supply)})"></span></td>
@@ -306,6 +327,57 @@
 
 
         populateTable();
+    }
+
+    function sortDesc(sortOn){
+        let arrow = sortOn + 'ColUp';
+        if(!($('#arrow').is(":visible"))) {
+            //alert(arrow);
+            //sort desc
+            supplies.sort(compareSuppliesByNames);
+            console.log("Original: " + JSON.stringify(supplies, null, 10));
+            populateTable();
+            //show lower arrow
+
+        }
+        //hide all arrows
+        $('.arrows').hide();
+        $('#itemNameColUp').show();
+
+        //else{
+        //show upper arrow
+        //sort desc
+        //}
+    }
+    function compareStrings(a,b){
+        a = a.toLocaleLowerCase();
+        b = b.toLocaleLowerCase();
+        if(a < b){return -1;}
+        if(a > b){return 1;}
+        //a == b
+        return 0;
+    }
+    function compareStringsDesc(a, b){
+        return compareStrings(b, a);
+    }
+    function compareNumbers(a,b){
+        return a - b;
+    }
+    function compareNumbersDesc(a,b){
+        return compareNumbers(b,a);
+    }
+
+    function compareSuppliesByPrices(a,b){
+        a = a.price;
+        b = b.price;
+        return compareNumbers(a,b);
+    }
+
+
+    function compareSuppliesByNames(a,b){
+        a = a.itemName;
+        b = b.itemName;
+        return compareStrings(a,b);
     }
 
     $('#tableBtn').on('click', function(event){

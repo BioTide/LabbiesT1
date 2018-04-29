@@ -40,12 +40,28 @@
                 <thead>
                 <tr>
                     <th>Photo</th>
-                    <th>Species</th>
+                    <th style="cursor: pointer" onclick="sortSpecies()">Species</th>
+                    <th>
+                        <span class="arrows" id="speciesColUp" clickable>▲</span>
+                        <span class="arrows" id="speciesColDown">▼</span>
+                    </th>
                     <th>Id</th>
-                    <th class="text-right">Quantity</th>
-                    <th class="text-right">Price&nbsp;&nbsp;</th>
+                    <th class="text-right" style="cursor: pointer" onclick="sortQuantity()">Quantity</th>
+                    <th>
+                        <span class="arrows" id="quantityColUp" clickable>▲</span>
+                        <span class="arrows" id="quantityColDown">▼</span>
+                    </th>
+                    <th class="text-right" style="cursor: pointer" onclick="sortPrice()">Price&nbsp;&nbsp;</th>
+                    <th>
+                        <span class="arrows" id="priceColUp" clickable>▲</span>
+                        <span class="arrows" id="priceColDown">▼</span>
+                    </th>
                     <th>Description</th>
-                    <th>Inventory</th>
+                    <th style="cursor: pointer" onclick="sortInventory()">Inventory</th>
+                    <th>
+                        <span class="arrows" id="inventoryColUp" clickable>▲</span>
+                        <span class="arrows" id="inventoryColDown">▼</span>
+                    </th>
                     <th id="editPencil"><span class="oi oi-pencil text-warning clickable" title="Edit product(s)" onClick="editProd()"></span></th>
                     <th id="saveCheckMark"><span class="oi oi-check text-success clickable" title="Save product(s)" onClick="saveProd()"></span></th>
                 </tr>
@@ -207,6 +223,7 @@ include "../Footer.html";
         $.getJSON("../Animals.json", function(data){
             animals = data;
             populateTable();
+            $('.arrows').hide();
         });
     });
 
@@ -219,9 +236,12 @@ include "../Footer.html";
                 `<tr class="animalRow">
                     <td><img src="${animal.photo}" height="100px" width="100px"></td>
                     <td contenteditable="false" class="editable">${animal.species}</td>
+                    <td></td>
                     <td>${animal.id}</td>
                     <td contenteditable="false" class="text-right editable">${animal.quantity}&nbsp;&nbsp;&nbsp;&nbsp;</td>
+                    <td></td>
                     <td contenteditable="false" class="text-right editable">$${animal.price.toFixed(2)}</td>
+                    <td></td>
                     <td contenteditable="false" class="editable">${animal.desc}</td>
                     <td contenteditable="false" class="editable">${animal.inv}</td>
                     <td></td>
@@ -337,6 +357,121 @@ include "../Footer.html";
 
     function addCart(){
 
+    }
+
+    function sortSpecies(){
+        if(!($('#speciesColUp').is(":visible"))) {
+            //sort desc
+            animals.sort(compareSpecies);
+            populateTable();
+            //show lower arrow
+            $('.arrows').hide();
+            $('#speciesColUp').show();
+        }
+        else{
+            //sort ascending
+            animals.sort(compareSpeciesDesc);
+            populateTable();
+            //show upper arrow
+            $('.arrows').hide();
+            $('#speciesColDown').show();
+        }
+    }
+    function compareSpeciesDesc(a, b){
+        return compareSpecies(b, a);
+    }
+    function compareSpecies(a,b){
+        a = a.species;
+        b = b.species;
+        return compareStrings(a,b);
+    }
+    function compareStrings(a,b){
+        a = a.toLocaleLowerCase();
+        b = b.toLocaleLowerCase();
+        if(a < b){return -1;}
+        if(a > b){return 1;}
+        return 0;
+    }
+    function sortQuantity(){
+        if(!($('#quantityColUp').is(":visible"))) {
+            //sort desc
+            animals.sort(compareQuantity);
+            populateTable();
+            //show lower arrow
+            $('.arrows').hide();
+            $('#quantityColUp').show();
+        }
+        else{
+            //sort ascending
+            animals.sort(compareQuantityDesc);
+            populateTable();
+            //show upper arrow
+            $('.arrows').hide();
+            $('#quantityColDown').show();
+        }
+    }
+    function compareQuantityDesc(a, b){
+        return compareQuantity(b, a);
+    }
+    function compareQuantity(a,b){
+        a = a.quantity;
+        b = b.quantity;
+        return compareNumbers(a,b);
+    }
+    function compareNumbers(a,b){
+        return a - b;
+    }
+    function sortPrice(){
+        if(!($('#priceColUp').is(":visible"))) {
+            //sort desc
+            animals.sort(comparePrice);
+            populateTable();
+            //show lower arrow
+            $('.arrows').hide();
+            $('#priceColUp').show();
+        }
+        else{
+            //sort ascending
+            animals.sort(comparePriceDesc);
+            populateTable();
+            //show upper arrow
+            $('.arrows').hide();
+            $('#priceColDown').show();
+        }
+    }
+    function comparePriceDesc(a, b){
+        return comparePrice(b, a);
+    }
+    function comparePrice(a,b){
+        a = a.price;
+        b = b.price;
+        return compareNumbers(a,b);
+    }
+    function sortInventory(){
+        if(!($('#inventoryColUp').is(":visible"))) {
+            //sort desc
+            animals.sort(compareInventory);
+            populateTable();
+            //show lower arrow
+            $('.arrows').hide();
+            $('#inventoryColUp').show();
+        }
+        else{
+            //sort ascending
+            animals.sort(compareInventoryDesc);
+            populateTable();
+            //show upper arrow
+            $('.arrows').hide();
+            $('#inventoryColDown').show();
+        }
+    }
+    function compareInventoryDesc(a, b){
+        return compareInventory(b, a);
+    }
+    function compareInventory(a,b){
+        a = a.inv;
+        b = b.inv;
+        return compareNumbers(a,b);
     }
 
     $('#tableBtn').on('click', function(event){

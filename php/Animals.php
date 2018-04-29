@@ -248,7 +248,6 @@ include "../Footer.html";
                     <td><input type = "text" id="invInput" title="Inventory"></td>
                     <td></td>
                     <td><span class="oi oi-plus text-success clickable" title="Add product" onclick="addProd()"></span></td>
-                    <td><span class="oi oi-plus text-success clickable" title="Add To Cart" onClick="addCart()"></span></td>
 
                     <td></td>
                 </form>

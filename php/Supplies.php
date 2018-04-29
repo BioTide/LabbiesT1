@@ -244,7 +244,7 @@
                     <td>${supply.desc}</td>
                     <td></td>
                     <td><span class="oi oi-x text-danger clickable" title="Remove this product" onClick="removeProd(${supplies.indexOf(supply)})"></span></td>
-                    <td><span class="oi oi-pencil text-secondary clickable" title="Edit this product"></span></td>
+                    <td><span class="oi oi-plus text-success clickable" title="Add To Cart" onClick="addCart()"></span></td>
                 </tr>`
             );
         }
@@ -327,6 +327,10 @@
 
 
         populateTable();
+    }
+
+    function addCart(){
+
     }
 
     function sortDesc(sortOn){

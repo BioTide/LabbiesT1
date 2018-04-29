@@ -226,6 +226,8 @@ include "../Footer.html";
                     <td contenteditable="false" class="editable">${animal.inv}</td>
                     <td></td>
                     <td><span class="oi oi-x text-danger clickable" title="Remove this product" onClick="removeProd(${animals.indexOf(animal)})"></span></td>
+                    <td><span class="oi oi-plus text-success clickable" title="Add To Cart" onclick="addCart(${animals.indexOf(animal)})"></span></td>
+
                 </tr>`
                     //<td><span class="oi oi-pencil text-secondary clickable" title="Edit this product" onClick="editProd()"></span></td>
             );
@@ -246,6 +248,8 @@ include "../Footer.html";
                     <td><input type = "text" id="invInput" title="Inventory"></td>
                     <td></td>
                     <td><span class="oi oi-plus text-success clickable" title="Add product" onclick="addProd()"></span></td>
+                    <td><span class="oi oi-plus text-success clickable" title="Add To Cart" onClick="addCart()"></span></td>
+
                     <td></td>
                 </form>
             </tr>`
@@ -331,6 +335,10 @@ include "../Footer.html";
         sessionStorage.setItem('tableReplacement', localTable);
 
     }// End saveProd function
+
+    function addCart(){
+
+    }
 
     $('#tableBtn').on('click', function(event){
        $('#aniTable').show();

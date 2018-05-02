@@ -64,6 +64,8 @@
                             <span class="arrows" id="itemPriceColDown">▼</span>
                         </th>
                         <th>Description</th>
+                        <th id="editPencil"><span class="oi oi-pencil text-warning clickable" title="Edit product(s)" onClick="editProd()"></span></th>
+                        <th id="saveCheckMark"><span class="oi oi-check text-success clickable" title="Save product(s)" onClick="saveProd()"></span></th>
                     </tr>
                     </thead>
                     <!-- Animal Rows - Dynamically populated by jQuery code -->
@@ -215,14 +217,27 @@
 
 <script>
     /*global $*/
+
     let supplies = [];
+
     $(function(){// The DOM is ready for us to insert new data
+
         $.getJSON("../Supplies.json", function(data){
-            supplies = data;
-            populateTable();
+
             $('.arrows').hide();
-        });
-    });
+
+            let tableEdited = localStorage.getItem('supplyTableReplacement');
+
+            if(!tableEdited) {
+
+                supplies = data;
+                populateTable();
+            }
+
+        });// End get JSON
+
+    });// End anonymous function
+
     function populateTable(){
         // $('#supList').hide();
         // $('#supGrid').hide();
@@ -232,25 +247,24 @@
             $('#supplyTable').append(
                 `<tr class="supplyRow">
                     <td class="text-center"><img src="${supply.itemPhoto}" height="100px" width="100px"></td>
-                    <td class="text-center">${supply.itemName}</td>
+                    <td contenteditable="false" class="text-center editable">${supply.itemName}</td>
                     <td></td>
                     <td class="text-center">${supply.itemId}</td>
-                    <td class="text-center">${supply.itemCategory}</td>
+                    <td contenteditable="false" class="text-center editable">${supply.itemCategory}</td>
                     <td></td>
-                    <td class="text-center">${supply.itemSize}</td>
-                    <td class="text-center">${supply.itemInv}</td>
-                    <td class="text-right">${supply.quantity}&nbsp;&nbsp;&nbsp;&nbsp;</td>
+                    <td contenteditable="false" class="text-center editable">${supply.itemSize}</td>
+                    <td contenteditable="false" class="text-center editable">${supply.itemInv}</td>
+                    <td contenteditable="false" class="text-right editable">${supply.quantity}&nbsp;&nbsp;&nbsp;&nbsp;</td>
                     <td></td>
-                    <td class="text-right">$${supply.price.toFixed(2)}</td>
+                    <td contenteditable="false" class="text-right editable">$${supply.price.toFixed(2)}</td>
                     <td></td>
-                    <td>${supply.desc}</td>
-
+                    <td contenteditable="false" class="editable">${supply.desc}</td>
                     <td><span class="oi oi-x text-danger clickable" title="Remove this product" onClick="removeProd(${supplies.indexOf(supply)})"></span></td>
-                    <td><span class="oi oi-pencil text-secondary clickable" title="Edit this product"></span></td>
-                    <td><span class="oi oi-check text-success" title="Add to Cart" onclick="addCart(${supplies.indexOf(supply)})"></span></td>
                 </tr>`
             );
-        }
+
+        }// End for loop
+
         $('#supplyTable').append(
             `<tr class="supplyRow">
                 <form>
@@ -340,6 +354,43 @@
 
         populateTable();
     }
+
+    function editProd(){
+
+        // Toggle between edit and save
+        $('#editPencil').hide();
+        $('#saveCheckMark').show();
+
+        // Hide the remove icons
+        $('.oi-x').hide();
+
+        $('#supList').hide();
+        $('#supGrid').hide();
+
+        $('.editable').attr('contenteditable', 'true');
+
+    }// End editProd
+
+    function saveProd(){
+
+        $('#editPencil').show();
+        $('#saveCheckMark').hide();
+
+        // Show the remove icons
+        $('.oi-x').show();
+
+        // Map the existing table to a JSON object
+        let tblTest = $('table#supplyTable tr').get().map(function(row) {
+            return $(row).find('td').get().map(function(cell) {
+                return $(cell).html();
+            });
+
+        });// End mapping
+
+        let localTable = JSON.stringify(tblTest);
+        localStorage.setItem('supplyTableReplacement', localTable);
+
+    }// End saveProd function
 
     function sortItem(){
         if(!($('#itemNameColUp').is(":visible"))) {
@@ -482,6 +533,62 @@
         $('#supTable').hide();
         $('#supList').hide();
     });
+
+    $(document).ready(function(){
+
+        // Retrieve session data
+        let data = localStorage.getItem('supplyTableReplacement');
+
+        // If the session has admin rights enabled
+        if(data)
+        {
+            // Parse in the previous table from session storage
+            let sessionSupplies = JSON.parse(data);
+
+            // Erase the current table storage
+            $('.supplyRow').remove();
+
+            console.log(sessionSupplies);
+
+            for(let i = 1; i < sessionSupplies.length; i++){
+
+                let cleanQty = Number(sessionSupplies[i][8].replace(/[^0-9\.-]+/g,""));
+                let cleanPrice = Number(sessionSupplies[i][10].replace(/[^0-9\.-]+/g,""));
+                let cleanPhotoPath = sessionSupplies[i][0].split("\"")[1];
+
+                let id = sessionSupplies[i][3];
+                let name = sessionSupplies[i][1];
+                let category = sessionSupplies[i][4];
+                let photo = cleanPhotoPath;
+                let size = sessionSupplies[i][6];
+                let quantity = cleanQty;
+                let price = cleanPrice;
+                let inventory = sessionSupplies[i][7];
+                let description = sessionSupplies[i][12];
+
+                //add supplies object to animals
+                supplies.push({
+
+                    itemId: id,
+                    itemName: name,
+                    itemCategory: category,
+                    itemPhoto: photo,
+                    itemSize: size,
+                    quantity: quantity,
+                    price: price,
+                    itemInv: inventory,
+                    desc: description
+                });
+
+            }// End outer for loop
+
+            //display supplies
+            populateTable();
+
+        }// End if
+
+    });// End document ready
+
 </script>
 
 <?php

@@ -309,7 +309,8 @@ include "../Footer.html";
         populateTable()
 
         saveProd();
-    }
+
+    }// End removeProd
 
     function editProd(){
 

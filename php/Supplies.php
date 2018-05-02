@@ -353,6 +353,8 @@
         $('.supplyRow').remove();
 
         populateTable();
+
+        saveProd();
     }
 
     function editProd(){

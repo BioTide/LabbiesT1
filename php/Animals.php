@@ -231,6 +231,8 @@ include "../Footer.html";
                     <td contenteditable="false" class="editable">${animal.inv}</td>
                     <td></td>
                     <td><span class="oi oi-x text-danger clickable" title="Remove this product" onClick="removeProd(${animals.indexOf(animal)})"></span></td>
+                    <td><span class="oi oi-plus text-success clickable" title="Add To Cart" onclick="addToCart()"></span></td>
+
                 </tr>`
             );
 

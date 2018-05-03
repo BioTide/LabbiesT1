@@ -275,7 +275,6 @@
                 total: supplies[i].price
             });
         }
-
     }
     // addProd Function
     // Purpose: Get user input to add additional item

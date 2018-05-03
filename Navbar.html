@@ -50,8 +50,9 @@
     let cartTotal = 0;
 
     function populateCart(){
+
         $.getJSON("../cart.json", function(data){
-            let tableEdited = localStorage.getItem('cartReplacement');
+            let tableEdited = JSON.parse(localStorage.getItem('cartReplacement'));
             console.log(tableEdited);
             if(!tableEdited) {
                 cartItems = data;
@@ -59,7 +60,9 @@
             else{
                 cartItems = tableEdited;
             }
+            console.log(cartItems);
         });
+
         $('#cartRow').remove();
 
         for(let cart of cartItems){

@@ -42,6 +42,32 @@
         </div>
     </div>
     <div class = "navbar-right text-white">
-        <span id="shoppingCart" class="oi oi-cart align-baseline clickable col-xl-1" data-toggle="modal" data-target="#exampleModalCenter" title="See your Current Shopping Cart">
+        <span id="shoppingCart" class="oi oi-cart align-baseline clickable col-xl-1" data-toggle="modal" data-target="#exampleModalCenter" title="See your Current Shopping Cart" onclick="populateCart()">
     </div>
 </nav>
+<script>
+    let cartItems = [];
+
+    function populateCart(){
+        $.getJSON("../cart.json", function(data){
+            //let tableEdited = localStorage.getItem('tableReplacement');
+            //if(!tableEdited) {
+                cartItems = data;
+                console.log(cartItems);
+            //}
+
+        });
+        //$('.modal-body').remove();
+        for(let cart of cartItems){
+            $('#modalRow').append(
+                `<div class="row">
+                    <div class="col-xl-3">${cart.name}</div>
+                    <div class="col-xl-3">${cart.price}</div>
+                    <div class="col-xl-3">${cart.units}</div>
+                    <div class="col-xl-3">${cart.total}</div>
+                 </div>`
+            );
+        }<!-- End for loop -->
+
+    }<!-- End populateTable -->
+</script>

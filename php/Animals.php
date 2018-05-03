@@ -208,7 +208,7 @@ include "cart.php";
                     <td contenteditable="false" class="editable adminView">${animal.inv}</td>
                     <td>&nbsp;&nbsp;&nbsp;</td>
                     <td><span class="oi oi-x text-danger clickable adminView" title="Remove this product" onClick="removeProd(${animals.indexOf(animal)})"></span></td>
-                    <td><span class="oi oi-plus text-success clickable" title="Add To Cart" onclick="addToCart()"></span></td>
+                    <td><span class="oi oi-plus text-success clickable" title="Add To Cart" onclick="addToCart(${animals.indexOf(animal)})"></span></td>
                 </tr>`
             );
         }<!-- End for loop -->
@@ -232,17 +232,25 @@ include "cart.php";
         $('#aniList').hide();
         $('#aniGrid').hide();
     }<!-- End populateTable -->
-    function addToCart(i){
-        alert(animals[i].itemName + " added to cart");
 
-        $('#modalRow').append(
-            '<div class="row">' +
-            '<div class="col-xl-3 text-left"><b>' + animals[i].itemName + '</b></div>' +
-            '<div class="col-xl-3"><b>$' + animals[i].price.toFixed(2) + '</b></div>' +
-            '<div class="col-xl-3"><b>' + animals[i].quantity + '</b></div>' +
-            '<div class="col-xl-3"><b></b></div>' +
-            '</div>'
-        );
+    function addToCart(i){
+        let tf = false;
+        alert(animals[i].species + " added to cart");
+        for(let cart of cartItems){
+            if(cart.name == animals[i].species){
+                cart.units += 1;
+                cart.total += cart.price;
+                tf = true;
+            }
+        }
+        if(!tf) {
+            cartItems.push({
+                name: animals[i].species,
+                price: animals[i].price,
+                units: 1,
+                total: animals[i].price
+            });
+        }
 
     }
     function addProd() {

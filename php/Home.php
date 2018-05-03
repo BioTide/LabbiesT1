@@ -108,9 +108,7 @@ include "../Navbar.html";
 
 <?php
 include "../Footer.html";
-?>
-
-<?php
+include "cart.php";
 include "../AdminCheck.html";
 ?>
 

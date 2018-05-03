@@ -19,7 +19,6 @@
             <div class="col-xl-12">
                 <h1 class = "bg-success text-white text-center">
                     Shipping and Credit Card Information
-                    <span id="shoppingCart" class="oi oi-cart align-baseline clickable col-xl-1" data-toggle="modal" data-target="#exampleModalCenter" title="See your Current Shopping Cart">
                 </h1>
             </div>
         </div>
@@ -282,9 +281,7 @@
 
         <?php
         include "../Footer.html";
-        ?>
-
-        <?php
+        include "cart.php";
         include "../AdminCheck.html";
         ?>
     </body>

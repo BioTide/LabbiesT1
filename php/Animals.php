@@ -44,7 +44,7 @@ include "../Navbar.html";
                         <span class="arrows" id="speciesColUp" >▲</span>
                         <span class="arrows" id="speciesColDown">▼</span>
                     </th>
-                    <th>Id</th>
+                    <th class="adminView">Id</th>
                     <th class="text-right" style="cursor: pointer" onclick="sortQuantity()">Quantity</th>
                     <th>
                         <span class="arrows" id="quantityColUp">▲</span>
@@ -56,12 +56,12 @@ include "../Navbar.html";
                         <span class="arrows" id="priceColDown">▼</span>
                     </th>
                     <th>Description</th>
-                    <th style="cursor: pointer" onclick="sortInventory()">Inventory</th>
+                    <th style="cursor: pointer" onclick="sortInventory()" class="adminView">Inventory</th>
                     <th>
                         <span class="arrows" id="inventoryColUp">▲</span>
                         <span class="arrows" id="inventoryColDown">▼</span>
                     </th>
-                    <th id="editPencil"><span class="oi oi-pencil text-warning" title="Edit product(s)" onclick="editProd()"></span></th>
+                    <th id="editPencil"><span class="oi oi-pencil text-warning adminView" title="Edit product(s)" onclick="editProd()"></span></th>
                     <th id="saveCheckMark"><span class="oi oi-check text-success" title="Save product(s)" onclick="saveProd()"></span></th>
                 </tr>
                 </thead>
@@ -179,6 +179,7 @@ include "cart.php";
 <script>
     /*global $*/
     let animals = [];
+
     $(function(){// The DOM is ready for us to insert new data
         $.getJSON("../Animals.json", function(data){
             let tableEdited = localStorage.getItem('tableReplacement');
@@ -189,6 +190,7 @@ include "cart.php";
             $('.arrows').hide();
         });
     });
+
     function populateTable(){
         $('.animalRow').remove();
         for(let animal of animals){
@@ -197,21 +199,21 @@ include "cart.php";
                     <td><img src="${animal.photo}" height="100px" width="100px"></td>
                     <td contenteditable="false" class="editable">${animal.species}</td>
                     <td>&nbsp;&nbsp;</td>
-                    <td>${animal.id}</td>
+                    <td class="adminView">${animal.id}</td>
                     <td contenteditable="false" class="text-right editable">${animal.quantity}&nbsp;&nbsp;&nbsp;&nbsp;</td>
                     <td>&nbsp;&nbsp;</td>
                     <td contenteditable="false" class="text-right editable">$${animal.price.toFixed(2)}</td>
                     <td>&nbsp;&nbsp;</td>
                     <td contenteditable="false" class="editable">${animal.desc}&nbsp;</td>
-                    <td contenteditable="false" class="editable">${animal.inv}</td>
+                    <td contenteditable="false" class="editable adminView">${animal.inv}</td>
                     <td>&nbsp;&nbsp;&nbsp;</td>
-                    <td><span class="oi oi-x text-danger clickable" title="Remove this product" onClick="removeProd(${animals.indexOf(animal)})"></span></td>
+                    <td><span class="oi oi-x text-danger clickable adminView" title="Remove this product" onClick="removeProd(${animals.indexOf(animal)})"></span></td>
                     <td><span class="oi oi-plus text-success clickable" title="Add To Cart" onclick="addToCart()"></span></td>
                 </tr>`
             );
         }<!-- End for loop -->
         $('#aniTable').append(
-            `<tr class="animalRow">
+            `<tr class="animalRow adminView">
                 <form>
 		            <td><input type="file" accept="image/*" height="100px" width="100px"id ="photoInput" title="Add Photo">
 		            </td>
@@ -423,7 +425,9 @@ include "cart.php";
         $('#aniTable').hide();
         $('#aniList').hide();
     });
+
     $(document).ready(function(){
+
         // Retrieve session data
         let data = localStorage.getItem('tableReplacement');
         // If the session has admin rights enabled
@@ -433,8 +437,6 @@ include "cart.php";
             let sessionAnimals = JSON.parse(data);
             // Display the new table
             $('.animalRow').remove();
-
-            //console.log(sessionAnimals);
 
             for(let i = 1; i < sessionAnimals.length; i++){
                 let cleanQty = Number(sessionAnimals[i][4].replace(/[^0-9\.-]+/g,""));
@@ -462,6 +464,16 @@ include "cart.php";
             populateTable();
         }// End if
     });// End document ready
+
+    $(window).bind("load", function() {
+        if(sessionStorage.getItem('adminRights') === 'enabled'){
+            $('.adminView').show();
+        }
+        else{
+            $('.adminView').hide();
+        }
+    });
+
 </script>
 
 <?php

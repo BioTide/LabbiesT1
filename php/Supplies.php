@@ -44,13 +44,13 @@
                             <span class="arrows" id="itemNameColUp" clickable>▲</span>
                             <span class="arrows" id="itemNameColDown">▼</span>
                         </th>
-                        <th class="text-center">Id</th>
-                        <th class="text-center" style="cursor: pointer" onclick="sortCategory()">Category</th>
+                        <th class="text-center adminView">Id</th>
+                        <th class="text-center adminView" style="cursor: pointer" onclick="sortCategory()">Category</th>
                         <th>
                             <span class="arrows" id="itemCategoryColUp" clickable>▲</span>
                             <span class="arrows" id="itemCategoryColDown">▼</span>
                         </th>
-                        <th class="text-center">Size</th>
+                        <th class="text-center adminView">Size</th>
                         <th class="text-center">Inventory</th>
                         <th class="text-right" style="cursor: pointer" onclick="sortQuantity()">Quantity</th>
                         <th>
@@ -63,7 +63,7 @@
                             <span class="arrows" id="itemPriceColDown">▼</span>
                         </th>
                         <th>Description</th>
-                        <th id="editPencil"><span class="oi oi-pencil text-warning clickable" title="Edit product(s)" onClick="editProd()"></span></th>
+                        <th id="editPencil"><span class="oi oi-pencil text-warning clickable adminView" title="Edit product(s)" onClick="editProd()"></span></th>
                         <th id="saveCheckMark"><span class="oi oi-check text-success clickable" title="Save product(s)" onClick="saveProd()"></span></th>
                     </tr>
                     </thead>
@@ -216,17 +216,17 @@
                     <td class="text-center"><img src="${supply.itemPhoto}" height="100px" width="100px"></td>
                     <td contenteditable="false" class="text-center editable">${supply.itemName}</td>
                     <td></td>
-                    <td class="text-center">${supply.itemId}</td>
-                    <td contenteditable="false" class="text-center editable">${supply.itemCategory}</td>
+                    <td class="text-center adminView">${supply.itemId}</td>
+                    <td contenteditable="false" class="text-center editable adminView">${supply.itemCategory}</td>
                     <td></td>
-                    <td contenteditable="false" class="text-center editable">${supply.itemSize}</td>
+                    <td contenteditable="false" class="text-center editable adminView">${supply.itemSize}</td>
                     <td contenteditable="false" class="text-center editable">${supply.itemInv}</td>
                     <td contenteditable="false" class="text-right editable">${supply.quantity}&nbsp;&nbsp;&nbsp;&nbsp;</td>
                     <td></td>
                     <td contenteditable="false" class="text-right editable">$${supply.price.toFixed(2)}</td>
                     <td></td>
                     <td contenteditable="false" class="editable">${supply.desc}</td>
-                    <td><span class="oi oi-x text-danger clickable" title="Remove this product" onclick="removeProd(${supplies.indexOf(supply)})"></span></td>
+                    <td><span class="oi oi-x text-danger clickable adminView" title="Remove this product" onclick="removeProd(${supplies.indexOf(supply)})"></span></td>
                     <td><span class="oi oi-plus text-success clickable" title="Add To Cart" onclick="addToCart(${supplies.indexOf(supply)})"></span></td>
 
                 </tr>`
@@ -235,7 +235,7 @@
         }// End for loop
 
         $('#supplyTable').append(
-            `<tr class="supplyRow">
+            `<tr class="supplyRow adminView">
                 <form>
 		            <td><input type="file" src="file:///C:\\Users\\LuAnn\\Documents\\3660Labbies\\LabbiesT1\\*.*"  id ="itemPhotoInput" title="Add Photo">
 		            </td>
@@ -560,6 +560,15 @@
         }// End if
 
     });// End document ready
+
+    $(window).bind("load", function() {
+        if(sessionStorage.getItem('adminRights') === 'enabled'){
+            $('.adminView').show();
+        }
+        else{
+            $('.adminView').hide();
+        }
+    });
 
 </script>
 

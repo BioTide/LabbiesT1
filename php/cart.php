@@ -12,8 +12,8 @@
                 <div class="container-fluid">
                     <div class="row">
                         <div class="col-xl-3"><b>Name</b></div>
-                        <div class="col-xl-3"><b>Price</b></div>
-                        <div class="col-xl-3"><b>Quantity</b></div>
+                        <div class="col-xl-3"><b>Price/Units</b></div>
+                        <div class="col-xl-3"><b># of Units</b></div>
                         <div class="col-xl-3"><b>Total</b></div>
                     </div> <!--ending row-->
 

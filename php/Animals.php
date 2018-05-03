@@ -39,14 +39,30 @@ include "../Navbar.html";
                 <thead>
                 <tr>
                     <th>Photo</th>
-                    <th>Species</th>
+                    <th style="cursor: pointer" onclick="sortSpecies()">Species</th>
+                    <th>
+                        <span class="arrows" id="speciesColUp" >▲</span>
+                        <span class="arrows" id="speciesColDown">▼</span>
+                    </th>
                     <th>Id</th>
-                    <th class="text-right">Quantity</th>
-                    <th class="text-right">Price&nbsp;&nbsp;</th>
+                    <th class="text-right" style="cursor: pointer" onclick="sortQuantity()">Quantity</th>
+                    <th>
+                        <span class="arrows" id="quantityColUp">▲</span>
+                        <span class="arrows" id="quantityColDown">▼</span>
+                    </th>
+                    <th class="text-right" style="cursor: pointer" onclick="sortPrice()">Price&nbsp;&nbsp;</th>
+                    <th>
+                        <span class="arrows" id="priceColUp">▲</span>
+                        <span class="arrows" id="priceColDown">▼</span>
+                    </th>
                     <th>Description</th>
-                    <th>Inventory</th>
-                    <th id="editPencil"><span class="oi oi-pencil text-warning clickable" title="Edit product(s)" onClick="editProd()"></span></th>
-                    <th id="saveCheckMark"><span class="oi oi-check text-success clickable" title="Save product(s)" onClick="saveProd()"></span></th>
+                    <th style="cursor: pointer" onclick="sortInventory()">Inventory</th>
+                    <th>
+                        <span class="arrows" id="inventoryColUp">▲</span>
+                        <span class="arrows" id="inventoryColDown">▼</span>
+                    </th>
+                    <th id="editPencil"><span class="oi oi-pencil text-warning" title="Edit product(s)" onclick="editProd()"></span></th>
+                    <th id="saveCheckMark"><span class="oi oi-check text-success" title="Save product(s)" onclick="saveProd()"></span></th>
                 </tr>
                 </thead>
                 <!-- Animal Rows - Dynamically populated by jQuery code -->
@@ -161,49 +177,41 @@ include "cart.php";
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
 
 <script>
-
     /*global $*/
-
     let animals = [];
-
     $(function(){// The DOM is ready for us to insert new data
         $.getJSON("../Animals.json", function(data){
-
             let tableEdited = localStorage.getItem('tableReplacement');
-
             if(!tableEdited) {
                 animals = data;
                 populateTable();
             }
+            $('.arrows').hide();
         });
     });
-
     function populateTable(){
-
         $('.animalRow').remove();
-
         for(let animal of animals){
             $('#animalTable').append(
                 `<tr class="animalRow">
                     <td><img src="${animal.photo}" height="100px" width="100px"></td>
                     <td contenteditable="false" class="editable">${animal.species}</td>
+                    <td>&nbsp;&nbsp;</td>
                     <td>${animal.id}</td>
                     <td contenteditable="false" class="text-right editable">${animal.quantity}&nbsp;&nbsp;&nbsp;&nbsp;</td>
+                    <td>&nbsp;&nbsp;</td>
                     <td contenteditable="false" class="text-right editable">$${animal.price.toFixed(2)}</td>
-                    <td contenteditable="false" class="editable">${animal.desc}</td>
+                    <td>&nbsp;&nbsp;</td>
+                    <td contenteditable="false" class="editable">${animal.desc}&nbsp;</td>
                     <td contenteditable="false" class="editable">${animal.inv}</td>
-                    <td></td>
+                    <td>&nbsp;&nbsp;&nbsp;</td>
                     <td><span class="oi oi-x text-danger clickable" title="Remove this product" onClick="removeProd(${animals.indexOf(animal)})"></span></td>
                     <td><span class="oi oi-plus text-success clickable" title="Add To Cart" onclick="addToCart()"></span></td>
-
                 </tr>`
             );
-
         }<!-- End for loop -->
-
         $('#aniTable').append(
             `<tr class="animalRow">
-
                 <form>
 		            <td><input type="file" accept="image/*" height="100px" width="100px"id ="photoInput" title="Add Photo">
 		            </td>
@@ -219,14 +227,10 @@ include "cart.php";
                 </form>
             </tr>`
         );
-
         $('#aniList').hide();
         $('#aniGrid').hide();
-
     }<!-- End populateTable -->
-
     function addProd() {
-
         let animalPhoto = $('#photoInput').val();
         let animalID = $('#idInput').val();
         let species = $('#speciesInput').val();
@@ -234,7 +238,6 @@ include "cart.php";
         let price = Number($('#priceInput').val());
         let description = $('#descInput').val();
         let inventory = Number($('#invInput').val());
-
         //add animal object to animals
         animals.push({
             photo: animalPhoto,
@@ -245,12 +248,9 @@ include "cart.php";
             desc: description,
             inv: inventory
         });
-
         $('.animalRow').remove();
-
         //display animals
         populateTable();
-
         //blank out the add text boxes
         $('#photoInput').val('');
         $('#idInput').val('');
@@ -259,100 +259,182 @@ include "cart.php";
         $('#priceInput').val('');
         $('#descInput').val('');
         $('#invInput').val('');
-
     }<!-- End addProd -->
-
     function removeProd(i) {
-
         $('#aniList').hide();
         $('#aniGrid').hide();
-
         animals.splice(i,1);
-
         $('.animalRow').remove();
-
         populateTable()
-
         saveProd();
-
     }// End removeProd
-
     function editProd(){
-
         // Toggle between edit and save
         $('#editPencil').hide();
         $('#saveCheckMark').show();
-
         // Hide the remove icons
         $('.oi-x').hide();
-
         $('#aniList').hide();
         $('#aniGrid').hide();
-
         $('.editable').attr('contenteditable', 'true');
-
     }// End editProd
-
     function saveProd(){
-
         $('#editPencil').show();
         $('#saveCheckMark').hide();
-
         // Show the remove icons
         $('.oi-x').show();
-
         // Map the existing table to a JSON object
         let tblTest = $('table#animalTable tr').get().map(function(row) {
             return $(row).find('td').get().map(function(cell) {
                 return $(cell).html();
             });
-
         });// End mapping
-
         let localTable = JSON.stringify(tblTest);
         localStorage.setItem('tableReplacement', localTable);
-
     }// End saveProd function
-
+    function sortSpecies(){
+        if(!($('#speciesColUp').is(":visible"))) {
+            //sort desc
+            animals.sort(compareSpecies);
+            populateTable();
+            //show lower arrow
+            $('.arrows').hide();
+            $('#speciesColUp').show();
+        }
+        else{
+            //sort ascending
+            animals.sort(compareSpeciesDesc);
+            populateTable();
+            //show upper arrow
+            $('.arrows').hide();
+            $('#speciesColDown').show();
+        }
+    }
+    function compareSpeciesDesc(a, b){
+        return compareSpecies(b, a);
+    }
+    function compareSpecies(a,b){
+        a = a.species;
+        b = b.species;
+        return compareStrings(a,b);
+    }
+    function compareStrings(a,b){
+        a = a.toLocaleLowerCase();
+        b = b.toLocaleLowerCase();
+        if(a < b){return -1;}
+        if(a > b){return 1;}
+        return 0;
+    }
+    function sortQuantity(){
+        if(!($('#quantityColUp').is(":visible"))) {
+            //sort desc
+            animals.sort(compareQuantity);
+            populateTable();
+            //show lower arrow
+            $('.arrows').hide();
+            $('#quantityColUp').show();
+        }
+        else{
+            //sort ascending
+            animals.sort(compareQuantityDesc);
+            populateTable();
+            //show upper arrow
+            $('.arrows').hide();
+            $('#quantityColDown').show();
+        }
+    }
+    function compareQuantityDesc(a, b){
+        return compareQuantity(b, a);
+    }
+    function compareQuantity(a,b){
+        a = a.quantity;
+        b = b.quantity;
+        return compareNumbers(a,b);
+    }
+    function compareNumbers(a,b){
+        return a - b;
+    }
+    function sortPrice(){
+        if(!($('#priceColUp').is(":visible"))) {
+            //sort desc
+            animals.sort(comparePrice);
+            populateTable();
+            //show lower arrow
+            $('.arrows').hide();
+            $('#priceColUp').show();
+        }
+        else{
+            //sort ascending
+            animals.sort(comparePriceDesc);
+            populateTable();
+            //show upper arrow
+            $('.arrows').hide();
+            $('#priceColDown').show();
+        }
+    }
+    function comparePriceDesc(a, b){
+        return comparePrice(b, a);
+    }
+    function comparePrice(a,b){
+        a = a.price;
+        b = b.price;
+        return compareNumbers(a,b);
+    }
+    function sortInventory(){
+        if(!($('#inventoryColUp').is(":visible"))) {
+            //sort desc
+            animals.sort(compareInventory);
+            populateTable();
+            //show lower arrow
+            $('.arrows').hide();
+            $('#inventoryColUp').show();
+        }
+        else{
+            //sort ascending
+            animals.sort(compareInventoryDesc);
+            populateTable();
+            //show upper arrow
+            $('.arrows').hide();
+            $('#inventoryColDown').show();
+        }
+    }
+    function compareInventoryDesc(a, b){
+        return compareInventory(b, a);
+    }
+    function compareInventory(a,b){
+        a = a.inv;
+        b = b.inv;
+        return compareNumbers(a,b);
+    }
     $('#tableBtn').on('click', function(event){
         $('#aniTable').show();
         $('#aniList').hide();
         $('#aniGrid').hide();
     });
-
     $('#listBtn').on('click', function(event){
         $('#aniList').show();
         $('#aniTable').hide();
         $('#aniGrid').hide();
     });
-
     $('#gridBtn').on('click', function(event){
         $('#aniGrid').show();
         $('#aniTable').hide();
         $('#aniList').hide();
     });
-
     $(document).ready(function(){
-
         // Retrieve session data
         let data = localStorage.getItem('tableReplacement');
-
         // If the session has admin rights enabled
         if(data)
         {
             // Parse in the previous table from session storage
             let sessionAnimals = JSON.parse(data);
-
             // Display the new table
-
             $('.animalRow').remove();
-
             for(let i = 1; i < sessionAnimals.length; i++){
-
                 let cleanQty = Number(sessionAnimals[i][3].replace(/[^0-9\.-]+/g,""));
                 let cleanPrice = Number(sessionAnimals[i][4].replace(/[^0-9\.-]+/g,""));
                 let cleanPhotoPath = sessionAnimals[i][0].split("\"")[1];
-
                 let animalPhoto = cleanPhotoPath;
                 let species = sessionAnimals[i][1];
                 let animalID = sessionAnimals[i][2];
@@ -360,7 +442,6 @@ include "cart.php";
                 let price = cleanPrice;
                 let description = sessionAnimals[i][5];
                 let inventory = sessionAnimals[i][6];
-
                 //add animal object to animals
                 animals.push({
                     photo: animalPhoto,
@@ -371,16 +452,11 @@ include "cart.php";
                     desc: description,
                     inv: inventory
                 });
-
             }// End outer for loop
-
             //display animals
             populateTable();
-
         }// End if
-
     });// End document ready
-
 </script>
 
 <?php

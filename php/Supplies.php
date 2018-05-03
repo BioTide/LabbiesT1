@@ -36,7 +36,7 @@
         <!-- Supply Table Row -->
         <div class="row" id="supTable">
             <div>
-                <table class="table table-responsive" id="supplyTable">
+                <table class="table table-responsive table-striped" id="supplyTable">
                     <thead>
                     <tr>
                         <th class="text-center">Photo</th>

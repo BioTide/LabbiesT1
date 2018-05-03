@@ -18,6 +18,7 @@
                     </div> <!--ending row-->
                 </div> <!--end container-fluid-->
                 <div class="container-fluid" id="modalRow"></div>
+                <div class="container-fluid" id="modalTotal"></div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
                     <a class="btn btn-primary" href="Shipping.php" role="button">Proceed To Checkout</a>

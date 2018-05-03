@@ -47,13 +47,12 @@
 </nav>
 <script>
     let cartItems = [];
-
+    let cartTotal = 0;
     function populateCart(){
         $.getJSON("../cart.json", function(data){
             //let tableEdited = localStorage.getItem('tableReplacement');
             //if(!tableEdited) {
                 cartItems = data;
-                console.log(cartItems);
             //}
 
         });
@@ -61,13 +60,16 @@
         for(let cart of cartItems){
             $('#modalRow').append(
                 `<div class="row">
-                    <div class="col-xl-3">${cart.name}</div>
-                    <div class="col-xl-3">${cart.price}</div>
-                    <div class="col-xl-3">${cart.units}</div>
-                    <div class="col-xl-3">${cart.total}</div>
+                    <div class="col-xl-3">&nbsp;${cart.name}</div>
+                    <div class="col-xl-3 text-right">$${cart.price.toFixed(2)}</div>
+                    <div class="col-xl-3 text-right">${cart.units}&nbsp;&nbsp;</div>
+                    <div class="col-xl-3 text-right">$${cart.total.toFixed(2)}&nbsp;&nbsp;</div>
                  </div>`
             );
+            cartTotal += cart.total;
         }<!-- End for loop -->
-
+        $('#modalTotal').append(
+            '<div><b>\nShopping Cart Total = $' + cartTotal.toFixed(2) + '<b></div>'
+        )
     }<!-- End populateTable -->
 </script>

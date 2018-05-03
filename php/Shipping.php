@@ -8,6 +8,7 @@
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.css" rel="stylesheet">
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
     <link rel="stylesheet" href="../Animals.css" type="text/css">
+
 </head>
     <body>
 
@@ -214,6 +215,7 @@
                             <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
                         </div> <!--end modal-footer-->
                     </div> <!--end modal-body-->
+                    <p class="text-center">Thank you for ordering with Labbies!</p>
                 </div> <!-- end modal-content-->
             </div> <!--class="modal-dialog-->
         </div><!--end Modal-->

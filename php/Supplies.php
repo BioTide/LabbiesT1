@@ -226,8 +226,8 @@
                     <td contenteditable="false" class="text-right editable">$${supply.price.toFixed(2)}</td>
                     <td></td>
                     <td contenteditable="false" class="editable">${supply.desc}</td>
-                    <td><span class="oi oi-x text-danger clickable" title="Remove this product" onClick="removeProd(${supplies.indexOf(supply)})"></span></td>
-                    <td><span class="oi oi-plus text-success clickable" title="Add To Cart" onclick="addToCart()"></span></td>
+                    <td><span class="oi oi-x text-danger clickable" title="Remove this product" onclick="removeProd(${supplies.indexOf(supply)})"></span></td>
+                    <td><span class="oi oi-plus text-success clickable" title="Add To Cart" onclick="addToCart(${supplies.indexOf(supply)})"></span></td>
 
                 </tr>`
             );
@@ -256,10 +256,9 @@
         $('#supList').hide();
         $('#supGrid').hide();
     }
-    function addCart(i){
+    function addToCart(i){
         alert(supplies[i].itemName + " added to cart");
         console.log(supplies[i].itemName);
-        let cartName = supplies[i].itemName;
         $('#modalRow').append(
             '<div class="row">' +
                 '<div class="col-xl-3 text-left"><b>' + supplies[i].itemName + '</b></div>' +

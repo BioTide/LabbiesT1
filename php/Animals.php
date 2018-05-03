@@ -232,6 +232,19 @@ include "cart.php";
         $('#aniList').hide();
         $('#aniGrid').hide();
     }<!-- End populateTable -->
+    function addToCart(i){
+        alert(animals[i].itemName + " added to cart");
+
+        $('#modalRow').append(
+            '<div class="row">' +
+            '<div class="col-xl-3 text-left"><b>' + animals[i].itemName + '</b></div>' +
+            '<div class="col-xl-3"><b>$' + animals[i].price.toFixed(2) + '</b></div>' +
+            '<div class="col-xl-3"><b>' + animals[i].quantity + '</b></div>' +
+            '<div class="col-xl-3"><b></b></div>' +
+            '</div>'
+        );
+
+    }
     function addProd() {
         let animalPhoto = $('#photoInput').val();
         let animalID = $('#idInput').val();

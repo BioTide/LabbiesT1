@@ -258,12 +258,12 @@
     }
     function addToCart(i){
         alert(supplies[i].itemName + " added to cart");
-        console.log(supplies[i].itemName);
+
         $('#modalRow').append(
             '<div class="row">' +
                 '<div class="col-xl-3 text-left"><b>' + supplies[i].itemName + '</b></div>' +
                 '<div class="col-xl-3"><b>$' + supplies[i].price.toFixed(2) + '</b></div>' +
-                '<div class="col-xl-3"><b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;' + supplies[i].quantity + '</b></div>' +
+                '<div class="col-xl-3"><b>' + supplies[i].quantity + '</b></div>' +
                 '<div class="col-xl-3"><b></b></div>' +
             '</div>'
         );

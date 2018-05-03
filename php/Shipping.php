@@ -8,6 +8,7 @@
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.css" rel="stylesheet">
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
     <link rel="stylesheet" href="../Animals.css" type="text/css">
+
 </head>
     <body>
 
@@ -138,7 +139,7 @@
 
                 <div class = "row">
                     <div class = "col-md-12">
-                        <input type = "submit" class = "btn btn-success btn-send" value = "Place Order">
+                        <input type = "button" class = "btn btn-success btn-send" value = "Place Order" data-toggle="modal" data-target="#receiptModal">
                     </div>
                 </div>
 
@@ -186,6 +187,38 @@
         <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
 
+        <!-- Modal -->
+        <div class="modal fade" id="receiptModal" tabindex="-1" role="dialog" aria-labelledby="receiptModal" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLongTitle">Receipt</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">×</span>
+                        </button>
+                    </div> <!-- end modal-header-->
+                    <div class="modal-body">
+                        <div class="container-fluid">
+                            <div class="row">
+                                <div class="col-xl-3"><b>Name</b></div>
+                                <div class="col-xl-3"><b>Price</b></div>
+                                <div class="col-xl-3"><b>Quantity</b></div>
+                                <div class="col-xl-3"><b>Total</b></div>
+                            </div> <!--ending row-->
+                            <div class="row"></div> <!--ending row-->
+                            <div class="row"></div> <!--ending row-->
+                            <div class="row"></div> <!--ending row-->
+                            <div class="row"></div> <!--ending row-->
+                        </div> <!--end container-fluid-->
+                        <div class="container-fluid" id="modalRow"></div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                        </div> <!--end modal-footer-->
+                    </div> <!--end modal-body-->
+                    <p class="text-center">Thank you for ordering with Labbies!</p>
+                </div> <!-- end modal-content-->
+            </div> <!--class="modal-dialog-->
+        </div><!--end Modal-->
 
         <script>
 

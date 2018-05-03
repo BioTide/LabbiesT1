@@ -36,7 +36,7 @@ include "../Navbar.html";
     <div class="row text-center" id="aniTable">
         <div class="col-sm-2"></div>
         <div class="col-sm-8">
-            <table class="table" id="animalTable">
+            <table class="table-striped" id="animalTable">
                 <thead>
                 <tr>
                     <th>Photo</th>
@@ -185,7 +185,7 @@ include "../Footer.html";
                 </div> <!--end container-fluid-->
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                    <button type="button" class="btn btn-primary">Checkout</button>
+                    <a class="btn btn-primary" href="Shipping.php" role="button">Proceed To Checkout</a>
                 </div>
             </div> <!-- end modal-content-->
         </div>

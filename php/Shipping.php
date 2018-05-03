@@ -78,25 +78,25 @@
                     <div class = "col-md-6">
                         <div class = "form-group">
                             <label for = "formCompany">Street Address *</label>
-                            <input id = "formCompany" type = "tel" name = "address" class = "form-control" placeholder = "123 Cherry Lane Ste 14" required="required">
+                            <input id = "formAddress" type = "tel" name = "address" class = "form-control" placeholder = "123 Cherry Lane Ste 14" required="required">
                         </div>
                     </div>
                     <div class = "col-md-3">
                         <div class = "form-group">
                             <label for = "formCompany">City *</label>
-                            <input id = "formCompany" type = "tel" name = "city" class = "form-control" placeholder = "Salt Lake City" required="required">
+                            <input id = "formCity" type = "tel" name = "city" class = "form-control" placeholder = "Salt Lake City" required="required">
                         </div>
                     </div>
                     <div class = "col-md-1">
                         <div class = "form-group">
                             <label for = "formCompany">State *</label>
-                            <input id = "formCompany" type = "tel" name = "state" class = "form-control" placeholder = "UT" required="required">
+                            <input id = "formState" type = "tel" name = "state" class = "form-control" placeholder = "UT" required="required">
                         </div>
                     </div>
                     <div class = "col-md-2">
                         <div class = "form-group">
                             <label for = "formCompany">Zip Code *</label>
-                            <input id = "formCompany" type = "tel" name = "zip" class = "form-control" placeholder = "84103" required="required">
+                            <input id = "formZip" type = "tel" name = "zip" class = "form-control" placeholder = "84103" required="required">
                         </div>
                     </div>
                 </div><br>
@@ -111,7 +111,7 @@
                     <div class = "col-md-12">
                         <div class = "form-group">
                             <label for = "formCompany">Credit Card Number *</label>
-                            <input id = "formCompany" type = "tel" name = "zip" class = "form-control" placeholder = "84103" required="required">
+                            <input id = "formCCNumber" type = "tel" name = "zip" class = "form-control" placeholder = "84103" required="required">
                         </div>
                     </div>
                 </div>
@@ -120,19 +120,19 @@
                     <div class = "col-md-9">
                         <div class = "form-group">
                             <label for = "formName">Name on Card *</label>
-                            <input id = "formName" type = "text" name = "nameOnCard" class = "form-control" placeholder = "John Doe" required = "required">
+                            <input id = "formCCName" type = "text" name = "nameOnCard" class = "form-control" placeholder = "John Doe" required = "required">
                         </div>
                     </div>
                     <div class = "col-md-2">
                         <div class = "form-group">
                             <label for = "formName">Expiration Date *</label>
-                            <input id = "formName" type = "text" name = "expiration" class = "form-control" placeholder = "01/2019" required = "required">
+                            <input id = "formCCExpiration" type = "text" name = "expiration" class = "form-control" placeholder = "01/2019" required = "required">
                         </div>
                     </div>
                     <div class = "col-md-1">
                         <div class = "form-group">
                             <label for = "formName">CVV *</label>
-                            <input id = "formName" type = "text" name = "cvv" class = "form-control" placeholder = "123" required = "required">
+                            <input id = "formCCCVV" type = "text" name = "cvv" class = "form-control" placeholder = "123" required = "required">
                         </div>
                     </div>
                 </div>
@@ -186,6 +186,99 @@
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+
+
+        <script>
+
+            /*global $*/
+
+            // This repopulates forms with user entered data
+            $(document).ready(function(){
+
+                $('#formName').val(localStorage.getItem("firstName"));
+                $('#formLast').val(localStorage.getItem("lastName"));
+                $('#formEmail').val(localStorage.getItem("userEmail"));
+                $('#formPhone').val(localStorage.getItem("phoneNumber"));
+                $('#formCompany').val(localStorage.getItem("userCompany"));
+                $('#formAddress').val(localStorage.getItem("userAddress"));
+                $('#formCity').val(localStorage.getItem("userCity"));
+                $('#formState').val(localStorage.getItem("userState"));
+                $('#formZip').val(localStorage.getItem("userZip"));
+                $('#formCCNumber').val(localStorage.getItem("userCCNumber"));
+                $('#formCCName').val(localStorage.getItem("userCCName"))
+                $('#formCCExpiration').val(localStorage.getItem("userCCExp"));
+                $('#formCCCVV').val(localStorage.getItem("userCCCVV"));
+
+            });// End document ready function
+
+            // The following functions are for capturing user entered data
+
+            $('#formName').keyup(function() {
+
+                localStorage.setItem("firstName", $('#formName').val());
+            });
+
+            $('#formLast').keyup(function() {
+
+                localStorage.setItem("lastName", $('#formLast').val());
+            });
+
+            $('#formEmail').keyup(function() {
+
+                localStorage.setItem("userEmail", $('#formEmail').val());
+            });
+
+            $('#formPhone').keyup(function() {
+
+                localStorage.setItem("phoneNumber", $('#formPhone').val());
+            });
+
+            $('#formCompany').keyup(function() {
+
+                localStorage.setItem("userCompany", $('#formCompany').val());
+            });
+
+            $('#formAddress').keyup(function() {
+
+                localStorage.setItem("userAddress", $('#formAddress').val());
+            });
+
+            $('#formCity').keyup(function() {
+
+                localStorage.setItem("userCity", $('#formCity').val());
+            });
+
+            $('#formState').keyup(function() {
+
+                localStorage.setItem("userState", $('#formState').val());
+            });
+
+            $('#formZip').keyup(function() {
+
+                localStorage.setItem("userZip", $('#formZip').val());
+            });
+
+            $('#formCCNumber').keyup(function() {
+
+                localStorage.setItem("userCCNumber", $('#formCCNumber').val());
+            });
+
+            $('#formCCName').keyup(function() {
+
+                localStorage.setItem("userCCName", $('#formCCName').val());
+            });
+
+            $('#formCCExpiration').keyup(function() {
+
+                localStorage.setItem("userCCExp", $('#formCCExpiration').val());
+            });
+
+            $('#formCCCVV').keyup(function() {
+
+                localStorage.setItem("userCCCVV", $('#formCCCVV').val());
+            });
+
+        </script>
 
         <?php
         include "../Footer.html";

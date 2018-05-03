@@ -260,6 +260,8 @@
                     <td></td>
                     <td contenteditable="false" class="editable">${supply.desc}</td>
                     <td><span class="oi oi-x text-danger clickable" title="Remove this product" onClick="removeProd(${supplies.indexOf(supply)})"></span></td>
+                    <td><span class="oi oi-plus text-success clickable" title="Add To Cart" onclick="addToCart()"></span></td>
+
                 </tr>`
             );
 
@@ -268,7 +270,7 @@
         $('#supplyTable').append(
             `<tr class="supplyRow">
                 <form>
-		            <td><input type="file" action="*.php" accept="image/*" id ="itemPhotoInput" title="Add Photo">
+		            <td><input type="file" src="file:///C:\\Users\\LuAnn\\Documents\\3660Labbies\\LabbiesT1\\*.*"  id ="itemPhotoInput" title="Add Photo">
 		            </td>
                     <td><input type="text" id = "itemNameInput" title="Item Name"></td>
                     <td><input type="text" id="itemIdInput" title="Item ID"></td>

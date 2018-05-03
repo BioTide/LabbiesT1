@@ -334,6 +334,7 @@
 
         // Hide the remove icons
         $('.oi-x').hide();
+        $('.oi-plus').hide();
 
         $('#supList').hide();
         $('#supGrid').hide();
@@ -349,6 +350,7 @@
 
         // Show the remove icons
         $('.oi-x').show();
+        $('.oi-plus').show();
 
         // Map the existing table to a JSON object
         let tblTest = $('table#supplyTable tr').get().map(function(row) {

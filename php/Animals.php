@@ -431,17 +431,20 @@ include "cart.php";
             let sessionAnimals = JSON.parse(data);
             // Display the new table
             $('.animalRow').remove();
+
+            //console.log(sessionAnimals);
+
             for(let i = 1; i < sessionAnimals.length; i++){
-                let cleanQty = Number(sessionAnimals[i][3].replace(/[^0-9\.-]+/g,""));
-                let cleanPrice = Number(sessionAnimals[i][4].replace(/[^0-9\.-]+/g,""));
+                let cleanQty = Number(sessionAnimals[i][4].replace(/[^0-9\.-]+/g,""));
+                let cleanPrice = Number(sessionAnimals[i][6].replace(/[^0-9\.-]+/g,""));
                 let cleanPhotoPath = sessionAnimals[i][0].split("\"")[1];
                 let animalPhoto = cleanPhotoPath;
                 let species = sessionAnimals[i][1];
-                let animalID = sessionAnimals[i][2];
+                let animalID = sessionAnimals[i][3];
                 let qty = cleanQty;
                 let price = cleanPrice;
-                let description = sessionAnimals[i][5];
-                let inventory = sessionAnimals[i][6];
+                let description = sessionAnimals[i][8];
+                let inventory = sessionAnimals[i][9];
                 //add animal object to animals
                 animals.push({
                     photo: animalPhoto,

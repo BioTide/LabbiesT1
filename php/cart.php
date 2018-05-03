@@ -16,10 +16,7 @@
                         <div class="col-xl-3"><b>Quantity</b></div>
                         <div class="col-xl-3"><b>Total</b></div>
                     </div> <!--ending row-->
-                    <div class="row"></div> <!--ending row-->
-                    <div class="row"></div> <!--ending row-->
-                    <div class="row"></div> <!--ending row-->
-                    <div class="row"></div> <!--ending row-->
+
                 </div> <!--end container-fluid-->
                 <div class="container-fluid" id="modalRow"></div>
                 <div class="modal-footer">

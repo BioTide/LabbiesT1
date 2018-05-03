@@ -204,7 +204,7 @@
                 <div class="container-fluid" id="modalRow"></div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                    <button type="button" class="btn btn-primary">Checkout</button>
+                    <a class="btn btn-primary" href="Shipping.php" role="button">Proceed To Checkout</a>
                 </div> <!--end modal-footer-->
             </div> <!--end modal-body-->
         </div> <!-- end modal-content-->

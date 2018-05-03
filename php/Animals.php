@@ -274,6 +274,7 @@ include "cart.php";
         $('#saveCheckMark').show();
         // Hide the remove icons
         $('.oi-x').hide();
+        $('.oi-plus').hide();
         $('#aniList').hide();
         $('#aniGrid').hide();
         $('.editable').attr('contenteditable', 'true');
@@ -283,6 +284,7 @@ include "cart.php";
         $('#saveCheckMark').hide();
         // Show the remove icons
         $('.oi-x').show();
+        $('.oi-plus').show();
         // Map the existing table to a JSON object
         let tblTest = $('table#animalTable tr').get().map(function(row) {
             return $(row).find('td').get().map(function(cell) {

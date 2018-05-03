@@ -234,8 +234,10 @@ include "cart.php";
     }<!-- End populateTable -->
 
     function addToCart(i){
+
         let tf = false;
         alert(animals[i].species + " added to cart");
+        //console.log(cartItems);
         for(let cart of cartItems){
             if(cart.name == animals[i].species){
                 cart.units += 1;
@@ -252,6 +254,10 @@ include "cart.php";
             });
         }
 
+
+        console.log(cartItems);
+        let localCart = JSON.stringify(cartItems);
+        localStorage.setItem('cartReplacement', localCart);
     }
     function addProd() {
         let animalPhoto = $('#photoInput').val();
@@ -291,6 +297,7 @@ include "cart.php";
         populateTable()
         saveProd();
     }// End removeProd
+
     function editProd(){
         // Toggle between edit and save
         $('#editPencil').hide();
@@ -314,9 +321,11 @@ include "cart.php";
                 return $(cell).html();
             });
         });// End mapping
+        console.log(tblTest);
         let localTable = JSON.stringify(tblTest);
         localStorage.setItem('tableReplacement', localTable);
     }// End saveProd function
+
     function sortSpecies(){
         if(!($('#speciesColUp').is(":visible"))) {
             //sort desc

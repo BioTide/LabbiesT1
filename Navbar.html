@@ -42,24 +42,29 @@
         </div>
     </div>
     <div class = "navbar-right text-white">
-        <span id="shoppingCart" class="oi oi-cart align-baseline clickable col-xl-1" data-toggle="modal" data-target="#exampleModalCenter" title="See your Current Shopping Cart" onclick="populateCart()">
+        <span id="shoppingCart" class="oi oi-cart align-baseline clickable col-xl-1" data-toggle="modal" data-target="#exampleModalCenter" title="See your Current Shopping Cart" onclick="populateCart()"></span>
     </div>
 </nav>
 <script>
     let cartItems = [];
     let cartTotal = 0;
+
     function populateCart(){
         $.getJSON("../cart.json", function(data){
-            //let tableEdited = localStorage.getItem('tableReplacement');
-            //if(!tableEdited) {
+            let tableEdited = localStorage.getItem('cartReplacement');
+            console.log(tableEdited);
+            if(!tableEdited) {
                 cartItems = data;
-            //}
-
+            }
+            else{
+                cartItems = tableEdited;
+            }
         });
-        //$('.modal-body').remove();
+        $('#cartRow').remove();
+
         for(let cart of cartItems){
             $('#modalRow').append(
-                `<div class="row">
+                `<div class="row" id="cartRow">
                     <div class="col-xl-3">&nbsp;${cart.name}</div>
                     <div class="col-xl-3 text-right">$${cart.price.toFixed(2)}</div>
                     <div class="col-xl-3 text-right">${cart.units}&nbsp;&nbsp;</div>
@@ -68,8 +73,10 @@
             );
             cartTotal += cart.total;
         }<!-- End for loop -->
+        $('.cartTotal').remove();
         $('#modalTotal').append(
-            '<div><b>\nShopping Cart Total = $' + cartTotal.toFixed(2) + '<b></div>'
+            '<div class="cartTotal"><b>\nShopping Cart Total = $' + cartTotal.toFixed(2) + '<b></div>'
         )
     }<!-- End populateTable -->
+
 </script>
